@@ -1,0 +1,61 @@
+\sectionquestion{Ensemble Methods}
+
+\begin{parts}
+
+\part Graddyant is training a random forest for binary classification on samples $\{(\xv^{(i)}, y^{(i)}\}_{i=1}^n$.
+In order to reduce variance, Graddyant applies an extreme form of sample bagging, training each decision tree with only one sample. Assume decision trees are trained using the standard greedy algorithm ID3 used previously in this class, with information gain as the splitting criterion, with no pruning.
+\begin{subparts}
+\subpart[1] \textbf{Numerical answer:} What is the depth of the largest decision tree in the random forest?
+    \begin{tcolorbox}[fit,height=1cm, width=2cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    0, the root node is already pure and majority vote is sufficient
+    \end{soln}
+
+
+\subpart[2] \textbf{Short answer:} As the number of trees increases, what classifier does Graddyant's random forest resemble in expectation? Why?
+    \fillwithlines{10em}
+    \begin{soln}
+    Majority vote. We get an approximately equal number of trees per sample, and each tree always votes for the label of that sample, so the unweighted majority vote over the forest approximates a majority vote over the data.
+    \end{soln}
+
+\subpart[2] \textbf{Select all that apply:} Select all of the following that apply to Graddyant's random forest.
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Each decision tree has low variance.
+     \choice Each decision tree has high variance.
+     \choice The ensemble has low variance.
+     \choice The ensemble has high variance.
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    A, C. Both the decision tree and ensemble resemble majority vote, high bias low variance.
+    \end{soln}
+\end{subparts}
+    \begin{qauthor}
+    Abhi. Ensemble Methods: Bagging
+
+Implement random forests.
+
+Discuss the relation in bagging between the sample size and variance of the base classifier/regressor.
+
+    \end{qauthor}
+
+\clearpage
+
+\part[2] \textbf{Short answer:} At his new company Tweetstatok, Melon Husk asks his employees to speed up their implementation of AdaBoost. He instructs them to ditch the sequential training of weak learners and to instead \emph{train each weak learner in parallel independently and then learn all the weights for the ensemble at once}. The employees chuckle quietly at Melon Husk's naivety. Explain why this approach is not likely to produce the same results as the standard AdaBoost.
+% OLD VERSION: Melon Husk is trying to speed up his implementation of AdaBoost at his new company Tweetstatok. Melon decides to try training each weak learner in parallel instead of training weak learners serially, then learn all the weights for the ensemble at once. Will this produce the same results as standard AdaBoost? Why or why not?
+    \fillwithlines{10em}
+    \begin{soln}
+    It won't work, can't update weight distribution based on error of one weak learner to train the next if they're learned in parallel.
+    \end{soln}
+    \begin{qauthor}
+    Abhi. Ensemble Methods: Boosting
+
+    Implement AdaBoost
+    \end{qauthor}
+
+\end{parts}

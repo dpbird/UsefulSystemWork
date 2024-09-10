@@ -1,0 +1,68 @@
+\sectionquestion{Linear Regression}
+
+\begin{parts}
+
+
+
+    
+\begin{comment}
+
+\part Suppose we are performing linear regression on $n$ training points with $d$ features, and we want to find the \textbf{exact} value of $\wv^*$, the weight vector that minimizes the mean squared error on our $n$ training points. Assume that the inverse of $\Xv^T\Xv$ exists, where $\Xv$ is the design matrix.
+
+\begin{subparts}
+
+    \subpart[1] \textbf{Select all that apply:} Which of the following will always give us the exact value of $\wv^*$?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice The closed-form solution to the least squares problem
+     \choice Gradient descent
+     \choice Mini-batch stochastic gradient descent
+     \choice Stochastic gradient descent
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    Only the closed-form solution.
+    \end{soln}
+
+    % CHEAT SHEET
+    % \subpart[1] \textbf{Short answer:} What is the time complexity in big-$O$ of computing the closed-form solution to linear regression?
+    % \begin{tcolorbox}[fit,height=1cm, width=4cm, blank, borderline={1pt}{-2pt}]
+    % %solution
+    % \end{tcolorbox}
+    % \begin{soln}
+    % $O(d^3 + nd^2)$
+    % \end{soln}
+
+    \subpart[1] \textbf{Short answer:} What is the time complexity in big-$O$ of computing one step of gradient descent for linear regression?
+    \begin{tcolorbox}[fit,height=1cm, width=4cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $O(nd)$
+    \end{soln}
+
+    \subpart[1] \textbf{Short answer:} What is the time complexity in big-$O$ of computing one step of stochastic gradient descent for linear regression?
+    \begin{tcolorbox}[fit,height=1cm, width=4cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $O(d)$
+    \end{soln}
+    
+\end{subparts}
+\begin{qauthor}
+    Abhi
+
+    Choose a Linear Regression optimization technique that is appropriate for a
+particular dataset by analyzing the tradeoff of computational complexity vs.
+convergence speed
+
+\end{qauthor}
+\begin{qtester}
+    I like these questions. I guess one issue might be if the student considers the case that you cannot calculate the inverse of $X^TX$ Also we should give them $X \in \mathbb{R}^{n \times d}$
+\end{qtester}    
+\end{comment}
+
+\end{parts}

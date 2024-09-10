@@ -1,0 +1,73 @@
+\sectionquestion{$k$-Means}
+
+\begin{parts}
+
+\part[2] \textbf{Select all that apply:} Which of the following statements about optimizing the K-means objective function is correct? \\
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Both gradient descent and coordinate descent can be used to optimize the K-means objective function.
+     \choice The K-means objective function is convex so gradient descent is guaranteed to always find the optimal clustering.
+     \choice Because block coordinate descent does not optimize all of the variables simultaneously, the objective function's value can increase from iteration to iteration.
+     \choice The optimal clustering that minimizes the K-means objective function can be solved for in closed form but doing so is computational expensive. 
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+        None of the above
+    \end{soln}
+    \begin{qauthor}
+        Max Tang, Connect the nonconvexity of the K-Means objective function with the (possibly) poor performance of random initialization
+
+        Lightly edited by Henry
+    \end{qauthor}
+
+\part Honk and Chonk are having a clustering competition! They both start with the same dataset of unlabelled data points, $\mathcal{D}$, and they agree to both use K-means with $K=3$. Honk decides to use Lloyd's method, the version of the algorithm presented in lecture where the cluster centers are initialized to randomly selected data points in $\mathcal{D}$. Chonk decides to use block coordinate descent as well except instead of initializing the cluster centers, he initializes the \emph{cluster assignments} by randomly choosing an integer from ${1,2,3}$ for each data point in $\mathcal{D}$.
+
+\begin{subparts}
+    \subpart[2] \textbf{True or False:} Both Honk and Chonk's clustering algorithms will always return $3$ clusters of points. Briefly justify your answer in 1-2 concise sentences. 
+    \begin{checkboxes}
+         \choice True 
+         \choice False
+    \end{checkboxes}
+    \fillwithlines{8em}
+    \begin{soln}
+        False, Chonk's algorithm could initialize one of the clusters to be empty e.g., no data point is assigned to cluster 3 at initialization. If this is the case, the algorithm will only return 2 clusters. 
+    \end{soln}
+    \begin{qauthor}
+        Henry
+    \end{qauthor}
+
+    \clearpage
+    \subpart[2] \textbf{True or False:} Despite their different initialization methods, Honk and Chonk's clustering algorithms \emph{could} converge to the same final clustering. Briefly justify your answer in 1-2 concise sentences. 
+    \begin{checkboxes}
+         \choice True 
+         \choice False
+    \end{checkboxes}
+    \fillwithlines{8em}
+    \begin{soln}
+        True, if after some number of iterations, both algorithms have the same assignments and cluster centers, then every subsequent iteration of block coordinate descent will behave identically and the two will return the same final clustering. 
+    \end{soln}
+    \begin{qauthor}
+        Henry
+    \end{qauthor}
+
+\begin{EnvFullwidth}
+    Neural decides to enter the competition but because he has taken 10-301/601, he decides to use K-means++ to initialize his block coordinate descent algorithm. 
+\end{EnvFullwidth}
+    
+    \subpart[2] \textbf{True or False:} Neural's clustering at convergence is guaranteed to have a lower objective function value than both Honk and Chonk's clusterings at convergence. Briefly justify your answer in 1-2 concise sentences. 
+    \begin{checkboxes}
+         \choice True 
+         \choice False
+    \end{checkboxes}
+    \fillwithlines{8em}
+    \begin{soln}
+        False, because all of these initialization methods have some randomness, we cannot guarantee that K-means++ will outperform either of the other two e.g., there is some non-zero probability that both Neural and Honk initialize their algorithms to the same set of cluster centers, in which case they will both return the same final clustering. 
+    \end{soln}
+    \begin{qauthor}
+        Henry
+    \end{qauthor}
+\end{subparts}
+
+\end{parts}

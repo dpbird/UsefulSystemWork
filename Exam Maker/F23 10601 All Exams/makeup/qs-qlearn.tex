@@ -1,0 +1,142 @@
+\sectionquestion{Q-Learning and Deep RL}
+
+\begin{parts}
+
+\part Bocchi and Dora are both running tabular Q-learning on the same environment with unknown nondeterministic transitions. 
+The two use the exact same parameters, except the value for $\epsilon$ in their $\epsilon$-greedy action selection (i.e. choose a random action with probability $\epsilon$, and a greedy action with probability $(1-\epsilon)$).
+Since Bocchi does not like exploring, she sets $\epsilon = 0$. Meanwhile, Dora loves exploring so she sets $\epsilon = 1$.
+%
+Assume the discount factor $\gamma$ satisfies $0 \leq \gamma < 1$, rewards are finite and bounded, Q-values are initialized to zero, and learning rate $\alpha_t$ follows the schedule $\alpha_t = \frac{1}{t+1}$.
+
+    \begin{subparts}
+        \subpart[2] \textbf{Select one:} Over an arbitrarily large number of steps, is Bocchi's Q-learning algorithm guaranteed to converge to the optimal Q-value function? \textbf{Explain in one sentence.}
+        \begin{checkboxes}
+            \choice Yes
+            \choice No
+        \end{checkboxes}
+        \fillwithlines{5em}
+        \begin{soln}
+        No, since Bocchi's algorithm isn't guaranteed to visit every state 
+        \end{soln}
+
+        \subpart[2] \textbf{Select one:} Over an arbitrarily large number of steps, is Dora's Q-learning algorthim guaranteed to converge to the optimal Q-value function?  \textbf{Explain in one sentence.}
+        \begin{checkboxes}
+            \choice Yes
+            \choice No
+        \end{checkboxes}
+        \fillwithlines{5em}
+        \begin{soln}
+            Yes, since Dora's algorithm is guaranteed to visit every state arbitrarily many times
+        \end{soln}
+
+        \begin{comment}
+        \subpart[2] \textbf{Short answer:} Why might it be preferable to set $\epsilon$ to a small non-zero constant instead of exactly $0$ or $1$?
+        \fillwithlines{7em}
+        \begin{soln}
+            $\epsilon$-greedy strikes a balance between exploration and exploitation; it is guaranteed to converge unlike a pure greedy strategy and likely to converge faster than a pure random strategy.
+        \end{soln}
+        \end{comment}
+        
+    \end{subparts}
+        
+
+\begin{qauthor}
+    Alex, Identify the conditions under which the Q-learning algorithm will converge to the true value function
+\end{qauthor}
+
+\clearpage
+
+\part Consider a supervised online learning problem in which your goal is to minimize the number of mistakes made on a stream of examples $(\xv^{(1)}, y^{(1))}), (\xv^{(2)}, y^{(2))}), \ldots$ where $\xv^{(i)} \in \Rb^M$ and $y^{(i)} \in \{+1, -1\}$ and $y^{(i)} = c^*(\xv^{(i)})$. Assume for all $i \neq j$, $\xv^{(i)} \neq \xv^{(j)}$ and that the model is not able to view any past points after a new one arrives.
+
+In this problem, you will recast this \textit{online learning} problem as a \textit{reinforcement learning} problem by defining your state space $\Sc$, action space $\Ac$, reward function $R(s,a)$, and transition function $\delta(s,a)$. Your goal is to learn a linear model $\hat{y}^{(i)} = h_{\thetav}(\xv^{(i)}) = \text{sign}(\thetav^T\xv^{(i)})$. 
+
+\textbf{(For full credit, all your answers must be in terms of mathematical quantities appearing in the above paragraphs.)}
+
+\begin{subparts}
+
+\subpart[1] \textbf{Short answer:} What is the state at timestep $t$, i.e. $s_{t}$?
+    \begin{tcolorbox}[fit,height=1cm, width=4cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $\xv^{(t)}$, i.e. the $t$th feature vector
+    \end{soln}
+    \begin{qauthor}   Matt    \end{qauthor}
+
+\subpart[1] \textbf{Short answer:} Define the state space, $\Sc$.
+    \begin{tcolorbox}[fit,height=1.5cm, width=6cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $\Rb^M$, i.e. real-valued vectors of length $M$
+    \end{soln}
+    \begin{qauthor}   Matt    \end{qauthor}
+
+% \subpart[1] \textbf{Short answer:} What is the greedy action at timestep $t$, i.e. $a_{t}$?
+%     \begin{tcolorbox}[fit,height=1cm, width=4cm, blank, borderline={1pt}{-2pt}]
+%     %solution
+%     \end{tcolorbox}
+%     \begin{soln}
+%     $\hat{y}^{(t)}$, i.e. the $t$th prediction
+%     \end{soln}
+%     \begin{qauthor}   Matt    \end{qauthor}
+    
+\subpart[1] \textbf{Short answer:} Define the action space, $\Ac$.
+    \begin{tcolorbox}[fit,height=1.5cm, width=6cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $\{+1, -1\}$, i.e. assigning a label of $+1$ or $-1$ to $y^{(i)}$
+    \end{soln}
+    \begin{qauthor}   Matt    \end{qauthor}
+    
+\subpart[1] \textbf{Short answer:} Define the reward function, $R(s, a) : \Sc \times \Ac \rightarrow \Rb$.
+    \begin{tcolorbox}[fit,height=1.9cm, width=8cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    \begin{align*}
+        R(\xv^{(t)}, a) = \begin{cases}
+        1 & \text{if } y^{(t)} = a \\
+        0 & \text{if } y^{(t)} \neq a 
+        \end{cases}
+    \end{align*}
+    \end{soln}
+    \begin{qauthor}   Matt    \end{qauthor}
+    
+\subpart[1] \textbf{Short answer:} Define the transition function, i.e. $s_{t+1} = \delta(s_t, a_t)$.
+    \begin{tcolorbox}[fit,height=1.9cm, width=8cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $\delta(\xv^{(t)}, \hat{y}^{(t)}) = \xv^{(t+1)}$
+    \end{soln}
+    \begin{qauthor}   Matt    \end{qauthor}
+
+% \subpart[1] \textbf{Short answer:} Define the policy, $\pi(s_t) : \Sc \rightarrow \Ac$.
+%     \begin{tcolorbox}[fit,height=2cm, width=8cm, blank, borderline={1pt}{-2pt}]
+%     %solution
+%     \end{tcolorbox}
+%     \begin{soln}
+%     $\pi(\xv^{(t)}) = h_{\thetav}(\xv^{(t)}) = \text{sign}(\thetav^T \xv^{(t)})$
+%     \end{soln}
+%     \begin{qauthor}   Matt    \end{qauthor}
+
+
+\subpart[1] \textbf{Select one:} Which of the following would be the best choice to learn a policy $\pi : \Sc \rightarrow \Ac$?
+    \begin{checkboxes}
+     \choice value iteration
+     \choice policy iteration
+     \choice tabular Q-learning
+     \choice deep Q-learning
+    \end{checkboxes}
+    \begin{soln}
+    deep Q-learning
+    \end{soln}
+    \begin{qauthor}   Matt    \end{qauthor}
+
+    
+\end{subparts}
+
+
+\end{parts}

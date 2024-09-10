@@ -1,0 +1,131 @@
+\begin{parts}
+\part[4] In class, you've seen information theoretic quantities such as entropy, conditional entropy, and mutual information. One other information theoretic quantity is called \textbf{Kullback-Leibler Divergence} (or KL divergence). For any two random variables $A$ and $B$ over the same space $\mathcal{X}$ (for example, that $A$ and $B$ both describe binary variables and take values 0 and 1 only) who have distributions $P(A)$ and $P(B)$ respectively, the KL divergence from $B$ to $A$ is defined as:
+\begin{equation}
+    \text{KL}(P(A) \mid\mid P(B)) = - \sum_{x \in \mathcal{X}} P(A = x) \log_2 \left(\frac{P(B = x)}{P(A = x)} \right)
+\end{equation}
+In this sense, KL divergence measure how much the distribution of a random variable $B$ is different from the distribution of a random variable $A$, and a KL divergence of 0 means that the two distributions are identical in terms of information.
+\begin{subparts}
+\subpart[4] KL divergence is intrinsically related to one quantity we've seen before: mutual information! Your classmate Paul tried to prove this relation, but he got caught in a sandstorm and lost a few parts of the following proof:
+    \begin{proof}
+    We first will show that entropy and conditional entropy can be written as double summations over the \emph{joint} distribution of two variables:
+    \begin{align}
+        H(X) &= -\sum_{x}P(X=x) \log_2 P(X=x)\\
+        &= -\sum_{x} \left(\sum_{y} P(X=x, Y=y)\right) \log_2 P(X=x)\\
+        &= \sum_{x, y} \text{\textbf{[i]}}\\ %-\sum_{x, y}P(X=x, Y=y)\log_2 P(X=x)\\
+        H(X \mid Y) &= \sum_{y} P(Y=y) H(X \mid Y = y)\\
+        &= \sum_{y} P(Y=y) \left(-\sum_{x} P(X=x \mid Y=y) \log_2 P(X=x \mid Y=y)\right)\\
+        &= \sum_{x, y}\text{\textbf{[ii]}}
+    \end{align}
+    Thus, we have that:
+    \begin{align}
+        I(X; Y) &= H(X) - H(X \mid Y)\\
+        &=  \sum_{x, y}\text{\textbf{[i]}} - \sum_{x, y}\text{\textbf{[ii]}} \\
+        &= - \sum_{x, y} P(X=x, Y=y) \log_2\frac{P(X=x)}{P(X=x \mid Y=y)}\\
+        &= -\sum_{x, y} P(X=x, Y=y) \log_2\frac{P(X=x)P(Y=y)}{P(X=x, Y=y)}\\
+        &= \text{KL}(\text{\textbf{[iii]}})
+    \end{align}
+        % I(A;B) &= H(A) - H(A \mid B)\\
+        % &= -\sum_{a} P(A = a) \log_2 P(A=a) - \sum_{b}P(B=b) H(A \mid B = b)\\
+        % &= -\sum_{a} P(A = a) \log_2 P(A=a) - \sum_{b,a}P(B=b) P(A = a \mid B = b) \log_2 P(A=a \mid B = b)\\
+    \end{proof}
+\textbf{Fill in the blank:} In the following blanks, fill in the correct quantities that would go into \textbf{[i], [ii],} and \textbf{[iii]} in order to complete the proof.
+\begin{subsubparts}
+    \subsubpart \begin{tcolorbox}[fit,height=1.5cm, width=9cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+        $- P(X=x, Y = y) \log_2 P(X=x)$
+    \end{soln}
+\end{tcolorbox}
+    \subsubpart \begin{tcolorbox}[fit,height=1.5cm, width=9cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+        $- P(X=x, Y = y) \log_2 P(X=x \mid Y=y)$
+    \end{soln}
+\end{tcolorbox}
+    \subsubpart \begin{tcolorbox}[fit,height=1.5cm, width=9cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+        $P(X, Y) \mid\mid P(X)P(Y)$
+    \end{soln}
+\end{tcolorbox}
+\end{subsubparts}
+    % \begin{checkboxes}
+    %  \choice $I(A;B) = \text{KL}(P(A) \mid\mid P(B))$
+    %  \choice $I(A;B) = \text{KL}(P(A)P(B) \mid\mid P(A, B))$
+    %  \choice $I(A;B) = \text{KL}(P(A, B) \mid\mid P(A)P(B))$
+    %  \choice $I(A;B) = \text{KL}(P(B) \mid\mid P(A))$
+    % \end{checkboxes}
+    % \begin{soln}
+    %     C.
+    % \end{soln}
+    \begin{qauthor}
+        Zack, reasoning about information theoretic quantities, probability background
+    \end{qauthor}
+    
+\subpart[2] Consider the discrete random variables $A$ and $B$ that have the following probability distributions:
+\begin{table}[H]
+  \centering
+\begin{tabular}{ccccc}
+  \toprule
+  x & 0 & 1 & 2 \\ \midrule
+  P(A = x) & 0.25 & 0.25 & 0.5 \\
+  P(B = x) & 0.5 & 0.25 & 0.25 \\
+  \bottomrule
+\end{tabular}
+\label{tab:kldata}
+\end{table}
+
+\textbf{Numerical Answer:} What is $\text{KL}(P(A) \mid\mid P(B))$? Please put your final answer in the first box, and use the second box for any work.
+
+\begin{tcolorbox}[fit,height=1cm, width=2cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+        $\frac{1}{4}$
+    \end{soln}
+\end{tcolorbox} \begin{tcolorbox}[fit,height=3cm, width=11cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+        \begin{align}
+            \text{KL}(P(A) \mid\mid P(B)) &= - \left(0.25\log_2\frac{0.5}{0.25} + 0.25\log_2\frac{0.25}{0.25} + 0.5\log_2\frac{0.25}{0.5}\right)\\
+            &= -\left(0.25\log_2 2 + 0.25\log_2 1 + 0.5\log_2\frac{1}{2}\right)\\
+            &= -\left(0.25 - 0.5\right) = 0.25
+        \end{align}
+    \end{soln}
+\end{tcolorbox}
+    \begin{qauthor}
+        Zack, reasoning about information theoretic quantities
+    \end{qauthor}
+\end{subparts}
+
+\part[4] Suppose we have two $f_1(x)$ and $f_2(x)$ that are convex $\forall x \in \mathbb{R}^d$ and $g(x) = \min(f_1(x),f_2(x))$. Is $g(x)$ convex? If yes, prove so from the definition of convexity; if no, give a counter-example.
+\begin{tcolorbox}[fit,height=3cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    %solution
+\end{tcolorbox}
+\begin{soln}
+        No.
+        $$f_{1}(x) = (x-1)^{2} , f_2(x) = (x+1)^{2},\:
+        g(x) = \min(f_1(x), f_2(x))$$
+        Suppose $x = -1, y = +1, \lambda = 0.5$.
+        \begin{align*}
+         f(\lambda x + (1-\lambda) y) &\leq \lambda f(x) + (1-\lambda) f(y)\\
+        f(0) &\leq 0.5 f(-1) + 0.5 f(1)\\
+        1 &\leq 0.5 f(-1) + 0.5 f(1)\\
+        1 &\leq 0
+        \end{align*}
+
+\end{soln}
+\begin{qauthor}
+   Udai
+\end{qauthor}
+
+\part[2] \textbf{Select one} You are tasked with building a \textbf{Regression Tree} that predicts the price of houses. Which among the following would you choose to measure the impurity of the Tree?
+    \begin{checkboxes}
+     \choice The impurity can be measured using residual sum of squares.
+     \choice The impurity can be measured using Gini index.
+     \choice The impurity can be measured using misclassification error.
+     \choice The impurity can be meausred using the r-squared statistic.
+     \choice The impurity can be meausred using entropy.
+\end{checkboxes}
+    \begin{soln}
+    A
+    \end{soln}
+\begin{qauthor}
+    Shubham Phal
+\end{qauthor}
+
+\end{parts}

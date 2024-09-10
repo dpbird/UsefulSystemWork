@@ -1,0 +1,96 @@
+\sectionquestion{Good Questions, Cut for Time}
+
+\begin{parts}
+
+
+\part In this question we will look at a neural network and think about how we can incorporate ideas of regularization. For this question, consider a 1-hidden layer neural network with 30 hidden units and a softmax output layer over 10 classes; the objective is to minimize cross-entropy loss. The number of features in the input is 10. You can use the terms $y, \hat{y}$ to refer to the labels and predictions respectively, and $\alpha, \beta$ to refer to the weights. 
+
+\begin{subparts}
+    \subpart[3] \textbf{Short Answer:} Write down the loss function of this network, given that we are using L2 regularization.
+    \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+    \begin{soln}
+        $$\ell (\hat{y},y) = - \sum_{i=1}^{10}y_i*log(\hat{y}_i) + \lambda (\sum_{i=1}^{10} \sum_{j=1}^{30} \alpha_{i,j}^{2} + \sum_{i=1}^{30}\sum_{j=1}^{10} \beta_{i,j}^{2})$$
+    \end{soln}
+    \subpart[2] \textbf{Short Answer:} If we use SGD to optimize this network, what is the gradient update for $\alpha_{i,j}$. You may use the expression $\frac{\partial \ell(\hat{y}, y)}{\partial \alpha_{i,j}}$ to denote the non-regularized gradient, and $\eta$ to represent the learning rate.
+   \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+    \begin{soln}
+        $$\alpha_{i,j} = \alpha_{i,j} - (\eta + 2\lambda \alpha_{i,j}) \frac{\partial \ell(\hat{y}, y)}{\partial \alpha_{i,j}}) $$
+    \end{soln}
+
+    \subpart[1] \textbf{Short Answer:} Write down the gradient update for $\alpha$. Use $*$ for element-wise multiplication and $@$ for matrix multiplication
+   \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+    \begin{soln}
+        $$\alpha = \alpha - \eta \frac{\partial \ell(\hat{y}, y)}{\partial \alpha} - 2\lambda \alpha * \frac{\partial \ell(\hat{y}, y)}{\partial \alpha} $$
+    \end{soln}
+    \subpart[1] \textbf{Short Answer:} Briefly explain the effect of the hyperparameter $\lambda$ in our network. Specifically, what happens if the value of $\lambda$ is very large, and what happens if it is very small?
+    \fillwithlines{8em}
+    \begin{soln}
+        When $\lambda$ is very small, the loss function does not care as much about the magnitude of the weights, and will prioritize minimizing the loss. When $\lambda$ is very large, the SGD algorithm will minimize the weights as much as possible, which may not decrease the loss.
+    \end{soln}
+    \subpart[2] \textbf{Select all that apply:} Which of the following statements about regularization are true:
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice The regularized loss is always lower than the non-regularized loss
+     \choice If the network is initialized with very large weights, the regularized loss will have a larger gradient update than non-regularized loss
+     \choice The gradient updates are larger for regularized loss than non-regularized loss
+     \choice The regularized loss will converge faster than non-regularized loss
+     \choice As weights become larger, the regularized loss increases faster than non-regularized loss
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    B,E
+    \end{soln}
+    \begin{qauthor}
+        Bhargav, Neural Networks, Instantiate an optimization method (e.g. SGD) and a regularizer (e.g. L2) when the parameters of a model are comprised of several matrices corresponding to different layers of a neural network
+    \end{qauthor}
+\end{subparts}
+
+
+
+\part
+Henry the day trader wants to build a neural network to predict how the cost of some stock will change on a day-to-day basis.
+\begin{subparts}
+\subpart[1] Henry really doesn’t like activation functions and wants to use a network with the only connection between linear layers being the identity function! What potential disadvantage could this decision incur?
+
+    \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+\begin{soln}
+Since non-linear activations introduce the ability for neural networks to learn non-linear functions, it’s possible that this data doesn’t follow a totally linear pattern and you will lose out on the opportunity to learn more complex functions that better fit the distribution.
+\end{soln}
+
+\subpart[1] Luckily, you were there to talk some sense into Henry and he will now be using a sensible combination of GeLU, Softmax, and some other fancy activation functions. But now Henry is complaining that this model is simply too much work to code! He is also considering a linear regression. What potential disadvantage could this decision incur?
+
+    \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+\begin{soln}
+Since linear regression (OLS) assumes independently gathered data, the fact that many of your training data will have overlap with one another could interfere with that assumption.
+\end{soln}
+\end{subparts}
+
+\part[2] \textbf{Math:} Suppose you have a binary classification task with 2 real-valued inputs. You decide to use a finite hypothesis set $\mathcal{H}$. If $|\mathcal{H}| = Q$, what is the tightest upper bound on the VC-dimension of $\mathcal{H}$ you can guarantee? Express your answer in terms of $Q$ by filling in the inequality below:
+\\ \\
+$d_{VC}(\mathcal{H}) \leq$ \begin{tcolorbox}[fit,height=1.5cm, width=3cm, blank, borderline={1pt}{-2pt}, nobeforeafter]
+    \begin{soln}
+        $\lfloor \log_2(Q) \rfloor$
+    \end{soln}
+\end{tcolorbox}
+
+
+\part[2] \textbf{Short answer:} You are trying to derive the MLE estimate for some probability distribution parameter. However there seems to be a problem - your likelihood function is a product over individual likelihoods, which seems hopeless to optimize over the parameter! In 2-3 concise sentences, describe what step/mathematical transformation are you missing, and what this transformation accomplishes?
+\fillwithlines{9em} 
+\begin{soln}
+    Take the log of likelihood function - turns the product into a sum of likelihoods, whose derivative can also be expressed as a sum of derivatives of likelihoods
+\end{soln}
+\begin{qauthor}
+    Henry, heavily inspired by UNKNOWN 
+\end{qauthor}
+\begin{qtester}
+    Good question. I like that there is a breakdown of the basic concepts between parts a and b
+\end{qtester}
+
+\end{parts}

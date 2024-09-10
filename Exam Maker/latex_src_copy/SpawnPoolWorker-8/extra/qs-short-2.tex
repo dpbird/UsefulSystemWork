@@ -1,0 +1,306 @@
+\section{Multiple Choice and Short Answer Questions}
+
+\subsection{Decision Trees, Information Gain, and Entropy (HW2 team)}
+
+\begin{enumerate}
+
+    
+    \item For a dataset with $k$ binary-value attributes and binary attributes, what is the maximum depth tree that can be learned (include leaf nodes in your calculation)? How many nodes does this tree have?
+    
+    \begin{soln}
+        $k$, $2^{k+1}-1$
+    \end{soln}
+    
+    \begin{qauthor}
+    Soham (is this too simple a question?)
+    \end{qauthor}
+
+    \item For categorical data, is it possible to learn a decision tree which gives the same output as the $k$ nearest neighbor algorithm when $k = 1$? \textit{Hint: Think about how each algorithm would work when you have a dataset with two binary valued attributes and binary labels}
+    
+    \begin{soln}
+    Yes it is. A full decision tree partitions the discrete valued space completely, and in each leaf node the decision is based on the labels of the points.
+    \end{soln}
+    
+    \begin{qauthor}
+    Soham
+    \end{qauthor}
+    
+    \item\pts{2} \textbf{Multiple choice.} Assuming that all the training examples are corrected labeled by a decision tree classifier. As the number of training examples increases, which of the following statements is true?
+    \begin{enumerate}
+    \item The training error decreases monotonically, and the test error increases monotonically. 
+    \item The training error decreases monotonically, and the test error first decreases and at some point starts to increase monotonically. 
+    \item The training error remains the same, and the test error increases monotonically. 
+    \item The training error remains the same, and the test error first decreases and at some point starts to increase monotonically. 
+    \end{enumerate}
+    
+    \begin{soln}
+    c, the training error is always 0, and the test error increases monotonically. 
+    \end{soln}
+    
+    \begin{qauthor}
+    Mo- Adapted from F17 Final, learning objective ML Basics 2f
+    \end{qauthor}
+    
+   \item\pts{2} \textbf{Multiple choice.} Assuming that the depth of the decision tree classifier is fixed at 2. As the number of training examples increases, which of the following statements is true?
+    \begin{enumerate}
+    \item The training error increases monotonically, and the test error decreases monotonically. 
+    \item The training error increases monotonically, and the test error first decreases and at some point starts to increase monotonically. 
+    \item The training error decreases monotonically, and the test error decreases monotonically. 
+    \item The training error decreases monotonically, and the test error first decreases and at some point starts to increase monotonically. 
+    \end{enumerate}
+    
+    \begin{soln}
+    a, the training error starts from 0, and then increases as the number of training examples increases, and the test error decreases, getting closer and closer to training error. 
+    \end{soln}
+    
+    \begin{qauthor}
+    Mo- Adapted from F17 Final, learning objective ML Basics 2f
+    \end{qauthor}
+    
+     
+\end{enumerate}
+    
+\subsection{Linear regression, Perceptron, KNN questions (HW3 team)}
+\begin{enumerate}
+    \item In this problem you will run the perceptron algorithm on the following dataset:
+    \begin{align*}
+        & x^{(1)} = \begin{bmatrix} 0 \\ 1 \end{bmatrix},  y^{(1)} = -1 \\
+        & x^{(2)} = \begin{bmatrix} -1 \\ 2 \end{bmatrix},  y^{(2)} = 1 \\
+        & x^{(3)} = \begin{bmatrix} 3 \\ 1 \end{bmatrix},  y^{(3)} = -1 \\
+    \end{align*}
+    Assume we are running the algorithm with parameters $w$ and $b$, where $w$ corresponds to the weights and $b$ corresponds to the bias term. We initialized $w = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$ and $b = 0$. What's the value of $w$ and $0$ after \textbf{two} passes over the dataset.
+    
+    \begin{soln}
+    w = $\begin{bmatrix} -1 \\ 0 \end{bmatrix}$, b = -1.
+    \end{soln}
+    
+    \begin{qauthor}
+    Jennifer
+    \end{qauthor}
+    
+    \item Please select all the correct options below about the perceptron algorithm:
+    (a) When performing batch perceptron, if the algorithm makes no mistakes in the current pass of the data, then the algorithm has converged.
+    (b) Suppose we have a dataset and we have fixed $R$ in the mistake bound $\frac{R^2}{\gamma^2}$. Then we can get the tightest mistake bound if $\gamma$ is the margin of the dataset with respect to the max-margin separating hyperplane. 
+    (c) The perceptron algorithm always finds the separating hyperplane with the largest margin.
+    
+    \begin{soln}
+    (a), (b).
+    \end{soln}
+    
+    \begin{qauthor}
+        Jennifer    
+    \end{qauthor}
+    
+    \item We can view the perceptron algorithm as performing stochastic gradient descent on an objective function. Please state the objective function and briefly explain why minimizing this objective function is equivalent to running the perceptron algorithm.
+    
+    \begin{soln}
+    The objective function is $J(\theta) = \sum_{i=1}^{N} (-y^{(i)}\theta^Tx^{(i)})_+$. This is the objective because as we can see, when the algorithm makes a correct prediction on data point $i$, no cost is incurred on this data point. And when the algorithm makes an incorrect prediction on data point $i$, a positive cost is incurred. This matches the perceptron algorithm's goal of classifying every data point correctly while not caring about how confident the classifications are.
+    \end{soln}
+    
+    \begin{qauthor}
+    Jennifer
+    \end{qauthor}
+    
+    \item Consider the mini data set in Table \ref{tab:minidata}, where each data point has only one feature $x$ and has label $y$. Solve the linear regression problem with two parameters weight and bias:\\
+    
+    \begin{table}[!hbtp]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{x} & 1.0 & 2.0 & 3.0\\   \hline 
+        \textbf{y} & 1.0 & 5.0 & 6.0\\  \hline
+        \end{tabular}
+        \caption{Mini dataset}
+        \label{tab:minidata}
+    \end{table}
+    
+    \begin{enumerate}
+        \item What is the closed-form solution?
+        
+        \item If we initialize the weight as $2.0$ and bias term as $0.0$, and set the learning rate as $0.1$, what is the weight and bias after one iteration of batch gradient descent? Note that we do not introduce any regularization in this problem and our objective function looks like $\frac{1}{N}\sum_{i=1}^{N} (wx_i + b - y_i)^2$, where $N$ is the number of data points, $w$ is the weight, and $b$ is the bias term.  
+        
+        \item Using the same objective function, initialization and learning rate, calculate the weight and bias after one iteration of stochastic gradient descent on the first data point, $x_1 = 1.0, y_1 = 1.0$. 
+
+    \end{enumerate}
+    
+    \begin{soln}
+    (a) weight = 2.5, bias = -1
+    
+    (b) weight = 2.0333, bias = 0
+    
+    (c) weight = 1.9, bias = -0.1
+    \end{soln}
+    
+    \begin{qauthor}
+    Qinghan: edited from S18 10-601 HW3
+    \end{qauthor}
+    
+    \item Assume that the input feature matrix $\mathbf{X} \in \mathbb{R}^{N\times D}$ ($N$ = number of datapoints and $D$ = number of features) is $K$-sparse i.e. no more than $K$ features of any datapoint are non-zero. What is the best runtime complexity of a single batch gradient descent update for linear regression?  Give your answer in Big-O notation
+    
+    \begin{soln}
+    The runtime complexity is $\mathcal{O}(N \cdot K)$ for calculating the gradient. Performing the update is $\mathcal{O}(D)$. Hence, the overall runtime is $\mathcal{O}(N \cdot K + D)$. If the student says $\mathcal{O}(N \cdot D)$, they have not considered the efficiency of sparse matrix multiplication and should receive half credit.
+    \end{soln}
+    
+    \begin{qauthor}
+    Qinghan: taken from S17 10-601 Midterm. 
+    \end{qauthor}
+    
+    \item Consider a linear regression model with only one parameter, the bias, ie., $y=\theta_0$. Suppose you are given $N$ data points $D = \{(x^{(i)},y^{(i)})\}_{i=1}^N$, where $x^{(i)} \in \mathbb{R}$ is the feature and $y^{(i)} \in \mathbb{R}$ is the output. \textbf{True of False:} Minimizing the sum of squared errors results in $\theta_0$ being the median of the $y^{(i)}$ values.
+    
+    \begin{soln}
+    False. $\sum_{i=1}^N(y^{(i)}-\theta_0)^2$ is the training cost, which when differentiated and set to zero gives $\theta_0 = \frac{\sum_{i=1}^N y^{(i)}}{N}$, the mean of the $y^{(i)}$ values.
+    \end{soln}
+    
+    \begin{qauthor}
+    Qinghan: taken from S17 10-601 Midterm. 
+    \end{qauthor}
+    
+\end{enumerate}
+
+\subsection{Logistic Regression, Multinomial Regression, Regularization (HW4 team)}
+\begin{enumerate}
+    
+    
+    \item In logisitic regression, $P_{\theta} (y=1|x) = \frac{1}{1 + exp(-\theta^T x)}$.Prove that logistic regression is a linear classifier. 
+    
+    \begin{soln}
+    To find the decision boundary, set $P_{\theta} (y=1|x) = P_{\theta} (y=0|x)$. We thus have:
+    \begin{align*}
+        \frac{1}{1 + exp(-\theta^T x)} =&\ \frac{1}{1 + exp(\theta^T x)}\\
+        exp(-\theta^T x) =&\ exp(\theta^T x)\\
+       \theta^T x =&\ 0\\
+    \end{align*}
+    As shown, the decision boundary is linear in $x$.
+    \end{soln}
+    
+    \begin{qauthor}
+    Elaine Liu, ML as optimization 3e (inspired by lecture on log reg)
+    \end{qauthor}
+    
+    
+    \item We have one data set with fifteen $\{x,y\}$ pairs where $x$ and $y$ are both 1-dimensional. The data were generated using an unknown function defined as $y = f(x)$.  Suppose $f(x) = wx+b + noise$. We try to fit polynomial basis functions to each data set. We partition our data set into a training of 10 points and test set of 5 points. Draw a plot of anticipated training and test errors as a function of the number of polynomial features ($1$, $x$, $x^2$, etc.) we use when fitting. How would the test error change if $f(x) = x^{10}+b+noise$?
+    
+ 
+    \begin{soln}
+    
+    The plot should look something like this with decreasing training error and ``bowl-shaped'' test error.
+    
+\includegraphics[width=12cm]{fig/overfit.png}
+
+For the second question, the bowl should shift rightward.
+\end{soln}
+    
+    \begin{qauthor}
+    Ryan , new question inspired by feature engineering lecture. ML as optimization 4c
+    \end{qauthor}
+    
+        
+    \item Given a logistic regression problem, like in homework 4, we perform steps (a) - (d) below. After doing all this we find that out model overfits and we want to add regularization. Which of the steps below would change, if we want to perform regularization. \textbf{Select all that apply.}
+    
+    \begin{enumerate}
+        \item Derive the gradient updates.
+        \item Do feature engineering to get the train data.
+        \item Initialize the weight matrix and the biases separately.
+        \item Apply stochastic gradient descent using the derived gradients.
+        \item None of the above.
+    \end{enumerate}
+    
+    \begin{soln}
+    The gradient update would change due to the regularization term.\\
+    Feature Engineering wont be affected.\\
+    The weight matrix initialization does not get affected, due to the fact that biases are initialized separately.\\
+    SGD would not change.
+    \end{soln}
+    
+\item While performing multinomial logistic regression, if we have imbalanced dataset (more number of examples for one class than the other), how would this affect the performance of the classifier?
+\begin{soln}
+The classifier would be biased more towards one class over the others.  \\
+    \end{soln}
+    \begin{qauthor}
+    Sriram
+    \end{qauthor}
+
+    
+    \item \textbf{Short Answer:} Typically, when training with gradient descent, we initialize the parameters for Multinomial Logistic Regression to 0. 
+    If we instead initialized the parameters to 1, would the predictions made by the learned model change? \textbf{Briefly justify your answer.}
+    
+    \fillwithlines{6em}
+    
+    \begin{soln}
+    Everything should be the same because Multinomial Logistic Regression is "shift invariant".
+        \begin{align*}
+            \mathbb P(y^{(i)} = k \vert \mathbf x^{(i)}; \theta)
+            = \frac {e^{{\mathbf \theta^{(k)}}^\top \mathbf x^{(i)}}} {\sum_{j=1}^{K} e^{{\mathbf \theta^{(j)}}^\top \mathbf x^{(i)}}}
+            = \frac
+            {e^{{(\mathbf \theta^{(k)} - \theta_0)}^\top \mathbf x^{(i)}}}
+            {\sum_{j=1}^{K} e^{{(\mathbf \theta^{(j)} - \theta_0)}^\top \mathbf x^{(i)}}}
+            =
+            \mathbb P(y^{(i)} = k \vert \mathbf x^{(i)}; \theta - \theta_0)
+        \end{align*}
+        
+        \begin{align*}
+            \nabla_{\mathbf \theta^{(k)}} J^{(i)}(\mathbf \theta) = 
+            & -\Big(
+            \mathbb I (y^{(i)} = k)
+            - \frac
+                {e^{{\mathbf \theta^{(k)}}^\top \mathbf x^{(i)}}}
+                {\sum_{j=1}^{K} e^{{\mathbf \theta^{(j)}}^\top \mathbf x^{(i)}}}
+            \Big)
+            \mathbf x^{(i)} \\
+            =& -\Big(
+            \mathbb I (y^{(i)} = k)
+            - \frac
+                {e^{{(\mathbf \theta^{(k)} - \theta_0)}^\top \mathbf x^{(i)}}}
+                {\sum_{j=1}^{K} e^{{(\mathbf \theta^{(j)} - \theta_0)}^\top \mathbf x^{(i)}}}
+            \Big)
+            \mathbf x^{(i)} \\
+            = &\nabla_{\mathbf \theta^{(k)}} J^{(i)}(\mathbf \theta - \theta_0)
+        \end{align*}
+    \end{soln}
+    
+    \begin{qauthor}
+    Boyue Li
+    \end{qauthor}
+    
+    
+\end{enumerate}
+
+\subsection{Neural Networks (HW5 team)}
+\begin{enumerate}
+    \item True or false: The sign function (given below) can be used as a nonlinear activation function in a neural network trained using SGD and backpropagation.
+    \[\textrm{sign}(x) = \begin{cases}1, &x \geq 0\\0, &\textrm{otherwise}\end{cases}\]
+    
+    \begin{soln}
+    False. The function is not differentiable.
+    \end{soln}
+    
+    \begin{qauthor}
+    Shawn Lyu
+    \end{qauthor}
+    
+    
+    \item     For a 3-way classification task with 20 features, when a network is trained with 10 hidden nodes, give the total number of parameters in the network.
+    \begin{enumerate}
+     \item 243
+    
+     \item 233
+    
+     \item 240
+    
+      \item 230
+     \end{enumerate}    
+    
+    
+     \begin{soln}
+    
+      A
+ 
+    \end{soln}
+    
+        \begin{qauthor}
+    Abhijeet 
+    \end{qauthor}
+    
+    
+    
+\end{enumerate}

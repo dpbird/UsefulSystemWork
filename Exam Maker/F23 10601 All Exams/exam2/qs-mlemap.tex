@@ -1,0 +1,262 @@
+\sectionquestion{MLE/MAP}
+
+\begin{parts}
+
+
+\begin{comment}
+\part \textbf{Short answer:} Assume that we have a distribution $\mathcal{D}$ with a parameter $\theta$ for which we want to calculate the MLE and MAP estimation. Assume that we use a \textbf{uniform prior} when doing MAP estimation. What will be the relationship between the MAP and MLE estimation for the parameter $\theta$? Briefly justify your answers in 1-2 sentences (may include equations to make your point). 
+\fillwithlines{6em}
+\begin{soln} 
+    They will be equal. MAP estimation with a uniform prior will be equal to MLE estimation. $\hat{\theta}_{MLE} = \argmax_{\theta} p(\mathcal{D} \lvert \theta)$ and $\hat{\theta}_{MAP} = \argmax_{\theta} p(\mathcal{D} \lvert \theta) p(\theta)$. If $p(\theta)$ is the uniform distribution, it will weight $p(\mathcal{D} \lvert \theta)$ equally for all values of $\theta$ and therefore will not impact which value of $\theta$ maximizes the likelihood. 
+\end{soln}
+\begin{qauthor}
+    Meher, MLE/MAP
+
+    Removed by Henry: this question is a bit tricky because you also need to assume that MLE estimate is in the domain of the uniform prior
+\end{qauthor}
+\begin{qtester}
+      
+\end{qtester}
+\end{comment}
+
+\part Suppose we have $N$ samples from a \emph{Poisson} distribution, $\mathcal{D} = \{x^{(i)}\}_{i=1}^N$. The Poisson distribution has one parameter $\theta$ and the probability density function (pdf) is 
+
+$$f(x \mid \theta) = e^{-\theta} \cdot \frac{\theta^{x}}{x!}$$
+
+% In the following questions, use the dataset to find the MLE estimate of $\theta$. 
+\begin{subparts}
+    \subpart[2] \textbf{Math:} Write an expression for the log-likelihood of $\mathcal{D}$. Simplify your answer as much as possible. Your answer must be in terms of only $x^{(i)}, \theta, N, \log(\cdot)$, and any constants you may need. 
+    \begin{tcolorbox}[fit,height=4.5cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \begin{soln} 
+        \begin{align*}
+            l(\mathcal{D} \mid \theta) &= \log\left(\prod_{i=1}^N f(x^{(i)} \mid \theta)\right)\\
+            &= \sum_{i=1}^N \log\left(e^{-\theta} \cdot \frac{\theta^{x^{(i)}}}{x^{(i)} !} \right)\\
+            &= \sum_{i=1}^N \left(-\theta + x^{(i)}\log\theta - \log(x^{(i)}!) \right)
+        \end{align*}
+        \end{soln}
+    \end{tcolorbox}
+    \begin{qtester}
+        The wording "...that is proportional to the log likelihood" is a bit strange. I like how the question is specified for grading.
+    \end{qtester}
+        
+    \subpart[2] \textbf{Math:} Compute the partial derivative of the log-likelihood with respect to  $\theta$. Your answer must be in terms of only $x^{(i)}, \theta, N, \log(\cdot)$, and any constants you may need. 
+    \begin{tcolorbox}[fit,height=4cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \begin{soln}
+        \begin{align*}
+            &\frac{\partial}{\partial\theta} \left[ \sum_{i=1}^N \left(-\theta + x^{(i)}\log\theta - \log(x^{(i)}!) \right)\right]\\
+            &= \sum_{i=1}^N (-1 + \frac{x^{(i)}}{\theta})
+        \end{align*}
+        \end{soln}
+    \end{tcolorbox}
+    
+    \subpart[2] \textbf{Math:} Using your answer from the previous question, compute the MLE of $\theta$ given $\mathcal{D}$.
+    \begin{tcolorbox}[fit,height=5.5cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \begin{soln}
+            \begin{align*}
+            &\sum_{i=1}^N (-1 + \frac{x^{(i)}}{\theta}) = 0\\
+            & \frac{1}{\theta} \sum_{i=1}^N x^{(i)} - N = 0\\
+            & \frac{1}{\theta}\sum_{i=1}^N x^{(i)} = N\\
+            & \theta = \frac{\sum_{i=1}^N x^{(i)}}{N}
+        \end{align*}
+        \end{soln}
+    \end{tcolorbox}  
+\end{subparts}
+\begin{qauthor}
+    Meher, MLE/MAP
+
+    Lightly edited by Henry
+\end{qauthor}
+\begin{qtester}
+    I like that this question breaks things down into parts and walks students through step by step. It does make grading difficult because of compounding errors
+\end{qtester}
+
+
+\part[2] \textbf{Short answer:} Suppose you want to estimate the parameters $\theta$ for some probability distribution and you are given $N$ samples from the distribution to do so. As $N$ goes to infinity, what happens to the relationship between the MLE and MAP estimates for $\theta$? Briefly justify your answer in 1-2 concise sentences. 
+
+% \textbf{Hint:} in MAP estimation, think about the impact of the prior when the number of samples is small vs. when the number of samples is large. 
+\fillwithlines{9em}
+\begin{soln} 
+    As the number of samples goes to infinity, the MAP estimation approaches the MLE estimation (they become equal). The more data that we have, the less impact the prior has on our MAP estimation. 
+\end{soln}
+\begin{qauthor}
+    Meher, MLE/MAP
+
+    Reworded slightly by Henry (would like feedback on necessity of the hint here)
+\end{qauthor}
+\begin{qtester}
+    Good question. We should limit this to "Explain your answer in no more than 2 sentences"
+\end{qtester}
+
+    
+\begin{comment}
+\part[4] Consider a non-standard deck of cards where each of the 4 suits (hearts, diamonds, spades, clubs) contains an indeterminate number of cards. You would like to estimate the probability of drawing a diamond on your first try.
+\begin{subparts}
+\subpart[2] Your friend claims to be a seasoned veteran to weird card-drawing games and claims that the likelihood of drawing a diamond can be modeled by a Beta distribution! Given that you do not have very much time to do the math behind a MAP estimation on the fly (the dealer is waiting for you to draw), is this prior distribution a computationally feasible one to try out? Why or why not?
+    \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+    \begin{soln}
+    Yes - the beta distribution is a conjugate prior for the bernoulli distribution, which are known to have lots of ‘cancellable’ properties in their density functions when combined in MAP estimation
+    \end{soln}
+
+       \begin{qtester}
+        Good question. However, I don't think conjugate priors were covered in class. Need to check on this. 
+    \end{qtester}
+
+\subpart[2] You decide to reject your friend’s offer of help and simply want to learn through trial and error (drawing lots of cards, recording the times you pull a diamond or do not pull a diamond). You now wish to derive an MLE estimate of this probability. However there seems to be a problem - your likelihood function is a product over individual likelihoods, which seems hopeless to optimize over a parameter! What step/mathematical transformation are you missing, and what does this transformation accomplish?
+    \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \end{tcolorbox}
+    \begin{soln}
+    Take the log of likelihood function - turns the product into a sum of likelihoods, whose derivative can also be expressed as a sum of derivatives of likelihoods
+    \end{soln}
+
+    \begin{qtester}
+        Good question. I like that there is a breakdown of the basic concepts between parts a and b
+    \end{qtester}
+\end{subparts}
+
+\part \textbf{Short answer:} You are working on a binary classification project to distinguish between two species of trees in a forest based two features: leaf shape and bark texture. You have collected a dataset of these features and want to estimate the most likely parameters for your classification model. You want to choose between MLE and MAP in the context for this project.
+\begin{subparts}
+\subpart[2]{Explain the major difference between MLE and MAP classification.}
+\fillwithlines{6em}
+    \begin{soln} 
+    MLE does not incorporate prior information or beliefs about the parameters, aiming to find parameter values that make the observed data most probable according to the model. On the other hand, MAP combines the likelihood of the observed data with a prior probability distribution over the parameters. Explanation with formulas also accepted.
+    \end{soln}
+\subpart[2]{Explain one possible reason why you would like to choose MAP over MLE in this context.}
+\fillwithlines{6em}
+\end{subparts}
+\begin{soln} 
+    MAP allows you to incorporate prior knowledge or beliefs about the model parameters. In the case of species classification, the prior information or expert knowledge about the likelihood of certain leaf shapes and bark textures being associated with specific tree species will be useful in improving parameter estimates
+\end{soln}
+\begin{qauthor}
+    Alisa, MLE/MAP Conceptual
+
+    Removed by Henry for overlap with other questions
+\end{qauthor}
+
+\part \textbf{Short Answer:} Neural the Narwhal is looking to enter a romantic relationship. Neural has no idea who their true love for life is, but have made some observations and collected some data points. Out of the time spent on texting each day, Neural texts Alpha 20 percent of the time, Beta 30 percent of the time, and Gamma 50 percent of the time.  
+
+\begin{subparts}
+\subpart[3] Which one of MLE and MAP is more appropriate for "estimating" Neural's future partner? Why?
+\begin{soln}
+    MLE is more appropriate in this case because we have no idea of what the prior would be (i.e. who Neural's true love is)
+\end{soln}
+
+\subpart[3] Regardless of your answer to the previous question, if the amount of time spent on texting is the only metric we are using to determine Narwhal's best future companion, who will the MLE be?
+\begin{soln}
+    Gamma
+\end{soln}
+\begin{qauthor}
+    Annie, MLE/MAP conceptual
+\end{qauthor}
+
+\subpart[3] ``In general, if the prior follows a standard Normal distribution, the MLE and MAP are always the same.'' Is this statement true, why or why not?
+\begin{soln}
+    False. If the likelihood function is not symmetric or centered around 0, then the MAP will be affected by the standard Normal prior, but the MLE will not.
+\end{soln}
+\begin{qauthor}
+    Annie, MLE/MAP conceptual
+
+    Removed by Henry for overlap with other questions and question setup e.g., assumptions on how amount of time spent is related to future companionship.
+\end{qauthor}
+\end{subparts}   
+\end{comment}
+
+\begin{comment} 
+\part[1] \textbf{Short answer:} Describe how maximum a posteriori (MAP) estimation differs from maximum likelihood estimation (MLE).
+    \fillwithlines{6em}
+    \begin{soln} 
+    Maximum likelihood estimation (MLE) finds the value of a parameter that maximizes the likelihood of the observed data given the parameter, while maximum a posteriori (MAP) estimation finds the value of a parameter that maximizes the posterior probability of the parameter given the data and prior knowledge.
+    \end{soln}
+    \begin{qauthor}
+    Yash, MLE and MAP
+    \end{qauthor}
+    
+\part Suppose you are given a dataset of $N = 2$ observations, $x^{(1)}$ and $x^{(2)}$, which are assumed to follow a normal distribution with unknown mean $\mu$ and known variance $\sigma^2 = 1$. You believe that $\mu$ is likely to be close to 0, but you're not sure. You decide to use a normal prior distribution with mean 0 and variance 1 to model your prior beliefs about $\mu$. 
+
+The probability density of a Gaussian with parameters $\mu$ and $\sigma^2$ is: 
+$$f(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \right) $$
+
+In the following questions, use the dataset and prior information given, to find the MAP estimate of $\mu$. 
+
+\begin{subparts}
+
+    \subpart[2] \textbf{Short answer:} Write an expression that is proportional to the likelihood of the two observations $p(x^{(1)}, x^{(2)} \mid \mu)$. Your answer must be in terms of only $x^{(1)}, x^{(2)}, \mu, \exp(\cdot)$, and any constants you may need. 
+        \begin{tcolorbox}[fit,height=2cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \end{tcolorbox}
+        \begin{soln} 
+        The likelihood function for the two observations is: 
+        $$ p(x_1, x_2 | \mu) \propto \exp\left(-\frac{(x_1 - \mu)^2}{2}\right) \exp\left(-\frac{(x_2 - \mu)^2}{2}\right) $$ 
+        Accept any answer proportional to the likelihood.
+        \end{soln}
+        
+    \subpart[1] \textbf{Short answer:} Write an expression that is proportional to the prior $p(\mu)$. Your answer must be in terms of only $\mu, \exp(\cdot)$, and any constants you may need. 
+        \begin{tcolorbox}[fit,height=2cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \end{tcolorbox}
+        \begin{soln}
+        The prior distribution for $\mu$ is: 
+        $$ p(\mu) \propto \exp\left(-\frac{\mu^2}{2}\right) $$ 
+        Accept any answer proportional to the likelihood.
+        \end{soln}
+
+\clearpage
+
+    \subpart[2] \textbf{Fill in the blank:} Write an expression that correctly fills in the blank below. For full credit, you should \textbf{remove} as many multiplicative / additive constants as possible and \textbf{show your work}.
+        \begin{align*}
+            \mu_{\text{MAP}} &= \argmax_{\mu} \log p(\mu \mid x^{(1)}, x^{(2)}) \\
+            &= \argmax_{\mu} \blankforFITB{3cm}{}
+        \end{align*}
+        \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \end{tcolorbox}
+        \begin{soln}
+         
+        \end{soln}
+   
+   \subpart[2] \textbf{Short answer:} Take the derivative of the log posterior with respect to $\mu$, set it to zero, and solve for $\mu$. Report this expression for the MAP estimator. \textbf{Show your work.}
+        \begin{tcolorbox}[fit,height=6cm, width=15cm, blank, borderline={1pt}{-2pt}]
+        \end{tcolorbox}
+        \begin{soln}
+        Taking the logarithm and maximizing with respect to $\mu$, we get: 
+        $$ \mu = \frac{x_1 + x_2}{3} $$ 
+        \end{soln} 
+
+    \subpart[1] \textbf{Select one:} Suppose $x^{(1)} = -0.4$ and $x^{(2)} = 1.0$, what is the MAP estimate of $\mu$?
+        \begin{checkboxes}
+         % \choice -0.3
+         % \choice -0.2
+         % \choice -0.1
+         \choice 0.0 
+         \choice 0.1
+         \choice 0.2
+         \choice 0.3
+         % \choice 0.4
+        \end{checkboxes}
+        \begin{soln}
+        the MAP estimate of $\mu$ is 0.2.
+        \end{soln} 
+        
+    % \subpart[1] \textbf{Numerical answer:} Suppose $x^{(1)} = -0.4$ and $x^{(2)} = 1.0$, what is the MAP estimate of $\mu$?
+    %     \begin{tcolorbox}[fit,height=2cm, width=5cm, blank, borderline={1pt}{-2pt}]
+    %     \end{tcolorbox}
+    %     \begin{soln}
+    %     the MAP estimate of $\mu$ is 0.2.
+    %     \end{soln} 
+
+    \subpart[1]  \textbf{True or False:} Suppose $x^{(1)} = -0.4$ and $x^{(2)} = 1.0$, the numerical values of the maximum likelihood estimate of $\mu$ and the MAP estimate of $\mu$ are exactly the same.
+        \begin{checkboxes}
+         \choice True 
+         \choice False
+        \end{checkboxes}
+        \begin{soln}
+        False, the MLE estimate of $\mu$ is 0.3.
+        \end{soln} 
+    
+\end{subparts}
+\begin{qauthor}
+    Yash, MLE and MAP
+\end{qauthor}
+\begin{qtester}
+    great!
+\end{qtester}
+\end{comment}
+
+\end{parts}

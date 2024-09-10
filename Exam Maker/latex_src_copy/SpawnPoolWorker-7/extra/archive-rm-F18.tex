@@ -1,0 +1,108 @@
+\section{Removed Questions}
+
+\vspace{1em}
+For the following two problems, consider a classification problem with distribution $p^\star(\vc{x})$ and target (oracle) function $c^*$: $\mathbb{R}^M \rightarrow \pm 1$. 
+$S$ is a data set drawn from $p^\star$ and labeled with $c^*$.
+
+\begin{enumerate}
+
+\item \pts{3} \textbf{True or False:} 
+For a given hypothesis space $H$, assume $c^\star \in H$. 
+    It is possible to determine a sufficient size of $S$ such that if we find a classifier $\hat{c}$ which attains $0$ error on the sample, then the true error of $\hat{c}$ is bounded by  $\epsilon$, with a given probability.     \textbf{Justify your answer.}
+    \begin{enumerate}
+    \item True
+    \item False
+    \end{enumerate}
+    \fillwithlines{4em} 
+\begin{soln} True. This is just a restatement of realizable PAC learning theorem.
+\end{soln}
+%\clearpage
+    
+    
+\item\pts{4} Draw a computation graph corresponding to the above feed-forward algorithm. Note that the computation graph must include all the given and intermediate quantities.
+
+\vspace{12em}
+
+\begin{soln}
+
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=10cm]{fig/compGraph.png}
+\end{center}
+\end{figure}
+\end{soln}
+
+\item \textbf{True or False:} Consider a binary (two-class) classification problem using k-nearest neighbors. We have n 1-dimensional training points $\{x_1,x_2,...,x_n\}$ with $x_i \in \Rb$, and their corresponding labels $\{y_1, y_2, ..., y_n\}$ with $y_i \in \{0,1\}$. 
+
+Assume the data points $x_1,x_2,...,x_n$ are sorted in the ascending order, we use Euclidean distance as the distance metric, and a point can be it's own neighbor. True or False: We \textbf{CAN} build a decision tree (with decisions at each node having the form ``$x \geq t$" and ``$x < t$", for $t \in \Rb$) that exhibits the exact same behavior as the 1-nearest neighbor classifier, on this dataset.
+
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    True, we can build a decision tree by setting the internal nodes at the mid-points between each pair of adjacent training points.
+    \end{soln}
+    \begin{qauthor}
+    (1) By George, (2) Sketch the decision boundary for a learning algorithm; 
+    Implement Decision Tree training and prediction, (3) source if  adapting/reusing a question: HW1 from F17 10-701
+    \end{qauthor}
+
+\begin{comment}
+    This question used to be Q3 in the K-NN section.  It was removed because we need to clearly define ties (or write a problem where ties don’t come up). Students considered both of the following situations to be ties, yielding different answers to Part 2.3 if they answered Part 2.2 incorrectly:
+    k=1, because (40,50) and (40,30) are tied in their distance to test point (50,40)
+    k=2, because when considering the two nearest neighbors (40,50) and (40,30), one is a circe and one is a cross, so there is a tie in the majority vote 
+\end{comment}
+    \item\pts{3} What is the minimum value of $k \in \{1,..,10\}$ that would cause the athlete from the previous question to be classified the other way? Assume a tie means the athlete will make the team.
+    
+    \vspace{2em}
+    
+    \begin{soln}
+    $k=5$.
+    \end{soln}
+    
+    \begin{qauthor}
+    Sienna (adapted from S17 Midterm)
+    \end{qauthor}
+
+
+\newpage
+\item Given the learned parameters, we can view the first hidden unit $z_1$ as a function of the two input features longitude $x_1$ and latitude $x_2$. We can do likewise for the second hidden unit $z_2$. 
+
+\emph{Hint:} Would anyone like to borrow a poster board?
+
+\begin{enumerate}[label=\roman*)]
+
+    \item \pts{3} \textbf{Using solid lines}, draw a contour plot (i.e. topological map) of $z_1$ as a function of $x_1$ and $x_2$ on Figure \ref{fig:nndata2} below. Include at least 3 contour lines and label each contour line with its value of $z_1$. 
+    \item \pts{3} \textbf{Using dashed lines}, draw a contour plot of $z_2$ as a function of $x_1$ and $x_2$ on Figure \ref{fig:nndata2} below. Include at least 3 contour lines and label each contour line with its value of $z_2$.
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=18cm]{fig/data_nn.pdf}
+    \caption{Same dataset as in Figure \ref{fig:nndata1}.}
+    \label{fig:nndata2}
+    \end{figure}
+    
+    
+\begin{soln}
+
+Note: Contour lines do not need to be equa-distant from one another.  Countour lines from the same z must be parallel
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=18cm]{fig/data_nn_sol2.pdf}
+\end{figure}
+\end{soln}
+    
+    % \item\pts{3} Explain in words how the neural network would \emph{compositionally} build up the decision boundary you drew for the previous question. 
+
+    % \fillwithlines{8em}
+    
+    % \begin{soln}
+    % The neural network would effectively learn two binary logistic regression classifiers. The first could learn a vertical decision boundary. The second could learn a horizontal decision boundary. Putting the two together would yield a decision boundary like the one shown.
+    
+    % Other similar answers are also acceptable.
+    % \end{soln}
+\end{enumerate}
+
+
+\end{enumerate}

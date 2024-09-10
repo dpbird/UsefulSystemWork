@@ -1,0 +1,132 @@
+\sectionquestion{k-Nearest Neighbors}
+
+\color{black}
+
+\begin{EnvFullwidth}
+An archaeologist discovers a 242 kilobyte 8-inch floppy disk buried beneath the hedges near Wean Hall. The floppy disk contains a few hundred black and white images of various sizes ranging from 2x2 pixels to 64x64 pixels. You are asked classify them as either a photo ($y=+$) or artwork ($y=-$) to aid in the analysis. 
+
+You build a k-Nearest Neighbor (k-NN) classifier trained on a training dataset obtained from the web (converted to similarly small black and white images). Assume you use Hamming distance to measure the distance between each pair of $M \times M$ pixel images: 
+$$d(\uv, \vv) = \sum_{i=1}^M \sum_{j=1}^M \mathbbm{1}(\uv_{i,j} \neq \vv_{i,j}) = \text{the number of pixels that differ between } \uv \text{ and } \vv$$
+If there is a tie in distance among points competing for $k$ nearest points, the classifier increases $k$ to include all those tied points in the majority vote. If there is a tie in the vote, your classifier returns $\hat{y}=?$. 
+You try out your k-NN implementation on the images below. Each image is represented as an $M \times M$ binary matrix $\xv$.
+%Each image is represented as a 2x2 binary matrix $\xv = \begin{bmatrix} x_{1,1} & x_{1,2} \\ x_{2,1} & x_{2,2} \end{bmatrix}$. 
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{cccccc|c|c}
+        \toprule
+         i & $y$ & $x_{1,1}$ & $x_{1,2}$ & $\cdots$ & $x_{64,64}$ & $d(\xv^{(i)}, \xv^{(8)})$ & $d(\xv^{(i)}, \xv^{(9)})$  \\
+         \midrule
+         1 & $+$ & 0 & 0 & $\cdots$ & 0 & 7 & 9 \\
+         2 & $+$ & 1 & 0 & $\cdots$ & 0 & 3 & 11 \\
+         3 & $+$ & 0 & 0 & $\cdots$ & 1 & 5 & 11 \\
+         4 & $+$ & 0 & 1 & $\cdots$ & 0 & 5 & 6 \\
+         5 & $-$ & 1 & 1 & $\cdots$ & 1 & 5 & 6 \\
+         6 & $-$ & 0 & 1 & $\cdots$ & 1 & 4 & 9 \\
+         7 & $-$ & 0 & 1 & $\cdots$ & 1 & 4 & 9 \\
+         \bottomrule
+    \end{tabular}
+    \end{center}
+ \caption{Training Data}
+ \label{tab:knnimages}
+\end{table}
+
+Below are the test points on which you evaluate the classifier. Above we include the distance of each of these test points to each of the training points.
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{cccccc}
+        \toprule
+         i &  & $x_{1,1}$ & $x_{1,2}$ & $\cdots$ & $x_{64,64}$ \\
+         \midrule
+         8 &  & 1 & 0 & $\cdots$ & 1 \\
+         9 &  & 0 & 1 & $\cdots$ & 0 \\
+         \bottomrule
+    \end{tabular}
+    \end{center}
+ \caption{Test Data}
+ \label{tab:knnimages}
+\end{table}
+
+\end{EnvFullwidth}
+
+\clearpage
+
+\begin{parts}
+
+\part[1] \textbf{Select one:} What would a k-NN classifier with $k=1$ predict as the label for test point $\xv^{(8)}$?
+    \begin{checkboxes}
+     \choice $\hat{y}=+$
+     \choice $\hat{y}=-$
+     \choice $\hat{y}=?$
+    \end{checkboxes}
+    \begin{soln}
+    $y=+$
+    \end{soln}
+    \begin{qauthor} Matt \end{qauthor}
+    
+\part[1] \textbf{Select one:} What would a k-NN classifier with $k=3$ predict as the label for test point $\xv^{(8)}$?
+    \begin{checkboxes}
+     \choice $\hat{y}=+$
+     \choice $\hat{y}=-$
+     \choice $\hat{y}=?$
+    \end{checkboxes}
+    \begin{soln}
+    $y=-$
+    \end{soln}
+    \begin{qauthor} Matt \end{qauthor}
+    
+\part[1] \textbf{Select one:} What would a k-NN classifier with $k=5$ predict as the label for test point $\xv^{(8)}$?
+    \begin{checkboxes}
+     \choice $\hat{y}=+$
+     \choice $\hat{y}=-$
+     \choice $\hat{y}=?$
+    \end{checkboxes}
+    \begin{soln}
+    $y=?$
+    \end{soln}
+    \begin{qauthor} Matt \end{qauthor}
+    
+\part[1] \textbf{Select one:} What would a k-NN classifier with $k=1$ predict as the label for test point $\xv^{(9)}$?
+    \begin{checkboxes}
+     \choice $\hat{y}=+$
+     \choice $\hat{y}=-$
+     \choice $\hat{y}=?$
+    \end{checkboxes}
+    \begin{soln}
+    $y=?$
+    \end{soln}
+    \begin{qauthor} Matt \end{qauthor}
+    
+\part[1] \textbf{Select one:} What would a k-NN classifier with $k=3$ predict as the label for test point $\xv^{(9)}$?
+    \begin{checkboxes}
+     \choice $\hat{y}=+$
+     \choice $\hat{y}=-$
+     \choice $\hat{y}=?$
+    \end{checkboxes}
+    \begin{soln}
+    $y=-$
+    \end{soln}
+    \begin{qauthor} Matt \end{qauthor}
+    
+\part[1] \textbf{Select one:} What would a k-NN classifier with $k=5$ predict as the label for test point $\xv^{(9)}$?
+    \begin{checkboxes}
+     \choice $\hat{y}=+$
+     \choice $\hat{y}=-$
+     \choice $\hat{y}=?$
+    \end{checkboxes}
+    \begin{soln}
+    $y=-$
+    \end{soln}
+    \begin{qauthor} Matt \end{qauthor}
+
+\part[2] \textbf{Short answer:} Your friend says that you should try using Euclidean distance because it might give better results. Do you agree that switching could lead to lower test error? Why or why not?
+    \fillwithlines{6em}
+    \begin{soln}
+    Input solution here.
+    \end{soln}
+    \begin{qauthor}
+    Input (1) author name, (2) learning objective addressed, and (3) source if  adapting/reusing a question.
+    \end{qauthor}
+
+\end{parts}

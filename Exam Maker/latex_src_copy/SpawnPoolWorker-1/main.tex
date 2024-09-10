@@ -1,0 +1,93 @@
+\documentclass[12pt,addpoints]{exam}
+\input{configurations.tex}
+
+\begin{document}
+
+\begin{soln}{\huge \bf Solutions}\end{soln}
+
+\newcommand{\toreplace}[1]{#1}
+\renewcommand{\toreplace}[1]{\underline{\hspace{10em}}}
+\renewcommand{\toreplace}[1]{\hphantom{\hspace{5em}}}
+
+
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{ID: arao2 - 341}
+\runningheadrule
+
+% Default to an empty tags environ.
+\NewEnviron{tags}{}{}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{3cm}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & {Ashwin Rao}\\
+\textbf{\term} &  \textbf{Andrew ID:} & {arao2} \\
+\textbf{\examnum} & \textbf{Room:} & {DH A302}\\
+\textbf{\examdate} & \textbf{Seat:} & {G05} \\
+\textbf{Time Limit: \timelimit} & \textbf{Exam Number:} & {341}
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+\textbf{Instructions:}
+\begin{itemize}
+    \item Verify your name and Andrew ID above. 
+    \item This exam contains \numpages\ pages (including this cover page).\\
+    The total number of points is \numpoints. 
+    %The total number of questions is \numquestions.
+    %\item You are allowed to use one page of notes
+    \item Clearly mark your answers in the allocated space If you have made a mistake, cross out the invalid parts of your solution, and circle the ones which should be graded.
+    \item Look over the exam first to make sure that none of the \numpages\ pages are missing. 
+    \item No electronic devices may be used during the exam.
+    \item Please write all answers \emph{darkly} in pencil or in pen.
+    \item You have \timelimit{} to complete the exam. Good luck!
+\end{itemize}
+
+\begin{center}
+    \pointtable[v][questions]
+\end{center}
+
+\noindent
+\rule[2ex]{\textwidth}{2pt}
+\newpage
+
+\input{instructions.tex}
+\clearpage
+\begin{questions}
+%\input{qtemplates.tex}
+%\clearpage
+%\input{qs-TA-s24.tex}
+%\clearpage
+% \input{qs-linreg.tex}
+% \clearpage
+\input{qs-opt.tex}
+\clearpage
+\input{qs-logreg.tex}
+\clearpage
+\input{qs-neuralnets.tex}
+\clearpage
+\input{qs-theory.tex}
+\clearpage
+\input{qs-societal.tex}
+\clearpage
+%\input{qs-misc.tex}
+% \clearpage
+\end{questions}
+
+\clearpage
+\begin{center}
+Do not remove this page! Use this page for scratch work.
+\end{center}
+\clearpage
+\begin{center}
+Do not remove this page! Use this page for scratch work.
+\end{center}
+\clearpage
+\begin{center}
+Do not remove this page! Use this page for scratch work.
+\end{center}
+\clearpage
+\begin{center}
+Do not remove this page! Use this page for scratch work.
+\end{center}
+
+\end{document}

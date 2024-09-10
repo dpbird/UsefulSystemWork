@@ -1,0 +1,100 @@
+%\documentclass[12pt]{exam}
+%\input{exam3/configurations.tex}
+%\begin{document}
+
+\tikzset{
+  neuron/.style={
+    minimum size=1.5em,
+    node distance=1.25cm and 1.25cm,
+  },
+  io/.style={
+    neuron,
+    fill=gray!15,
+  },
+  conn/.style={
+    -{Straight Barb[angle=60:2pt 3]},
+    thick,
+  },
+  vec/.style={
+    matrix of nodes,
+    nodes={minimum size=0.8em},
+  },
+}
+
+\begin{tikzpicture}
+
+% Input layer
+\node[io, label={[above left]$\xv^{(1)}$}] (x1) {
+  $\begin{bmatrix}
+    2 \\ 1
+  \end{bmatrix}$
+};
+\node[io, label={[above left]$\xv^{(2)}$}, right=of x1] (x2) {
+  $\begin{bmatrix}
+    1 \\ 0
+  \end{bmatrix}$
+};
+\node[io, label={[above left]$\xv^{(6)}$}, right=2.5cm of x2] (x3) {
+  $\begin{bmatrix}
+    \cdot \\ \cdot
+  \end{bmatrix}$
+};
+
+% % Hidden layer
+\node[io, label={[above left]$\hv^{(1)}$}, above=of x1] (h1) {
+  $\begin{bmatrix}
+    \cdot \\ \cdot
+  \end{bmatrix}$
+};
+\node[io, label={[above left]$\hv^{(2)}$}, above=of x2] (h2) {
+  $\begin{bmatrix}
+    \cdot \\ \cdot
+  \end{bmatrix}$
+};
+
+\node[right=.4cm of h2] (hcdots) {$\cdots$};
+
+\node[io, label={[above left]$\hv^{(6)}$}, above=of x3] (h3) {
+  $\begin{bmatrix}
+    -2 \\ 7
+  \end{bmatrix}$
+};
+
+\node[io, label={[above left]$\hv^{(0)}$}, left=of h1] (h0) {
+  $\begin{bmatrix}
+    0 \\ 0
+  \end{bmatrix}$
+};
+
+
+\node[io, label={[above left]$\yv^{(1)}$}, above=of h1] (y1) {
+  $\begin{bmatrix}
+    \cdot \\ \cdot
+  \end{bmatrix}$
+};
+\node[io, label={[above left]$\yv^{(2)}$}, above=of h2] (y2) {
+  $\begin{bmatrix}
+    \cdot \\ \cdot
+  \end{bmatrix}$
+};
+\node[io, label={[above left]$\yv^{(6)}$}, above=of h3] (y3) {
+  $\begin{bmatrix}
+    \cdot \\ \cdot
+  \end{bmatrix}$
+};
+
+% Connections
+\draw[conn] (x1) -- (h1);
+\draw[conn] (h1) -- (h2);
+\draw[conn] (x2) -- (h2);
+\draw[conn] (hcdots) -- (h3);
+\draw[conn] (x3) -- (h3);
+\draw[conn] (h1) -- (y1);
+\draw[conn] (h2) -- (y2);
+\draw[conn] (h3) -- (y3);
+\draw[conn] (h0) -- (h1);
+
+
+\end{tikzpicture}
+
+%\end{document}

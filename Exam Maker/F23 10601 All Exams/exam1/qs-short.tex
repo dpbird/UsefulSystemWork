@@ -1,0 +1,173 @@
+\sectionquestion{Working with Data}
+
+\begin{parts}
+
+\part[3] \textbf{Select all that apply:} Which of the following are situations that suggest your model is (or was) overfitting to the training data? % change to the \emph{entire} training data
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice The true error is much larger than the training error (Assume a magical oracle told you the true error)
+     \choice The true error is much less than the training error (Assume a magical oracle told you the true error)
+     \choice The test error is much larger than the training error
+     \choice The test error is much less than the training error
+     \choice The test error for a decision tree was high, but it is lower after pruning the tree
+     \choice The test error for a k-nearest neighbor classifier was high, but it is lower after decreasing $k$
+     \choice Splitting the training data into two even subsets and training a Perceptron classifier on each one yields two very different values for test error
+     %\choice A problem occurs with Perceptron training that is resolved by collecting 10x more data
+     %\choice A problem occurs with linear regression training that is resolved by adding more features
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    A, C, E (NOT G, assuming clarification was made)
+    \end{soln}
+    \begin{qauthor}
+    Matt adapted from Rita's question
+    \end{qauthor}
+
+
+\part[1] \textbf{True or False:} A key benefit to both a k-nearest neighbor classifier and to a Perceptron classifier is that re-scaling one feature will not affect the classifier's performance.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False, KNN is certainly succeptible to problems due to rescaling
+    \end{soln}
+    \begin{qauthor}
+    Matt inspired by Samiksha Kale's question
+    \end{qauthor}
+
+\part[2] \textbf{Select all that apply:} Which of the following could be used to directly classify whether a JPEG image depicts a reptile, an amphibian, or a fish?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Decision tree classification
+     \choice Decision tree regression
+     \choice k-Nearest neighbor classification
+     \choice k-Nearest neighbor regression
+     \choice Perceptron
+     \choice Linear regression
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    Decision Tree classifier and KNN classifier; not Perceptron b/c multiclass; not Linear regression b/c classification
+    \end{soln}
+    \begin{qauthor}
+    Matt inspired by Brendon's question
+    \end{qauthor}
+    
+\clearpage
+    
+\part[2] \textbf{Select all that apply:} Which of the following could be used to directly predict the future sea level in millimeters?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Decision tree classification
+     \choice Decision tree regression
+     \choice k-Nearest neighbor classification
+     \choice k-Nearest neighbor regression
+     \choice Perceptron
+     \choice Linear regression
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    Decision Tree regression, KNN regression, and Linear regression; not Perceptron
+    \end{soln}
+    \begin{qauthor}
+    Matt inspired by Brendon's question
+    \end{qauthor}
+
+\part[1] \textbf{True or False:} A naive implementation of the KNN algorithm does more computation at test time than training time.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    True
+    \end{soln}
+    \begin{qauthor}
+    Shubham Phal
+    \end{qauthor}
+
+
+\part[2] \textbf{Short answer:} Suppose we are using the random search algorithm for hyperparameter tuning. However, instead of sampling each hyperparameter from a uniform distribution, we sample from a Gaussian distribution with mean 0 and variance 1. Explain why this could sometimes yield worse results.
+    \begin{tcolorbox}[fit,height=3cm, width=15cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+    If we perform a random sampling of points based on a Gaussian distribution, we will bias towards testing hyperparameters centered around 0, and mostly between -1 and 1. This can lead us to finding the optimal hyperparameter between -1 and 1, but if the true optimal is at the edge of or outside this range, we are unlikely to find it or will waste a lot of computation time trying to find it.
+    \end{soln}
+    \end{tcolorbox}
+    \begin{qauthor}
+    Tara;
+    Comment from Brynn: Nice question!
+    \end{qauthor}
+
+
+% SKIP FOR TIME
+% \part[1] \textbf{True or False:} The random search algorithm is typically used for hyperparameter optimization, but could also be used for model parameter optimization.
+%     \begin{checkboxes}
+%      \choice True 
+%      \choice False
+%     \end{checkboxes}
+%     \begin{soln}
+%       True. e.g., the random model parameter search for linear regression example from lecture
+%     \end{soln}
+%     \begin{qauthor}
+%       Matt
+%     \end{qauthor}
+
+% FROM F21
+\part[2] \textbf{Select all that apply:} Which of the following
+are true? Assume that we randomly divide our labeled data into train, validation, and test sets.
+%[NOTE: We might want to change this question by choosing a few of these and making them true/false with explanation]
+    {%
+    \checkboxchar{$\Box$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice In general, cross-validation error is closer to the test error than normal validation error is. 
+     \choice Cross-validation error is slower to compute than normal validation error.
+     \choice In cross validation, the folds are sampled from the training dataset with replacement.
+     \choice Cross-validation can be used as a part of hyperparameter optimization.
+     \choice None of the above.
+    \end{checkboxes}
+    }
+    \begin{soln}
+    a, b, d
+    \end{soln}
+    \begin{qauthor}
+    Brendon
+    \end{qauthor}
+    
+\clearpage
+
+% FROM F21
+\part Brad, a zoologist, is making a machine learning model to determine if there is a narwhal in a picture. Brad's colleague at the Vancouver Aquarium gives him 10,601 pictures of the aquarium's one captive narwhal and 10,301 pictures without any narwhals at all.
+
+    \begin{subparts}
+    \subpart[2] \textbf{Short answer:} 
+    Explain one problem that may occur with using only the data provided to train the model.
+    \fillwithlines{4em}
+    \begin{soln}
+    Because the pictures are only of one narwhal, the model may not generalize to all narwhals.
+    \end{soln}
+    \begin{qauthor}
+    Abhishek Vijayakumar, 1.a
+    \end{qauthor}
+    
+    \subpart[2] \textbf{Short answer:} 
+    Brad now wants to make a model that outputs the number of narwhals in a picture as
+    an integer. Explain another problem that may occur with using only the
+    data provided to train the model.
+    \fillwithlines{4em}
+    \begin{soln}
+    The data only has images with $0$ or $1$ narwhals, so the model may not be able to
+    learn about and/or output labels for multiple narwhals in an image.
+    \end{soln}
+    \begin{qauthor}
+    Abhishek Vijayakumar, 1.a
+    \end{qauthor}
+    \end{subparts}
+
+  
+\end{parts}

@@ -1,0 +1,75 @@
+\sectionquestion{Module-Based AutoDiff \& Attention}
+
+\begin{parts}
+
+\part[2] \textbf{Fill in the blank:} Complete the following paragraph about module-based automatic differentiation by circling the best of the provided options for each of blanks: 
+
+\doublespacing
+\begin{quote}
+        In module-based automatic differentiation, each module is added to the tape during the \underline{\quad forward \quad / \quad backward \quad /} pass. The tape is represented by a \underline{\quad stack \quad / \quad queue \quad /} and module-based automatic differentiation removes modules from the tape in \underline{\quad topological \quad / \quad reverse topological \quad /} order with respect to the network's implied computation graph. 
+\end{quote}
+\singlespacing
+
+\begin{soln}
+    In module-based automatic differentiation, each module is added to the tape during the forward pass. The tape is represented by a stack and module-based automatic differentiation removes modules from the tape in reverse topological order with respect to the network's implied computation graph. 
+\end{soln}
+\begin{qauthor}
+    Henry
+\end{qauthor}
+
+\part[2] \textbf{Select all that apply:} Which of the following statements is/are valid reasons to prefer module-based automatic differentiation over the procedural approach?
+{%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+         \choice Module-based automatic differentiation tends to return a better set of weights at convergence (in terms of minimizing the neural network loss function) when run for the same number of epochs of SGD
+         \choice Module-based automatic differentiation allows for more efficient experimentation with deep learning architectures that stack many multi-layer units together (in terms of minimizing the lines of code)
+         \choice Module-based automatic differentiation eliminates the need to write backwards methods for certain modules if they are built using only modules with backwards methods
+         \choice Module-based automatic differentiation allows for the use of certain deep learning architectures that cannot be trained using the procedural approach
+         \choice None of the above
+    \end{checkboxes}
+}
+\begin{soln}
+    B and C
+\end{soln}
+\begin{qauthor}
+    Henry
+\end{qauthor}
+
+\part[1] \textbf{Math:} Suppose you have a single attention head that takes as input sequences of length $L$ where each token in the sequence is $D$-dimensional. It computes scaled dot-product attention using $C$-dimensional query vectors and outputs an $M$-dimensional embeddings for each token. How many parameters does this attention head have? 
+\begin{tcolorbox}[fit,height=1cm, width=2cm, blank, borderline={1pt}{-2pt}]
+    \begin{soln}
+        $2DC+DM$
+    \end{soln}
+\end{tcolorbox}
+\begin{qauthor}
+    Henry
+\end{qauthor}
+
+\clearpage
+
+\part[2] \textbf{Select all that apply:} Which of the following statements about multi-head attention is/are correct?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+         \choice Each head learns its own set of value weights $W_v$
+         \choice A single set of query weights $W_q$ is learned and shared across all heads
+         \choice The dimensionalities of the query vectors must be the same across all heads
+         \choice The outputs of each head are added together to form the final embedding
+         \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+        A
+    \end{soln}
+    \begin{qauthor}
+        Kushagra Agarwal, Describe the role of keys, queries and values in an attention module.
+    
+        Lightly edited by Henry
+    \end{qauthor}
+
+\part[2] \textbf{Short answer:} In 2-3 concise sentences, define position embeddings in the context of a transformer language model and explain why they are important to include in a transformer language model.
+\fillwithlines{12em}
+\begin{soln}
+    Position embeddings are vectors $p_t$ that capture information about where in the sequence each token is. Transformers require position embeddings because otherwise they have no ability to infer the relative or absolute position of tokens in their inputs i.e., two sequences with all the same tokens but in a different order would appear identical to a transformer language model. 
+\end{soln}
+\end{parts}

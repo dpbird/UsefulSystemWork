@@ -1,0 +1,52 @@
+
+\question[2] Draw the decision boundary you would expect a Decision Tree classifier with max depth 2 to learn on the training data in Figure \ref{fig:nndata3} below. Assume that at each node, the decision tree splits on $x_i < \alpha_j$ for a value of $\alpha_j$ at each node that minimize training error. \textit{Lightly shade the regions that are classified as positive ($y=+$).}
+
+    \begin{figure}[H]
+        \centering
+
+
+    \begin{tikzpicture}
+    \begin{axis}[
+        scale=0.9, width=12cm, height=8cm,
+        xmin=-80, xmax=60, xtick={-80,-60,-40,-20,0,20,40,60},
+        ymin=-40, ymax=40, ytick={-40,-20,0,20,40},
+        samples=50]
+        %\addplot[blue, ultra thick] (x,x*x);
+        %\addplot[red,  ultra thick] (x*x,x);
+        \addplot [
+            scatter,
+            only marks,
+            point meta=explicit symbolic,
+            scatter/classes={
+                a={mark=-,blue,scale=2,ultra thick},
+                b={mark=+,red,scale=2,ultra thick}
+            },
+            nodes near coords*={},
+            visualization depends on={\thisrow{myvalue} \as \myvalue},
+        ] table [meta=label] {
+            x y label myvalue
+            -40 20 a 1
+            -20 20 a 1
+            -0 20 a 1
+            -40 0 a 1
+            -20 0 a 1
+            -0 0 b 1
+            -60 -20 b 1
+            -40 -20 a 1
+            -20 -20 b 1
+            -0 -20 b 1
+            40 -20 a 1
+            40 0 b 1
+        };
+    \end{axis}
+    \end{tikzpicture}
+
+        \caption{Dataset for Decision Tree (Same dataset as in Figure \ref{fig:nndata2}).}
+        \label{fig:nndata3}
+    \end{figure}
+    \begin{soln}
+    TODO
+    \end{soln}
+    \begin{qauthor}
+    Matt Gormley
+    \end{qauthor}

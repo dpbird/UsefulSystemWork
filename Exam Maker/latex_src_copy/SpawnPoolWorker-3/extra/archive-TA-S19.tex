@@ -1,0 +1,331 @@
+\section{TEAM D Questions \pts{x}}
+
+Please add your questions below, be sure to use the latex formatting found in qtemplates.tex and page 16 of the pdf. The topics that should be covered are everything studied up to and including Lecture 8 : Probabilistic Learning.
+
+\newpage
+\subsection{Decision Trees}
+\begin{questions}
+
+    \question[1] \textbf{Select all that apply:} Which of these is/are true of Decision Trees?
+    {%
+    \checkboxchar{$\Box$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice The model depends on the underlying distribution of the data
+     \choice It is possible to calculate the expected value of each scenario in the model.
+     \choice It takes polynomial amount of time to build an optimal decision tree
+     \choice Pruning while building a decision tree may lead to overfitting
+    \end{checkboxes}
+    }
+    \begin{soln}
+    B and D
+    \end{soln}
+    \begin{qauthor}
+    (1) Gauri, (2) Judge whether a decision tree is "underfitting" or "overfitting", building optimal decision tree is NP-complete
+    \end{qauthor}
+    
+    \begin{qtester}
+    Strongly suggest removing this question or do an overhaul to the answers. Many options here are ambiguous: (A) this option can be right if by "model" it means the structure/shape of the decision tree built from data; (B) no idea what "scenario" means, and what about "expected value of scenario"? Does it mean the expected error (classification or regression) among all possible trees? Or the expected error among all data and tree built on data using ID3 algorithms? In either case, I fail to see how DT can help calculate the expectation. (C) "build" may lead students to think that they are following ID3 algorithm, which is of course polynomial time, using "find optimal decision tree" may be better.
+    \end{qtester}
+
+\end{questions}
+
+\newpage
+\subsection{K - Nearest Neighbors}
+\begin{questions}
+
+    \question[1] \textbf{Select one:} A k-Nearest Neighbor model with a large value of K is analogous to...
+    \begin{checkboxes}
+     \choice A \textit{short} Decision Tree with a \textit{low} branching factor
+     \choice A \textit{short} Decision Tree with a \textit{high} branching factor
+     \choice A \textit{long} Decision Tree with a \textit{low} branching factor
+     \choice A \textit{long} Decision Tree with a \textit{high} branching factor
+    \end{checkboxes}
+    
+    \begin{soln}
+    A short Decision Tree with a low branching factor
+    \end{soln}
+    
+    \begin{qauthor}
+    Loki
+    \end{qauthor}
+    
+    \question[1] \textbf{Select one.} Imagine you are using a majority vote k-Nearest Neighbor classifier on a data set with lots of noise. You want your classifier to be \textit{less} sensitive to the noise. Which is more likely to help and with what side-effect? 
+    \begin{checkboxes}
+        \choice Increase the value of $k =>$ Increase in prediction time
+        \choice Decrease the value of $k =>$ Increase in prediction time
+        \choice Increase the value of $k =>$ Decrease in prediction time
+        \choice Decrease the value of $k =>$ Decrease in prediction time
+    \end{checkboxes}
+    
+    \begin{soln}
+    Increase the value of $k =>$ Increase in prediction time
+    \end{soln}
+    
+    \begin{qauthor}
+    Adapted from Sienna, F18. Loki
+    \end{qauthor}
+    
+    
+   \question[1] \textbf{Select all that apply:} Identify the correct relationship between k, bias and variance:
+    {%
+    \checkboxchar{$\Box$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Increasing k leads to increase in bias
+     \choice Decreasing k leads to increase in bias
+     \choice Increasing k leads to increase in variance
+     \choice Decreasing k leads to increase in variance
+    \end{checkboxes}
+    }
+    \begin{soln}
+    A and D
+    \end{soln}
+    \begin{qauthor}
+    (1) Gauri, (2) Larger k simplifies the model leading to larger bias and smaller variance. (3) Adapted from https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-k-nearest-neighbors-algorithm/  
+    \end{qauthor}
+   
+   
+\end{questions}
+ 
+
+\subsection{Running Perceptron}
+
+Suppose you are given the following dataset: 
+
+\begin{table}[H]
+        \centering
+        \begin{tabular}{|l|l|l|l|}
+        \hline
+        Example Number & $X_1$ & $X_2$ & Y  \\ \hline
+        1 & -1    & 2     & -1  \\ \hline
+        2 & -2    & -2    & +1 \\ \hline
+        3 & 1 & -1    & +1  \\ \hline
+        4 & -3    & 1     & -1 \\ \hline
+        \end{tabular}
+        \label{tab:redbluepill}
+\end{table}
+
+
+You wish to perform the Batch Perceptron algorithm on this data. Assume you start with initial weights $\theta ^T = [0,0]$, bias $b=0$ and that we pass all of our examples through in order of their example number.
+
+\begin{questions}
+
+\question[1] \textbf{Numerical answer:} What would be the updated weight vector $\theta$ be after we pass example 1 through the perceptron algorithm?
+    \begin{tcolorbox}[fit,height=1cm, width=3cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $[1,-2]$
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+    
+\question[1] \textbf{Numerical answer:} What would be the updated bias $b$ be after we pass example 1 through our the Perceptron algorithm?
+    \begin{tcolorbox}[fit,height=1cm, width=2cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $-1$
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+
+\question[1] \textbf{Numerical answer:} What would be the updated weight vector $\theta$ be after we pass example 2 through the Perceptron algorithm?
+    \begin{tcolorbox}[fit,height=1cm, width=3cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $[-1,0]$
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+    
+\question[1] \textbf{Numerical answer:} What would be the updated bias $b$ be after we pass example 2 through the Perceptron algorithm?
+    \begin{tcolorbox}[fit,height=1cm, width=2cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $0$
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+    
+\question[1] \textbf{Numerical answer:} What would be the updated weight vector $\theta$ be after we pass example 3 through the Perceptron algorithm?
+    \begin{tcolorbox}[fit,height=1cm, width=3cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $[0,-1]$
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+    
+\question[1] \textbf{Numerical answer:} What would be the updated bias $b$ be after we pass example 3 through the Perceptron algorithm?
+    \begin{tcolorbox}[fit,height=1cm, width=2cm, blank, borderline={1pt}{-2pt}]
+    %solution
+    \end{tcolorbox}
+    \begin{soln}
+    $1$
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+    
+    \question[1] \textbf{True or False:} You friend stops you here and tells you that you do not need to update the Perceptron weights or the bias anymore, is this true or false?
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False, since the Perceptron algorithm states that if $\theta^T x \geq 0$ then we classify it as $+1$, then this last point would be classified incorrectly.
+    \end{soln}
+    \begin{qauthor}
+    (1) Daniel, (2) Implement the perceptron algorithm for binary
+classification.
+    \end{qauthor}
+
+   \question[2] \textbf{True or False: }Data (X,Y) has a non-linear decision boundary. Fortunately there is a function $\mathcal{F}$ that maps (X,Y) to ($\mathcal{F}$(X),Y) such that ($\mathcal{F}$(X),Y) is linearly separable. We have tried to build a modified perceptron to classify (X,Y). Is the given (modified) perceptron update rule correct ?\\
+    \\if sign(w$\mathcal{F}$($x^{(i)}$) + b) != $y^{(i)}$:\\
+    \indent w' = w + $y^{(i)}$$\mathcal{F}$($x^{(i)}$)\\
+    \indent b' = b + $y^{(i)}$
+    \begin{checkboxes}
+        \choice True
+        \choice False
+    \end{checkboxes}
+    
+    \begin{soln}
+    True
+    \end{soln}
+    
+    \begin{qauthor}
+    Loki
+    \end{qauthor}
+
+\end{questions}   
+
+\newpage
+\subsection{Perceptron}
+\begin{questions}
+\question[1] \textbf{Select all that apply:} Which of the following are considered as inductive bias of perceptron.
+    {%
+    \checkboxchar{$\Box$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Assume that most of the cases in a small neighborhood in feature space belong to the same class
+     \choice Decision boundary should be linear
+     \choice Prefer to correct the most recent mistakes
+     \choice Prefer the smallest hypothesis that explains the data
+    \end{checkboxes}
+    }
+    \begin{soln}
+    BC
+    \end{soln}
+    \begin{qauthor}
+    (1) Chenxi, (2) Describe the inductive bias of perceptron and the limitations of linear models
+    \end{qauthor}
+    \begin{qtester}
+    Not sure if this is covered in class, but really good question though.
+    \end{qtester}
+    
+\question[1] \textbf{True or False:} If the training data is linearly separable and representative of the true distribution, the perceptron algorithm always finds the optimal decision boundary for the true distribution.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False.
+    \end{soln}
+    \begin{qauthor}
+    (1) Eric, (2) Different order of data points seen change the final decision boundary
+    \end{qauthor}
+    
+\end{questions}
+
+\newpage
+\subsection{Linear Regression}
+\begin{questions}
+
+\question[1] \textbf{Select one:} The closed form solution for linear regression is $\theta = (X^TX)^{-1}X^Ty$. Suppose you have n = 35 training examples and m = 5 features(excluding the bias term). What are the dimensions of $X$, $y$, $\theta$ in the closed form equation.
+    \begin{checkboxes}
+     \choice $X$ is $35\times6$, $y$ is $35\times1$, $\theta$ is $6\times1$
+     \choice $X$ is $35\times6$, $y$ is $35\times6$, $\theta$ is $6\times6$
+     \choice $X$ is $35\times5$, $y$ is $35\times1$, $\theta$ is $5\times1$
+     \choice $X$ is $35\times5$, $y$ is $35\times5$, $\theta$ is $5\times5$
+    \end{checkboxes}
+    \begin{soln}
+    A.
+    \end{soln}
+    \begin{qauthor}
+    Input (1) Chenxi, (2) Closed form solution of linear regression, and (3) Adapted from practice question of Andrew Ng's Coursera course.
+    \end{qauthor}
+    
+    
+   
+
+\end{questions}
+
+\newpage
+\subsection{Regularization, Optimization}
+
+\begin{questions}
+
+    \question[1]\textbf{Select one:} Which of these is true about Regularization.
+    \begin{checkboxes}
+     \choice Larger values of $\lambda$ can overfit the data.
+     \choice Larger $\lambda$ does not affect the performance of your hypothesis
+     \choice Adding a regularization term to a classifier, ($\lambda \neq 0$), may cause some training examples to be classified incorrectly. 
+    \end{checkboxes}
+    \begin{soln}
+   C
+    \end{soln}
+    \begin{qauthor}
+    (1) Gauri, (2) Adapted from Stanford Coursera Course.
+    \end{qauthor}
+    
+    \begin{qtester}
+    Suggest adding an equation here reminding people what $\lambda$ is.
+    \end{qtester}
+    
+    \question[1] \textbf{True or False:} Stochastic Gradient Descent minimizes the error function asymptotically faster than Gradient Descent.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False
+    \end{soln}
+    \begin{qauthor}
+    (1) Gauri 
+    \end{qauthor}
+    
+    \question[1] \textbf{True or False:} Gradient Descent does better smaller datasets, whereas Stochastic Gradient Descent works better on larger datasets.
+    
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    True
+    \end{soln}
+    \begin{qauthor}
+    (1) Gauri (2)Choose a Linear Regression optimization technique that is appropriate for a
+particular dataset by analyzing the tradeoff of computational complexity vs.
+convergence speed.
+    \end{qauthor}
+    
+    \begin{qtester}
+    Opinions may differ here. If by "better" it means convergence performance, then GD is generally better than SGD, regardless of the data size; but if by "better" it means practicality, like memory use, scalability and running time, then the statement is valid. Recommend adding reasoning like "GD works better on smaller datasets because...and SGD works better on larger datasets because...", can even add wrong reasons to make the statement invalid.
+    \end{qtester}
+
+
+
+\end{questions}

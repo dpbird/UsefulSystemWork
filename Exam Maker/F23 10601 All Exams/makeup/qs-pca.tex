@@ -1,0 +1,80 @@
+\sectionquestion{Principal Component Analysis}
+
+\begin{parts}
+
+\part[2] \textbf{Select all that apply:} Which of the following is a use-case for dimensionality reduction?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Creating a low-dimensional visualization of high-dimensional data
+     \choice Achieving efficient use of computational resources such as time, memory, and data by using the dimensionality-reduced dataset instead of the original dataset
+     \choice Improving certain statistical generalization guarantees by reducing the number of dimensions
+     \choice Removing noise to improve data quality
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    A, B, C, D.
+    \end{soln}
+    
+    \begin{qauthor}
+    Abhi. PCA and Dimensionality Reduction
+    
+    Identify examples of high dimensional data and common use cases for dimensionality reduction
+
+    Based on slide 9 of lecture 24.
+    \end{qauthor}
+
+\part[2] \textbf{Select all that apply:} Which of the following are valid definitions of PCA?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Select a projection matrix $V$ that minimizes reconstruction error of the resulting projection where the rows of $V$ are orthogonal to each other.
+     \choice Select a projection matrix $V$ that maximizes variance of the resulting projection where the rows of $V$ are orthogonal to each other.
+     \choice Select a projection matrix $V$ encoding a random subspace by repeatedly sampling from a standard Gaussian.
+     \choice Select a projection matrix $V$ consisting of the $k$ eigenvectors with largest eigenvalue from the covariance matrix of the original data.
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    A, B, D (not C, which is kind of based on JL)
+    \end{soln}
+    
+    \begin{qauthor}
+    Abhi. PCA and Dimensionality Reduction
+
+    Establish the equivalence of minimization of reconstruction error with maximization of variance
+
+    Explain the connection between PCA, eigenvectors, eigenvalues, and covariance matrix
+
+
+    Based on slide 12, 16, 27 of lecture 24.
+    \end{qauthor}
+
+\part[2] \textbf{Select all that apply:} Select all of the following valid methods of obtaining the principal components of a dataset $X$.
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Gradient descent on principal components in the order $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_k$
+     \choice Gradient descent on principal components in the order $\vec{v}_k, \vec{v}_{k-1}, \dots, \vec{v}_1$
+     \choice Singular value decomposition on the matrix $X$
+     \choice Singular value decomposition on the matrix $X^\top X$
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    C, D
+    \end{soln}
+    
+    \begin{qauthor}
+    Abhi. PCA and Dimensionality Reduction
+
+Use common methods in linear algebra to obtain the principal components
+
+
+    Based on slide 35 of lecture 24.
+    \end{qauthor}
+
+
+
+\end{parts}

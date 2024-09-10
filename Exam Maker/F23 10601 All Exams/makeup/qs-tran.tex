@@ -1,0 +1,95 @@
+\sectionquestion{Attention and Transformers}
+
+\begin{parts}
+
+\part[1] \textbf{True or False:} Residual (skip) connections are used in Transformers to reduce the computational inefficiency that results from increased layer connections in deep models.
+    \begin{checkboxes}
+        \choice True
+        \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False
+    \end{soln}
+    \begin{qauthor}
+    Siva (edited by Matt), Identify residual connection's use case.
+    \end{qauthor}
+
+\part[2] \textbf{Select all that apply:} In the context of Transformer language models, which of these statements are true regarding mask matrices?
+    {%
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+     \choice Mask matrices are not required in models that use attention mechanisms.
+     \choice Mask matrices are only used in the training phase and not in the validation phase.
+     \choice A diagonal mask matrix is used to prevent the model from accessing future tokens.
+     \choice None of the above
+    \end{checkboxes}
+    }
+    \begin{soln}
+    A) False. This is incorrect as mask matrices are a crucial component in attention mechanisms, especially in Transformers.\\
+    B) False. Mask matrices are used in both training and validation phases, especially in autoregressive models during validation to prevent future token visibility. \\
+    C) False. Diagonal matrices are not commonly used for masking in standard Transformer models.\\
+    \end{soln}
+    \begin{qauthor}
+    Haohui (edited by Matt), Given a description of a sequence-to-sequence machine learning task, construct the appropriate mask matrix for training a Transformer to perform the specified task
+    \end{qauthor}
+
+    \begin{qtester}
+    Feedback: I'm not too much of a fan of A and B requiring them to remember exact axis layouts. C and D seem more accessible in an exam setting.
+    \end{qtester}
+
+\part[1] \textbf{Select one:} Which is the correct formula for computing  scaled dot product attention from the query $\Qv$, key $\Kv$, and value $\Vv$ matrices. Assume the dimensions of the query, key and value vectors are $d$. Assume $\text{softmax}(\cdot)$ is applied elementwise to its vector or matrix input.
+\begin{checkboxes}
+    \choice $\text{softmax}(\frac{(\Qv \Kv)^T}{\sqrt{d}}) \Vv$
+    \choice $\text{softmax}(\frac{\Qv \Kv^T}{\sqrt{d}}) \Vv$ 
+    \choice $\text{softmax}(\frac{\Qv \Vv^T}{\sqrt{d}}) \Kv$
+    \choice $\text{softmax}(\frac{\Qv \Kv^T \Vv}{\sqrt{d}})$
+    \choice None of the above
+\end{checkboxes}
+\begin{soln}
+    Option B is correct.
+    \end{soln}
+    \begin{qauthor}
+    Rakshith, Implement scaled dot-product attention in matrix form.
+    \end{qauthor}
+    \begin{qtester}
+        High level LGTM, they should be able to shape match somewhat and use semantic meaning somewhat.
+    \end{qtester}
+
+\part[1] \textbf{True or False:} Layer normalization is used in the Transformer architecture to keep the scale of the hidden states roughly the same across layers.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    True
+    \end{soln}
+    \begin{qauthor}
+    Matt (inspired by Q by Rakshith), Define layer normalization and residual connections in a Transformer layer.
+    \end{qauthor}
+
+\clearpage 
+
+\part[2] \textbf{Select all that apply:}  Why are positional embeddings necessary in the Transformer architecture for sequence modeling?
+{\checkboxchar{$\Box$} \checkedchar{$\blacksquare$}
+\begin{checkboxes}
+    \choice To introduce randomness and enhance diversity in the model's predictions. 
+    \choice To distinguish copies of the same word that appear in different parts of a sentence. %provide a potentially unique identification to each token within the sequence.
+    \choice To prevent overfitting by adding noise to the input data.
+    \choice To encode the order or position information of tokens in the absence of sequential operations like recurrence or convolution.
+    \choice To reduce computational complexity by simplifying the token representation.
+    \choice None of the above.  
+\end{checkboxes}}
+    \begin{soln}
+    B, D only. Positional embeddings are essential in Transformers to impart sequential information to tokens within a sequence, enabling the model to discern and maintain the positional relationships between elements without relying on recurrent or convolutional operations. They help the model understand the order or position of tokens, crucial for capturing sequential dependencies in non-sequential architectures like Transformers. 
+    \end{soln}
+    \begin{qauthor}
+    Siva (edited by Matt), Justify the use of positional embeddings in Transformers.
+    \end{qauthor}
+    \begin{qtester}
+        Note that learned postitional encodings (e.g. embedding-based) don't necessarily guarantee uniqueness. D is solid though.
+
+        Update: Updated the option B to reflect that the learned embeddings are not guaranteed to be unique.
+    \end{qtester}
+
+
+\end{parts}
