@@ -1,0 +1,227 @@
+\documentclass[12pt,addpoints]{exam}
+
+\newcommand{\class}{10-423/10-623 Gen AI}
+\newcommand{\term}{Fall 2024}
+\newcommand{\examnum}{Quiz 2}
+\newcommand{\examdate}{09/25/24}
+\newcommand{\timelimit}{15 minutes} % This one was 18-20 minutes in S24
+%% To HIDE SOLUTIONS, set this value to 0: 
+%\providecommand{\issoln}{0}
+\providecommand{\issoln}{1}
+
+\input{../shared_quiz/configurations.tex}
+
+\begin{document}
+
+\input{../shared_quiz/instructions.tex}
+
+% \input{../shared/instructions_for_specific_problem_types.tex}
+% \clearpage
+
+\begin{questions}
+
+\sectionquestion{Deep Models for Vision}
+\begin{parts}
+% TODO
+% \part[1] In a BERT model, which is an encoder-only transformer network, the [CLS] token is used to aggregate the information from the entire sequence into a single vector, which can be used for many downstream tasks such as emotion detection, etc.\\
+% \textbf{True or False:} The use of the [CLS] token at the very end of the input sequence will lead to a better performing model than if the [CLS] token was used at the beginning of the input sequence.
+% \begin{checkboxes}
+%     \choice True 
+%     \choice False
+% \end{checkboxes}
+% \begin{soln}
+%     False
+% \end{soln}
+% \begin{qauthor} 
+%     Aravind, Lecture 5
+% \end{qauthor}
+
+\part[1] In a Vision Transformer (ViT) model, which is an encoder-only transformer network, the extra learnable [class] embedding is analogous to the [CLS] token in a BERT model. It is used to aggregate the information from the entire image into a single vector, which can be used for many downstream tasks such as object detection, etc.\\
+\textbf{True or False:} The use of the extra learnable [class] embedding at the beginning of the input sequence, in principle, will lead to a better-performing model than if the extra learnable [class] embedding was used at the very end of the input sequence.
+\begin{checkboxes}
+    \choice True 
+    \choice False
+\end{checkboxes}
+\begin{soln}
+    False
+\end{soln}
+\begin{qauthor} 
+    Aravind, Lecture 5
+\end{qauthor}
+
+\part[2] 
+\textbf{Select One:} We have the following image and want to apply the following $3 \times 3$ kernel, with a padding of $1$ and stride of $2$. After applying this kernel, what is the value at position $(0, 1)$ (0-indexed)?
+
+\begin{figure*}[h]
+\begin{center}
+$\begin{bmatrix}
+1 & 2 & 2 & 1 & 1\\
+2 & 4 & 4 & 2 & 3\\
+1 & 3 & 3 & 1 & 4\\
+1 & 2 & 3 & 1 & 3\\
+0 & 1 & 4 & 2 & 0
+\end{bmatrix}$
+\caption{Image Matrix}
+\end{center}
+\end{figure*}
+
+\begin{figure*}[h]
+\begin{center}
+$\begin{bmatrix}
+0 & 1 & 0 \\
+1 & -4 & 1 \\
+0 & 1 & 0
+\end{bmatrix}$
+\caption{Kernel Matrix}
+\end{center}
+\end{figure*}
+
+\begin{checkboxes}
+    \choice 1 
+    \choice 2
+    \choice -1
+    \choice 0
+\end{checkboxes}
+\begin{soln}
+    -1\\
+$\begin{bmatrix}
+0 & 0 & 0\\
+2 & 2 & 1\\
+4 & 4 & 2\\
+\end{bmatrix} * \begin{bmatrix}
+0 & 1 & 0 \\
+1 & -4 & 1 \\
+0 & 1 & 0
+\end{bmatrix} = 2 + 2(-4) + 1 + 4 = -1$\\
+\end{soln}
+\begin{qauthor} 
+    Shreeya, Lecture 5
+\end{qauthor}
+\end{parts}
+
+
+\clearpage
+\sectionquestion{GANs}
+\begin{parts}
+% TODO 
+\part[1] \textbf{True or False:} In the training process of a Generative Adversarial Network (GAN), if the input noise vector \( z \) to the generator \( G_{\theta} \) is completely random and lacks any discernible pattern, it becomes impossible to perform backpropagation through the generator \( G_{\theta} \).
+\begin{checkboxes}
+    \choice True 
+    \choice False
+\end{checkboxes}
+\begin{soln}
+    False
+\end{soln}
+\begin{qauthor} 
+    Aravind, Lecture 6
+\end{qauthor}
+
+\part[1] \textbf{Select One: }Which of the following statements best describes the role of the discriminator in a Generative Adversarial Network (GAN)?
+\begin{checkboxes}
+    \choice The discriminator generates new data samples from the latent space. 
+    \choice The discriminator updates the generator’s parameters to improve the quality of generated samples.
+    \choice The discriminator distinguishes between real and generated data samples, providing feedback to the generator.
+    \choice The discriminator minimizes the difference between real and generated data distributions.
+\end{checkboxes}
+\begin{soln}
+    C
+\end{soln}
+\begin{qauthor} 
+    Shreeya, Lecture 6
+\end{qauthor}
+
+
+
+\end{parts}
+
+\clearpage
+\sectionquestion{VAEs}
+\begin{parts}
+% TODO 
+\part[0] \textbf{Select all that apply:} Which of the following are true statements about KL divergence?
+\begin{checkboxessquare}
+     \choice KL divergence is symmetric: $\text{KL}(p || q) = \text{KL}(q || p)$.
+     \choice KL$(p||q)$ is minimized when distributions $p, q$
+     are equivalent, i.e. $q(x) = p(x)$ for all $x \in X$.
+     \choice Maximizing ELBO is the same as minimizing KL divergence. 
+     \choice $0 \leq \text{KL}(p || q) \leq 1$ for all probability distributions $p$ and $q$. 
+     \choice None of the above.
+\end{checkboxessquare}
+\begin{soln}
+    B, C
+\end{soln}
+\begin{qauthor} 
+    Katie, Lecture 7
+\end{qauthor}
+\part[1]
+\textbf{True or False:} In Variational Autoencoders (VAEs), we sample from the latent distribution to generate the output. Since sampling prevents backpropagation through the network, neural networks cannot be used to build VAEs.
+\begin{checkboxes}
+    \choice True 
+    \choice False
+\end{checkboxes}
+\begin{soln}
+    False
+\end{soln}
+\begin{qauthor} 
+    Shrikara, Lecture 7
+\end{qauthor}
+\end{parts}
+
+\clearpage
+\sectionquestion{Diffusion Models}
+\begin{parts}
+% TODO 
+\part[1]
+\textbf{Select all that apply:}Why must the noise scaling factor $\alpha_t$ in Diffusion Probabilistic Models (DDPMs) follow a schedule?
+\begin{checkboxessquare}
+    \choice To ensure smooth addition of noise, preventing excessive corruption of data early on.
+    \choice To allow the model to gradually learn representations at different noise levels.
+    \choice To add noise in a completely random fashion, making the model more robust.
+    \choice To ensure the reverse process can recover the original data distribution effectively.
+    \choice To control the amount of noise added during each step, ensuring balanced corruption across all timesteps
+\end{checkboxessquare}
+\begin{soln}
+    A, D
+\end{soln}
+\begin{qauthor} 
+    Shrikara, Lecture 8
+\end{qauthor}
+
+\part[1] \textbf{Select One:} Suppose you are training a neural network $p(x)$ to approximate a known but hard-to-define probability distribution $q(x)$. We choose as our objective function $KL(q \parallel p) = \mathbb{E}_q  \left[ \log \frac{q(x)}{p(x)}\right]$. Which of the following describes how to select the optimal p(x) to minimize this objective function?
+\begin{checkboxes}
+    \choice Select p(x) to be as large as possible in order to minimize the fraction $\frac{q(x)}{p(x)}$.
+    \choice Select p(x) to be as small as possible in order to maximize the fraction $\frac{q(x)}{p(x)}$.
+    \choice Select p(x) to be as close as possible to q(x) in order to make the fraction $\frac{q(x)}{p(x)}$ equal 1.
+    \choice Select p(x) to be the uniform distribution so this term is independent of the parameters of the network and can be ignored.
+\end{checkboxes}
+\begin{soln}
+    C, log(1) = 0 and the KL divergence is non-negative. Therefore 0 is an optimal value.
+\end{soln}
+\begin{qauthor} 
+    Jacob, Lecture 6
+\end{qauthor}
+
+
+\part[1] \textbf{Select One:} Let function f(x, N) be the function which takes an image x and adds Gaussian noise to the image N times such that the output is the Nth step of forward diffusion in a DDPM model. What is the time complexity of an optimal implementation of this function? 
+\begin{checkboxes}
+    \choice O(1)
+    \choice O(N)
+    \choice O(h*w) where h and w are the image height and width
+    \choice O(N*h*w) where h and w are the image height and width
+    
+\end{checkboxes}
+\begin{soln}
+    A. Adding Gaussian noise N times can be mathematically equivalently implemented by adding lots of Gaussian noise just once. 
+\end{soln}
+\begin{qauthor} 
+    Jacob, Homework 2 and Lecture 8
+\end{qauthor}
+
+\end{parts}
+
+\end{questions}
+
+% Commented for quizzes
+%\input{../../shared/scratch_pages.tex}
+
+\end{document}
