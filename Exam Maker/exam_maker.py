@@ -102,7 +102,7 @@ def main(args):
         for row in tqdm(list(reader)):
             print(f"Currently Processing: {row}")
             andrew_id = row['Andrew ID']
-            first = row['Preferred/First Name']
+            first = row['First Name']
             last = row['Last Name']
             room = row['Room']
             seat = row['Seat']
@@ -110,10 +110,10 @@ def main(args):
 
             # Hacky seat number fix ('A1' to 'A01')
             seat = seat.strip()
-            if len(seat) == 2:
-                seat = seat[0] + '0' + seat[1]
-            else:
-                assert len(seat) == 3
+            # if len(seat) == 2:
+            #     seat = seat[0] + '0' + seat[1]
+            # else:
+            #     assert len(seat) == 3
             # Exam number fix ('1' to '001')
             num = int(num)
             num = '%03d' % (num)

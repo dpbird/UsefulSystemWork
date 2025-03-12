@@ -1,44 +1,484 @@
 \documentclass[12pt,addpoints]{exam}
-\input{configurations.tex}
 
-\begin{document}
+\newcommand{\class}{10-423/10-623 Gen AI}
+\newcommand{\term}{Spring 2025}
+\newcommand{\examnum}{Quiz 2}
+\newcommand{\examdate}{02/17/24}
+\newcommand{\timelimit}{15 minutes} % This one was 18-20 minutes in S24
+%% To HIDE SOLUTIONS, set this value to 0: 
+% \providecommand{\issoln}{0}
+\providecommand{\issoln}{0}
 
-\begin{soln}{\huge \bf Solutions}\end{soln}
+\usepackage{amsmath, amssymb, amsthm, enumerate}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{todonotes}
+\usepackage{bm}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{float}
+\usepackage{graphics}
+\setlength{\marginparwidth}{2.15cm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{epsfig}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage[normalem]{ulem}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{pgfplots}
+\usepackage[font=scriptsize]{subcaption}
+\usepackage{float}
+%\usepackage[]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{environ}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{lastpage}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{comment}
+% \usepackage{natbib}
+\usepackage{amsmath}
+% \usepackage{amssymb}
+% \usepackage{amsthm}
+% \usepackage{paralist}
+% \usepackage{epstopdf}
+% \usepackage{tabularx}
+% \usepackage{longtable}
+% \usepackage{multirow}
+% \usepackage{multicol}
+% \usepackage{algorithmic}
+% \usepackage{float}
+% \usepackage{paralist}
+% \usepackage{comment}
+% \usepackage{times}
+% \usepackage{textcomp}
+% \usepackage{caption}
+\usepackage[many]{tcolorbox}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{adjustbox}
+\usepackage{wasysym} % For \CIRCLE
+\usepackage{cancel} % For \xcancel
+\usepackage{amssymb}
+\usepackage{wrapfig}
 
-\newcommand{\toreplace}[1]{#1}
-\renewcommand{\toreplace}[1]{\underline{\hspace{10em}}}
-\renewcommand{\toreplace}[1]{\hphantom{\hspace{5em}}}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{automata}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.shapes}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{decorations.footprints}
+\usetikzlibrary{shadows}
+\usetikzlibrary{calc}
+\usetikzlibrary{spy}
+\usepackage{transparent}
+\usepackage{tikz-cd}
 
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.17}
 
-\pagestyle{head}
-\firstpageheader{}{}{}
-\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{ID: zlalena - 338}
-\runningheadrule
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
+
+% Instead of lines, use blank space.
+%\renewcommand{\fillwithlines}[1]{\vspace{#1}}
+
+\def\x{\mathbf x}
+\def\y{\mathbf y}
+\def\w{\mathbf w}
+\def\v{\mathbf v}
+\def\E{\mathbb E}
+\def\V{\mathbb V}
+\def\a{\mathbf a}
+\def\z{\mathbf z}
+
+\newcommand\MyBox[1]{%
+  \fbox{\parbox[c][1.7cm][c]{1.7cm}{\centering #1}}%
+}
+\newcommand\MyVBox[1]{%
+  \parbox[c][1.7cm][c]{2.5cm}{\centering\bfseries #1}%
+}  
+\newcommand\MyHBox[2][\dimexpr1.7cm+2\fboxsep\relax]{%
+  \parbox[c][1cm][c]{#1}{\centering\bfseries #2}%
+}  
+\newcommand\MyTBox[3]{
+  \MyVBox{#1}\MyBox{#2}
+  \MyBox{#3}\par
+}
+
+\newcommand{\pts}[1]{(#1 points)}
+
+\ifthenelse{\equal{\issoln}{1}}{
+
+% SOLUTION environment
+\newenvironment{soln}{\leavevmode\color{red}\ignorespaces }{}
+
+% QUESTION AUTHORS environment
+\newenvironment{qauthor}{\leavevmode\color{blue}\ignorespaces }{}
+
+% Question tester comment environment
+\newenvironment{qtester}{\leavevmode\color{green}\ignorespaces}{}
+}{
+  \NewEnviron{soln}{}
+  \NewEnviron{qauthor}{}
+  \NewEnviron{qtester}{}
+}
+
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\st}{\mathrm{s.t.}}
+
+\makeatletter
+\newcommand{\removelatexerror}{\let\@latex@error\@gobble}
+\makeatother
+
+\setlength\linefillheight{.35in}
+
 
 % Default to an empty tags environ.
 \NewEnviron{tags}{}{}
 
+% \newtcolorbox[]{answer_box}[1][]{
+%     % breakable,
+%     fit,
+%     enhanced,
+%     % nobeforeafter,
+%     colback=white,
+%     title=Your Answer,
+%     sidebyside align=top,
+%     box align=top,
+%     #1
+% }
+
+\newtcolorbox[]{answer_box}[1][]{
+    % breakable,
+    enhanced,
+    nobeforeafter,
+    colback=white,
+    title=Your Answer,
+    sidebyside align=top,
+    box align=top,
+    #1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands for placeholders used by exam 
+% builder script
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\toreplace}[1]{#1}
+%\renewcommand{\toreplace}[1]{\underline{\hspace{10em}}}
+\renewcommand{\toreplace}[1]{\hphantom{\hspace{8em}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting of header                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{ - 208} 
+% For 601 exams:  - 208}
+\runningheadrule
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting for \CorrectChoice of "exam" %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\CorrectChoiceEmphasis{}
+\checkedchar{\blackcircle}
+
+\newenvironment{checkboxessquare}{
+    \begingroup
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{checkboxes}
+    }{
+    \end{checkboxes}
+    \endgroup
+    }
+    
+\newenvironment{oneparcheckboxessquare}{
+    \begingroup
+    \checkboxchar{$\Box$} \checkedchar{$\blacksquare$} % change checkbox style locally
+    \begin{oneparcheckboxes}
+    }{
+    \end{oneparcheckboxes}
+    \endgroup
+    }
+
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom commands                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\vc}[1]{\boldsymbol{#1}}
+
+\newcommand{\fpartial}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\adj}[1]{\frac{\partial J}{\partial #1}}
+\newcommand{\chain}[2]{\adj{#2} = \adj{#1}\frac{\partial #1}{\partial #2}}
+
+% mathcal
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Hc}{\mathcal{H}}
+\newcommand{\Ic}{\mathcal{I}}
+\newcommand{\Jc}{\mathcal{J}}
+\newcommand{\Kc}{\mathcal{K}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\Mc}{\mathcal{M}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Pc}{\mathcal{P}}
+\newcommand{\Qc}{\mathcal{Q}}
+\newcommand{\Rc}{\mathcal{R}}
+\newcommand{\Sc}{\mathcal{S}}
+\newcommand{\Tc}{\mathcal{T}}
+\newcommand{\Uc}{\mathcal{U}}
+\newcommand{\Vc}{\mathcal{V}}
+\newcommand{\Wc}{\mathcal{W}}
+\newcommand{\Xc}{\mathcal{X}}
+\newcommand{\Yc}{\mathcal{Y}}
+\newcommand{\Zc}{\mathcal{Z}}
+
+% mathbb
+\newcommand{\Ab}{\mathbb{A}}
+\newcommand{\Bb}{\mathbb{B}}
+\newcommand{\Cb}{\mathbb{C}}
+\newcommand{\Db}{\mathbb{D}}
+\newcommand{\Eb}{\mathbb{E}}
+\newcommand{\Fb}{\mathbb{F}}
+\newcommand{\Gb}{\mathbb{G}}
+\newcommand{\Hb}{\mathbb{H}}
+\newcommand{\Ib}{\mathbb{I}}
+\newcommand{\Jb}{\mathbb{J}}
+\newcommand{\Kb}{\mathbb{K}}
+\newcommand{\Lb}{\mathbb{L}}
+\newcommand{\Mb}{\mathbb{M}}
+\newcommand{\Nb}{\mathbb{N}}
+\newcommand{\Ob}{\mathbb{O}}
+\newcommand{\Pb}{\mathbb{P}}
+\newcommand{\Qb}{\mathbb{Q}}
+\newcommand{\Rb}{\mathbb{R}}
+\newcommand{\Sb}{\mathbb{S}}
+\newcommand{\Tb}{\mathbb{T}}
+\newcommand{\Ub}{\mathbb{U}}
+\newcommand{\Vb}{\mathbb{V}}
+\newcommand{\Wb}{\mathbb{W}}
+\newcommand{\Xb}{\mathbb{X}}
+\newcommand{\Yb}{\mathbb{Y}}
+\newcommand{\Zb}{\mathbb{Z}}
+
+% mathbf lowercase
+\newcommand{\av}{\mathbf{a}}
+\newcommand{\bv}{\mathbf{b}}
+\newcommand{\cv}{\mathbf{c}}
+\newcommand{\dv}{\mathbf{d}}
+\newcommand{\ev}{\mathbf{e}}
+\newcommand{\fv}{\mathbf{f}}
+\newcommand{\gv}{\mathbf{g}}
+\newcommand{\hv}{\mathbf{h}}
+\newcommand{\iv}{\mathbf{i}}
+\newcommand{\jv}{\mathbf{j}}
+\newcommand{\kv}{\mathbf{k}}
+\newcommand{\lv}{\mathbf{l}}
+\newcommand{\mv}{\mathbf{m}}
+\newcommand{\nv}{\mathbf{n}}
+\newcommand{\ov}{\mathbf{o}}
+\newcommand{\pv}{\mathbf{p}}
+\newcommand{\qv}{\mathbf{q}}
+\newcommand{\rv}{\mathbf{r}}
+\newcommand{\sv}{\mathbf{s}}
+\newcommand{\tv}{\mathbf{t}}
+\newcommand{\uv}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\wv}{\mathbf{w}}
+\newcommand{\xv}{\mathbf{x}}
+\newcommand{\yv}{\mathbf{y}}
+\newcommand{\zv}{\mathbf{z}}
+
+% mathbf uppercase
+\newcommand{\Av}{\mathbf{A}}
+\newcommand{\Bv}{\mathbf{B}}
+\newcommand{\Cv}{\mathbf{C}}
+\newcommand{\Dv}{\mathbf{D}}
+\newcommand{\Ev}{\mathbf{E}}
+\newcommand{\Fv}{\mathbf{F}}
+\newcommand{\Gv}{\mathbf{G}}
+\newcommand{\Hv}{\mathbf{H}}
+\newcommand{\Iv}{\mathbf{I}}
+\newcommand{\Jv}{\mathbf{J}}
+\newcommand{\Kv}{\mathbf{K}}
+\newcommand{\Lv}{\mathbf{L}}
+\newcommand{\Mv}{\mathbf{M}}
+\newcommand{\Nv}{\mathbf{N}}
+\newcommand{\Ov}{\mathbf{O}}
+\newcommand{\Pv}{\mathbf{P}}
+\newcommand{\Qv}{\mathbf{Q}}
+\newcommand{\Rv}{\mathbf{R}}
+\newcommand{\Sv}{\mathbf{S}}
+\newcommand{\Tv}{\mathbf{T}}
+\newcommand{\Uv}{\mathbf{U}}
+\newcommand{\Vv}{\mathbf{V}}
+\newcommand{\Wv}{\mathbf{W}}
+\newcommand{\Xv}{\mathbf{X}}
+\newcommand{\Yv}{\mathbf{Y}}
+\newcommand{\Zv}{\mathbf{Z}}
+
+% bold greek lowercase
+\newcommand{\alphav     }{\boldsymbol \alpha     }
+\newcommand{\betav      }{\boldsymbol \beta      }
+\newcommand{\gammav     }{\boldsymbol \gamma     }
+\newcommand{\deltav     }{\boldsymbol \delta     }
+\newcommand{\epsilonv   }{\boldsymbol \epsilon   }
+\newcommand{\varepsilonv}{\boldsymbol \varepsilon}
+\newcommand{\zetav      }{\boldsymbol \zeta      }
+\newcommand{\etav       }{\boldsymbol \eta       }
+\newcommand{\thetav     }{\boldsymbol \theta     }
+\newcommand{\varthetav  }{\boldsymbol \vartheta  }
+\newcommand{\iotav      }{\boldsymbol \iota      }
+\newcommand{\kappav     }{\boldsymbol \kappa     }
+\newcommand{\varkappav  }{\boldsymbol \varkappa  }
+\newcommand{\lambdav    }{\boldsymbol \lambda    }
+\newcommand{\muv        }{\boldsymbol \mu        }
+\newcommand{\nuv        }{\boldsymbol \nu        }
+\newcommand{\xiv        }{\boldsymbol \xi        }
+\newcommand{\omicronv   }{\boldsymbol \omicron   }
+\newcommand{\piv        }{\boldsymbol \pi        }
+\newcommand{\varpiv     }{\boldsymbol \varpi     }
+\newcommand{\rhov       }{\boldsymbol \rho       }
+\newcommand{\varrhov    }{\boldsymbol \varrho    }
+\newcommand{\sigmav     }{\boldsymbol \sigma     }
+\newcommand{\varsigmav  }{\boldsymbol \varsigma  }
+\newcommand{\tauv       }{\boldsymbol \tau       }
+\newcommand{\upsilonv   }{\boldsymbol \upsilon   }
+\newcommand{\phiv       }{\boldsymbol \phi       }
+\newcommand{\varphiv    }{\boldsymbol \varphi    }
+\newcommand{\chiv       }{\boldsymbol \chi       }
+\newcommand{\psiv       }{\boldsymbol \psi       }
+\newcommand{\omegav     }{\boldsymbol \omega     }
+
+% bold greek uppercase
+\newcommand{\Gammav     }{\boldsymbol \Gamma     }
+\newcommand{\Deltav     }{\boldsymbol \Delta     }
+\newcommand{\Thetav     }{\boldsymbol \Theta     }
+\newcommand{\Lambdav    }{\boldsymbol \Lambda    }
+\newcommand{\Xiv        }{\boldsymbol \Xi        }
+\newcommand{\Piv        }{\boldsymbol \Pi        }
+\newcommand{\Sigmav     }{\boldsymbol \Sigma     }
+\newcommand{\Upsilonv   }{\boldsymbol \Upsilon   }
+\newcommand{\Phiv       }{\boldsymbol \Phi       }
+\newcommand{\Psiv       }{\boldsymbol \Psi       }
+\newcommand{\Omegav     }{\boldsymbol \Omega     }
+
+% Abhi messing around with examdoc
+\qformat{\textbf{{\Large \thequestion \; \; \thequestiontitle \ (\totalpoints \ points)}} \hfill}
+\renewcommand{\thequestion}{\arabic{question}}
+\renewcommand{\questionlabel}{\thequestion.}
+
+\renewcommand{\thepartno}{\arabic{partno}}
+\renewcommand{\partlabel}{\thequestion.\thepartno.}
+%\renewcommand{\partshook}{\setlength{\leftmargin}{0pt}}
+\renewcommand{\partshook}{\setlength{\itemsep}{0.4cm}}
+
+\renewcommand{\thesubpart}{\alph{subpart}}
+\renewcommand{\subpartlabel}{(\thesubpart)}
+
+\renewcommand{\thesubsubpart}{\roman{subsubpart}}
+\renewcommand{\subsubpartlabel}{\thesubsubpart.}
+
+% copied from stack overflow, as all good things are
+\newcommand\invisiblesection[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}}
+
+% quite possibly the worst workaround i have made for this class
+\newcommand{\sectionquestion}[1]{
+\titledquestion{#1}
+\invisiblesection{#1}
+~\vspace{-1em}
+}
+
+% hack for question numbers in table
+\usepackage{regexpatch}
+\makeatletter
+\xpatchcmd*\@multicolumntable{|c|c}{|l|c}{}{}
+\xpatchcmd\questions{\def\@currentlabel{\thequestiontitle}}{\def\@currentlabel{\thequestion. \thequestiontitle}}{}{}
+\makeatother
+
+
+\begin{document}
+
+\providecommand{\notesAllowed}{\string yes}
+
+\begin{soln}{\huge \bf Solutions}\end{soln}
+
+% Standard first-page header
 \noindent
 \begin{tabular*}{\textwidth}{l @{\extracolsep{3cm}} r @{\extracolsep{6pt}} l}
-\textbf{\class} & \textbf{Name:} & {Zoë Lalena}\\
-\textbf{\term} &  \textbf{Andrew ID:} & {zlalena} \\
-\textbf{\examnum} & \textbf{Room:} & {DH A302}\\
-\textbf{\examdate} & \textbf{Seat:} & {F19} \\
-\textbf{Time Limit: \timelimit} & \textbf{Exam Number:} & {338}
+\textbf{\class} & \textbf{Name:} & { }\\
+\textbf{\term} &  \textbf{Andrew ID:} & {} \\
+\textbf{\examnum} & \textbf{Room:} & {DH - 2210}\\
+\textbf{\examdate} & \textbf{Seat:} & {O8} \\
+\textbf{Time Limit: \timelimit} & \textbf{Exam Number:} & {208}
 \end{tabular*}\\
 \rule[2ex]{\textwidth}{2pt}
+
 
 \textbf{Instructions:}
 \begin{itemize}
     \item Verify your name and Andrew ID above. 
+    %\item Write your name and Andrew ID above. After you have been instructed to open the exam packet, write your Andrew ID at the top of each page.
     \item This exam contains \numpages\ pages (including this cover page).\\
     The total number of points is \numpoints. 
-    %The total number of questions is \numquestions.
-    %\item You are allowed to use one page of notes
-    \item Clearly mark your answers in the allocated space If you have made a mistake, cross out the invalid parts of your solution, and circle the ones which should be graded.
-    \item Look over the exam first to make sure that none of the \numpages\ pages are missing. 
+    % COMMENTED OUT FOR 10425 quizzes: 
+    %\ifthenelse{\equal{\notesAllowed}{\string yes}}{\item You are allowed to use one page of notes}{}
+    \item Clearly mark your answers in the allocated space. If you have made a mistake, cross out the invalid parts of your solution, and circle the ones which should be graded.
+    \item Look over the exam first to make sure that none of the \numpages\ pages are missing.
     \item No electronic devices may be used during the exam.
-    \item Please write all answers \emph{darkly} in pencil or in pen.
+    \item Please write all answers in pen or \emph{darkly} in pencil.
     \item You have \timelimit{} to complete the exam. Good luck!
 \end{itemize}
 
@@ -50,44 +490,271 @@
 \rule[2ex]{\textwidth}{2pt}
 \newpage
 
-\input{instructions.tex}
-\clearpage
+% \input{../shared/instructions_for_specific_problem_types.tex}
+% \clearpage
+
 \begin{questions}
-%\input{qtemplates.tex}
-%\clearpage
-%\input{qs-TA-s24.tex}
-%\clearpage
-% \input{qs-linreg.tex}
-% \clearpage
-\input{qs-opt.tex}
-\clearpage
-\input{qs-logreg.tex}
-\clearpage
-\input{qs-neuralnets.tex}
-\clearpage
-\input{qs-theory.tex}
-\clearpage
-\input{qs-societal.tex}
-\clearpage
-%\input{qs-misc.tex}
-% \clearpage
-\end{questions}
+
+\sectionquestion{Deep Models for Vision}
+\begin{parts}
+
+\part[1] \textbf{True or False:} As we go deeper into a CNN, the weights of \emph{later} convolutional layers learn to detect features of \emph{larger} patches of the input images.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    True
+    \end{soln}
+    \begin{qauthor} Pat    \end{qauthor}
+
+
+\part[1] \textbf{Select one:} Consider a 2D convolution layer with input image size $M\times M$ with $C_{in}$ channels. Let $N_W$ be the original number of weight parameters. If we double the input image width and height to be $2M\times 2M$ and change nothing else about the layer, what is total number of weights in this layer?
+\begin{checkboxes}
+    \choice $N_W / 2$
+    \choice $N_W / 4$
+    \choice $\sqrt{2} N_W$
+    \choice $2N_W$
+    \choice $4N_W$
+    \choice None of the above
+\end{checkboxes}
+\begin{soln}
+    None of the above. The number of parameters don't change.
+\end{soln}
+\begin{qauthor} Pat    \end{qauthor}
+
+\part[1] \textbf{Select all that apply:} Which aspects of an encoder-only Transformer model need to be substantially changed to convert it to a basic Vision Transformer (ViT) model?
+
+Select as few options as necessary.
+\begin{checkboxessquare}
+    \choice Tokenization
+    \choice Position embedding
+    \choice Attention blocks
+    \choice Transformer blocks
+    \choice Optimization algorithm 
+    \choice None of the above 
+\end{checkboxessquare}
+ \begin{soln}
+    Tokenization only
+\end{soln}
+\begin{qauthor} Pat    \end{qauthor}
+
+\end{parts}
 
 \clearpage
-\begin{center}
-Do not remove this page! Use this page for scratch work.
-\end{center}
+\sectionquestion{GANs}
+\begin{parts}
+
+
+\part[1] \textbf{True or False:} The discriminator's role in a GAN is to determine whether the noise vector was obtained by adding noise to a real image or by sampling noise from the generator model.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False
+    \end{soln}
+    \begin{qauthor} Matt    \end{qauthor}
+
+\part[2] \textbf{Select all that apply:} GANs learn by trying to find a $\theta$ and $\phi$ that optimize a minimax problem for a generator $G_{\theta}$ and a discriminator $D_{\phi}$:
+    \begin{align*}
+        &\min_{\theta} \max_{\phi} J(\theta, \phi), \qquad \text{where } J(\theta, \phi) = \log \left( D_{\phi}(\xv^{(i)}) \right) + \log \left( 1 - D_{\phi}(G_{\theta}(\zv^{(i)})) \right),
+    \end{align*}
+    $\xv^{(i)}$ is a random training image, and $\zv^{(i)}$ is a random noise vector.
+    %Which of the following are true of this learning problem?
+    Which of the following techniques could be used to optimize this learning problem?
+    \begin{checkboxessquare}
+     %\choice First update $\phi \gets \phi - \gamma \nabla_{\phi} J(\theta, \phi)$
+     \choice Alternate between a step in the direction of $\nabla_{\phi} J(\theta, \phi)$ and a step opposite the gradient of $\nabla_{\theta} J(\theta, \phi)$.
+     \choice Alternate between a step opposite the direction of $\nabla_{\phi} J(\theta, \phi)$ and a step in the gradient of $\nabla_{\theta} J(\theta, \phi)$.
+     \choice Jointly step in the direction $( \nabla_{\phi} J(\theta, \phi),\, -\nabla_{\theta} J(\theta, \phi) )$
+     \choice Jointly step in the direction $( -\nabla_{\phi} J(\theta, \phi),\, \nabla_{\theta} J(\theta, \phi) )$
+     \choice None of the above
+    \end{checkboxessquare}
+    \begin{soln}
+    A, C
+    \end{soln}
+    \begin{qauthor}
+    Matt
+    \end{qauthor}
+
+
+\part[1] \textbf{Select one:} Which of the following best describes how an image is generated from a trained GAN?
+    \begin{checkboxes}
+     \choice A neural network creates the mean and covariance parameters of a Gaussian, and an image is sampled from that Gaussian.
+     \choice Gaussian noise is repeatedly subtracted away from a randomly sampled noise vector until an image is left remaining.
+     \choice A noise vector is sampled from a Gaussian, then a deterministic neural network transforms the noise vector into an image.
+     \choice A noise vector is constructed by a neural network and then an image is sampled from a nonlinear distribution that conditions on that noise vector.
+    \end{checkboxes}
+    \begin{soln}
+    C
+    \end{soln}
+    \begin{qauthor}
+    Matt
+    \end{qauthor}
+
+\end{parts}
+
 \clearpage
-\begin{center}
-Do not remove this page! Use this page for scratch work.
-\end{center}
+\sectionquestion{Diffusion Models}
+\begin{parts}
+
+\part[1] \textbf{True or False:} To train a diffusion model, we find the parameters for the reverse process model that maximize the sum of the log-likelihoods of the training images, i.e. $\hat{\thetav} = \argmax \sum_{i=1}^N \log p_{\thetav}(\xv^{(i)})$ where $p_{\thetav}$ is the reverse process, and $\xv^{(1)}, \ldots, \xv^{(N)}$ are the $N$ training images.
+%A diffusion model is trained by finding the parameters that maximize the sum of the log-likelihoods of the training images under the reverse process model. 
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False, we cannot compute the log-likelihood of a training image under the reverse process model, and so we resort to a variational lower bound instead
+    \end{soln}
+    \begin{qauthor} Matt    \end{qauthor}
+
+\part[1] \textbf{True or False:} The forward process of a diffusion model \emph{and} the (learned) reverse process are both stochastic.
+    \begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    True
+    \end{soln}
+    \begin{qauthor} Matt    \end{qauthor}
+
+\part[2] \textbf{Select all that apply:} Why does the Denoising Diffusion Probabilistic Model (DDPM) use a UNet model? Recall that the structure of the exact reverse process $q(\xv_{t-1} \mid \xv_t, \xv_0)$ is a Gaussian of the form $\Nc( \tilde{\mu}_q(\xv_t, \xv_0), \sigma_t^2 \Iv)$.
+    \begin{checkboxessquare}
+     \choice Because a UNet is a parameter efficient encoder-only Transformer model. 
+     \choice Because the inputs and outputs of a UNet can be of the same dimension.
+     \choice In order to approximate $\tilde{\mu}_q(\xv_t, \xv_0)$ through various parameterizations.
+     \choice In order to approximate $\sigma_t^2 \Iv$ through various parameterizations.
+     \choice None of the above
+    \end{checkboxessquare}
+    \begin{soln}
+    B, C
+    \end{soln}
+    \begin{qauthor}
+    Matt
+    \end{qauthor}
+
+% GREAT QUESTION BUT CUT FOR TIME. USE THIS IN F25 EXAM.
+%
+% \part[2] \textbf{Select all that apply.} For the Denoising Diffusion Probabilistic Model (DDPM), the structure of the exact reverse process $q(\xv_{t-1} \mid \xv_t, \xv_0)$ is a Gaussian of the form $\Nc( \tilde{\mu}_q(\xv_t, \xv_0), \sigma_t^2 \Iv)$ where:
+% \begin{align*}
+% \tilde{\mu}_q(\xv_t, \xv_0) &= 
+%     \frac{ \sqrt{\bar{\alpha}_t} (1 - \alpha_t) }{ 1 - \bar{\alpha}_t } \xv_0 + 
+%     \frac{ \sqrt{\alpha_t} (1 - \bar{\alpha}_t) }{ 1 - \bar{\alpha}_t } \xv_t 
+% \end{align*}
+% or equivalently, where, 
+% \begin{align*}
+%     \tilde{\mu}_q(\xv_t, \xv_0) 
+%      &=  \frac{1}{\sqrt{\alpha_t}} \left( \xv_t - \frac{ (1-\alpha_t) }{ \sqrt{1 - \bar{\alpha}_t} } \epsilonv \right).
+% \end{align*}
+% Based on this, the DDPM's learned reverse process $p(\xv_{t-1} \mid \xv_t)$ can be parameterized in various ways. Which of the variables below could be approximated by a UNet model in a DDPM? (Your answer should identify exactly the parameterizations that were presented in lecture.)
+%     \begin{checkboxessquare}
+%      \choice $\tilde{\mu}_q$
+%      \choice $\sigma^2_t \Iv$
+%      \choice $\bar{\alpha}_t$
+%      \choice $\alpha_t$
+%      \choice $\xv_0$
+%      \choice $\xv_t$
+%      \choice $\epsilonv$
+%      \choice None of the above
+%     \end{checkboxessquare}
+%     \begin{soln}
+%     $\tilde{\mu}_q$, 
+%     $\xv_0$,
+%     $\epsilonv$
+%     \end{soln}
+%     \begin{qauthor}
+%     Matt
+%     \end{qauthor}
+
+% \part[1] \textbf{Fill in the blank:} \textit{ The original Denoising Diffusion Probabilistic Model (DDPM) paper observed that the structure of the exact reverse process $q(\xv_{t-1} \mid \xv_t, \xv_0)$ was a Gaussian of the form $\Nc( \tilde{\mu}_q(\xv_t, \xv_0), \sigma_t^2 \Iv)$ where:
+% \begin{align*}
+%     \tilde{\mu}_q(\xv_t, \xv_0) 
+%      &=  \frac{1}{\sqrt{\alpha_t}} \left( \xv_t - \frac{ (1-\alpha_t) }{ \sqrt{1 - \bar{\alpha}_t} } \epsilonv \right).
+% \end{align*}
+% The paper found that the best parameterization (at least empirically) was one that defined a UNet to approximate \underline{\hspace{8em}}. }
+
+% \textbf{Select one.}
+%     \begin{checkboxes}
+%      \choice $\tilde{\mu}_q$
+%      \choice $\xv_0$
+%      \choice $\xv_t$
+%      \choice $\sigma^2_t \Iv$
+%      \choice $\epsilonv$
+%      \choice $\alpha_t$
+%      \choice $\bar{\alpha}_t$
+%     \end{checkboxes}
+%     \begin{soln}
+%     $\epsilonv$
+%     \end{soln}
+%     \begin{qauthor}
+%     Matt
+%     \end{qauthor}
+
+\end{parts}
+
 \clearpage
-\begin{center}
-Do not remove this page! Use this page for scratch work.
-\end{center}
-\clearpage
-\begin{center}
-Do not remove this page! Use this page for scratch work.
-\end{center}
+\sectionquestion{VAEs}
+\begin{parts}
+
+% \part[1] \textbf{Select one:} In order to decrease the training error on a standard autoencoder, what change should we make to the number of dimensions in the latent vector $\mathbf{z} \in \mathbb{R}^K$?
+%     \begin{checkboxes}
+%      \choice Decrease $K$
+%      \choice Increase $K$
+%      \choice Changing the dimension of $\mathbf{z}$ has little effect on the training error
+%     \end{checkboxes}
+%     \begin{soln}
+%         Increase $K$
+%     \end{soln}
+%     \begin{qauthor}
+%     Pat
+%     \end{qauthor}
+
+\part[2] \textbf{Select all that apply.} Which of the following would we like to \emph{minimize} when training a variational autoencoder, where $q_{\phi}(\zv \mid \xv)$ is the encoder, $p_{\thetav}(\xv \mid \zv)$ is the decoder, $\zv^{(i)} \sim q_{\phi}(\zv \mid \xv^{(i)})$, and $\hat{\xv}^{(i)} \sim p_\theta(\xv \mid \zv^{(i)})$. 
+
+    \begin{checkboxessquare}
+        %\choice $KL\left(q_{\phiv}(\mathbf{z}\mid \mathbf{x}) \mid\mid p_{\thetav}(\mathbf{z})\right)$
+        % \choice $D_{KL}\left(q_{\phiv}(z\mid x) \mid\mid p_{\thetav}(z \mid x)\right)$
+        \choice $\frac{1}{N}\sum_{i=1}^N\|\mathbf{x}^{(i)} - \hat{\mathbf{x}}^{(i)}\|_2^2 - KL\left(q_{\phiv}(\mathbf{z}\mid \mathbf{x}) \mid\mid \Nc(\mathbf{0}, \Iv) \right)$
+        \choice $\mathbb{E}_{\mathbf{z}\sim q_{\phiv}(\mathbf{z}\mid \mathbf{x})}\left[-\log p_{\thetav}(\mathbf{x} \mid \mathbf{z}) \right] - KL\left(q_{\phiv}(\mathbf{z}\mid \mathbf{x}) \mid\mid p_{\thetav}(\mathbf{z})\right)$
+        \choice $-\text{ELBO}(q_{\phi})$
+        \choice None of the above
+    \end{checkboxessquare}
+    \begin{soln}
+        All of the above
+    \end{soln}
+    \begin{qauthor}
+    Pat
+    \end{qauthor}
+
+% Reparameterization
+\part[1] \textbf{True or False:} The reparameterization trick is used to avoid having a random function on the computation path between the generator network weights and the objective.
+\begin{checkboxes}
+     \choice True 
+     \choice False
+    \end{checkboxes}
+    \begin{soln}
+    False
+    \end{soln}
+    \begin{qauthor} Pat    \end{qauthor}
+
+% Sampling a new image
+% \part[1] \textbf{True or False:} If we would like to sample from $p(\mathbf{x})$ approximated by a trained VAE, we would first sample a latent variable $\mathbf{z}$ from a standard Gaussian and then pass that $\mathbf{z}$ through our generator network.
+% \begin{checkboxes}
+%      \choice True 
+%      \choice False
+%     \end{checkboxes}
+%     \begin{soln}
+%     True
+%     \end{soln}
+%     \begin{qauthor} Pat    \end{qauthor}
+
+\end{parts}
+
+\end{questions}
+
+% Commented for quizzes
+%\input{../../shared/scratch_pages.tex}
 
 \end{document}

@@ -25,10 +25,10 @@ def helper(row):
 
     # Hacky seat number fix ('A1' to 'A01')
     seat = seat.strip()
-    if len(seat) == 2:
-        seat = seat[0] + '0' + seat[1]
-    else:
-        assert len(seat) == 3
+    # if len(seat) == 2:
+    #     seat = seat[0] + '0' + seat[1]
+    # else:
+    #     assert len(seat) == 3
     # Exam number fix ('1' to '001')
     num = int(num)
     num = '%03d' % (num)
@@ -150,21 +150,6 @@ if __name__ == '__main__':
         document environment. PDF header definition can be moved into main 
         right under definition of toreplace.""")
     args = parser.parse_args()
-    # main(args)
-
-    print("Overleaf files found:")
-    for dir in os.listdir(args.in_dir):
-        print(dir)
-    print("Which file do you want to generate:")
-    
-    genFile = input()
-
-    if genFile in os.listdir(args.in_dir):
-        #DO THE THING
-        args.in_dir = os.path.join(args.in_dir, genFile)
-        print(args.in_dir)
-        main(args)
-    else:
-        print("You must select a file from the list presented! Closing down.")
+    main(args)
 
 # TODO: this can potentially be further optimized by use of latexmk pvc and repeated edits/copies

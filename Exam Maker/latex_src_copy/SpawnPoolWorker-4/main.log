@@ -1,114 +1,113 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.12)  9 SEP 2024 13:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.28)  17 FEB 2025 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./main.tex
 (main.tex
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-22>
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-10-09>
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/exam\exam.cls
 Document Class: exam 2023/07/09 Version 2.704 by Philip Hirschhorn
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+Document Class: article 2024/02/08 v1.4n Standard LaTeX document class
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count187
-\c@section=\count188
-\c@subsection=\count189
-\c@subsubsection=\count190
-\c@paragraph=\count191
-\c@subparagraph=\count192
-\c@figure=\count193
-\c@table=\count194
-\abovecaptionskip=\skip48
-\belowcaptionskip=\skip49
-\bibindent=\dimen140
+\c@part=\count194
+\c@section=\count195
+\c@subsection=\count196
+\c@subsubsection=\count197
+\c@paragraph=\count198
+\c@subparagraph=\count199
+\c@figure=\count266
+\c@table=\count267
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
 )
-\@extrawidth=\skip50
-\@rightmargin=\skip51
-\@extrahead=\skip52
-\@extrafoot=\skip53
-\run@exhd=\skip54
-\fp@exhd=\skip55
-\run@exft=\skip56
-\fp@exft=\skip57
-\covrun@exhd=\skip58
-\covfp@exhd=\skip59
-\covrun@exft=\skip60
-\covfp@exft=\skip61
-\c@num@coverpages=\count195
-\c@latest@ques=\count196
-\c@ques@end=\count197
-\c@last@object=\count198
-\c@incmp@ques=\count199
-\c@next@ques=\count266
-\c@next@page=\count267
-\c@tmp@hlfcntr=\count268
-\c@ifpos@cntr=\count269
-\c@question=\count270
-\c@partno=\count271
-\c@subpart=\count272
-\c@subsubpart=\count273
-\c@choice=\count274
-\c@numpoints=\count275
-\c@numbonuspoints=\count276
-\c@pointsof@thisquestion=\count277
-\c@bonuspointsof@thisquestion=\count278
-\c@numquestions=\count279
-\c@numparts=\count280
-\c@numsubparts=\count281
-\c@numsubsubparts=\count282
-\c@Curr@Page=\count283
-\c@@pagepoints=\count284
-\c@@pagebonuspoints=\count285
-\c@pageof@pagepoints=\count286
-\c@pageof@pagebonuspoints=\count287
-\c@latest@points=\count288
-\c@latest@bonuspoints=\count289
+\@extrawidth=\skip51
+\@rightmargin=\skip52
+\@extrahead=\skip53
+\@extrafoot=\skip54
+\run@exhd=\skip55
+\fp@exhd=\skip56
+\run@exft=\skip57
+\fp@exft=\skip58
+\covrun@exhd=\skip59
+\covfp@exhd=\skip60
+\covrun@exft=\skip61
+\covfp@exft=\skip62
+\c@num@coverpages=\count268
+\c@latest@ques=\count269
+\c@ques@end=\count270
+\c@last@object=\count271
+\c@incmp@ques=\count272
+\c@next@ques=\count273
+\c@next@page=\count274
+\c@tmp@hlfcntr=\count275
+\c@ifpos@cntr=\count276
+\c@question=\count277
+\c@partno=\count278
+\c@subpart=\count279
+\c@subsubpart=\count280
+\c@choice=\count281
+\c@numpoints=\count282
+\c@numbonuspoints=\count283
+\c@pointsof@thisquestion=\count284
+\c@bonuspointsof@thisquestion=\count285
+\c@numquestions=\count286
+\c@numparts=\count287
+\c@numsubparts=\count288
+\c@numsubsubparts=\count289
+\c@Curr@Page=\count290
+\c@@pagepoints=\count291
+\c@@pagebonuspoints=\count292
+\c@pageof@pagepoints=\count293
+\c@pageof@pagebonuspoints=\count294
+\c@latest@points=\count295
+\c@latest@bonuspoints=\count296
 \pageinfo@commands=\toks17
 \temp@toks=\toks18
 \pagepoint@commands=\toks19
 \point@toks=\toks20
-\c@ques@object=\count290
-\marginpointssep=\skip62
-\rightpointsmargin=\skip63
+\c@ques@object=\count297
+\marginpointssep=\skip63
+\rightpointsmargin=\skip64
 \choice@toks=\toks21
-\answerlinelength=\skip64
-\answerskip=\skip65
-\answerclearance=\skip66
-\fillinlinelength=\skip67
-\linefillheight=\skip68
-\linefillthickness=\skip69
-\dottedlinefillheight=\skip70
-\gridsize=\skip71
-\gridlinewidth=\skip72
-\minboxheight=\skip73
-\c@@iterator=\count291
-\@cellwidth=\skip74
-\c@tbl@points=\count292
-\c@tbl@bonuspoints=\count293
-\c@pq@index=\count294
-\c@pq@index@pts=\count295
-\c@pq@index@bpts=\count296
-\c@num@cols=\count297
-\c@num@rows=\count298
-\c@current@row=\count299
-\c@cols@done=\count300
-\c@exam@saved@eqnum=\count301
-\exam@box=\box51
-\saved@totalleftmargin=\dimen141
-\@sollistdepth=\count302
-\exam@FrameRule=\dimen142
-\exam@FrameSep=\dimen143
+\answerlinelength=\skip65
+\answerskip=\skip66
+\answerclearance=\skip67
+\fillinlinelength=\skip68
+\linefillheight=\skip69
+\linefillthickness=\skip70
+\dottedlinefillheight=\skip71
+\gridsize=\skip72
+\gridlinewidth=\skip73
+\minboxheight=\skip74
+\c@@iterator=\count298
+\@cellwidth=\skip75
+\c@tbl@points=\count299
+\c@tbl@bonuspoints=\count300
+\c@pq@index=\count301
+\c@pq@index@pts=\count302
+\c@pq@index@bpts=\count303
+\c@num@cols=\count304
+\c@num@rows=\count305
+\c@current@row=\count306
+\c@cols@done=\count307
+\c@exam@saved@eqnum=\count308
+\exam@box=\box52
+\saved@totalleftmargin=\dimen142
+\@sollistdepth=\count309
+\exam@FrameRule=\dimen143
+\exam@FrameSep=\dimen144
 )
-(configurations.tex
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2023/05/13 v2.17o AMS math features
-\@mathmargin=\skip75
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip76
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
@@ -117,59 +116,59 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
-\ex@=\dimen144
+\ex@=\dimen145
 ))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen145
+\pmbraise@=\dimen146
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count303
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count304
-\leftroot@=\count305
-LaTeX Info: Redefining \overline on input line 399.
-LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count306
-\DOTSCASE@=\count307
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box52
-\strutbox@=\box53
-LaTeX Info: Redefining \big on input line 722.
-LaTeX Info: Redefining \Big on input line 723.
-LaTeX Info: Redefining \bigg on input line 724.
-LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen146
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count308
-LaTeX Info: Redefining \bmod on input line 905.
-LaTeX Info: Redefining \pmod on input line 910.
-LaTeX Info: Redefining \smash on input line 940.
-LaTeX Info: Redefining \relbar on input line 970.
-LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count309
-\dotsspace@=\muskip16
-\c@parentequation=\count310
-\dspbrk@lvl=\count311
+\inf@bad=\count310
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count311
+\leftroot@=\count312
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count313
+\DOTSCASE@=\count314
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen147
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count315
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count316
+\dotsspace@=\muskip17
+\c@parentequation=\count317
+\dspbrk@lvl=\count318
 \tag@help=\toks23
-\row@=\count312
-\column@=\count313
-\maxfields@=\count314
+\row@=\count319
+\column@=\count320
+\maxfields@=\count321
 \andhelp@=\toks24
-\eqnshift@=\dimen147
-\alignsep@=\dimen148
-\tagshift@=\dimen149
-\tagwidth@=\dimen150
-\totwidth@=\dimen151
-\lineht@=\dimen152
+\eqnshift@=\dimen148
+\alignsep@=\dimen149
+\tagshift@=\dimen150
+\tagwidth@=\dimen151
+\totwidth@=\dimen152
+\lineht@=\dimen153
 \@envbody=\toks25
-\multlinegap=\skip76
-\multlinetaggap=\skip77
+\multlinegap=\skip77
+\multlinetaggap=\skip78
 \mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
@@ -191,49 +190,27 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks29
 \thm@notefont=\toks30
 \thm@headpunct=\toks31
-\thm@preskip=\skip78
-\thm@postskip=\skip79
-\thm@headsep=\skip80
+\thm@preskip=\skip79
+\thm@postskip=\skip80
+\thm@headsep=\skip81
 \dth@everypar=\toks32
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks33
 )
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks34
-)
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
-cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
-f
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen153
-\Gin@req@width=\dimen154
-)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+Package: color 2024/01/14 v1.3d Standard LaTeX Color (DPC)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
 
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )
@@ -248,31 +225,31 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks35
-\XKV@tempa@toks=\toks36
-)
-\XKV@depth=\count315
+\XKV@toks=\toks34
+\XKV@tempa@toks=\toks35
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
+\XKV@depth=\count322
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-LaTeX Info: Redefining \color on input line 758.
+LaTeX Info: Redefining \color on input line 762.
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
-Package xcolor Info: Model `RGB' extended on input line 1366.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz
 .sty
@@ -282,13 +259,13 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 ty
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
 l-common.tex
-\pgfutil@everybye=\toks37
-\pgfutil@tempdima=\dimen155
-\pgfutil@tempdimb=\dimen156
+\pgfutil@everybye=\toks36
+\pgfutil@tempdima=\dimen154
+\pgfutil@tempdimb=\dimen155
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
 l-latex.def
-\pgfutil@abb=\box54
+\pgfutil@abb=\box55
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs
 .code.tex
@@ -300,6 +277,24 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore
 .sty
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen156
+\Gin@req@width=\dimen157
+)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys
 .sty
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
@@ -308,33 +303,33 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
 s.code.tex
-\pgfkeys@pathtoks=\toks38
-\pgfkeys@temptoks=\toks39
+\pgfkeys@pathtoks=\toks37
+\pgfkeys@temptoks=\toks38
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
 slibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks40
+\pgfkeys@tmptoks=\toks39
 ))
-\pgf@x=\dimen157
-\pgf@y=\dimen158
-\pgf@xa=\dimen159
-\pgf@ya=\dimen160
-\pgf@xb=\dimen161
-\pgf@yb=\dimen162
-\pgf@xc=\dimen163
-\pgf@yc=\dimen164
-\pgf@xd=\dimen165
-\pgf@yd=\dimen166
+\pgf@x=\dimen158
+\pgf@y=\dimen159
+\pgf@xa=\dimen160
+\pgf@ya=\dimen161
+\pgf@xb=\dimen162
+\pgf@yb=\dimen163
+\pgf@xc=\dimen164
+\pgf@yc=\dimen165
+\pgf@xd=\dimen166
+\pgf@yd=\dimen167
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count316
-\c@pgf@countb=\count317
-\c@pgf@countc=\count318
-\c@pgf@countd=\count319
-\t@pgf@toka=\toks41
-\t@pgf@tokb=\toks42
-\t@pgf@tokc=\toks43
-\pgf@sys@id@count=\count320
+\c@pgf@counta=\count323
+\c@pgf@countb=\count324
+\c@pgf@countc=\count325
+\c@pgf@countd=\count326
+\t@pgf@toka=\toks40
+\t@pgf@tokb=\toks41
+\t@pgf@tokc=\toks42
+\pgf@sys@id@count=\count327
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.
 cfg
@@ -353,8 +348,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
 yssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count321
-\pgfsyssoftpath@bigbuffer@items=\count322
+\pgfsyssoftpath@smallbuffer@items=\count328
+\pgfsyssoftpath@bigbuffer@items=\count329
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
 ysprotocol.code.tex
@@ -370,12 +365,12 @@ e.tex
 .code.tex)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpars
 er.code.tex
-\pgfmath@dimen=\dimen167
-\pgfmath@count=\count323
-\pgfmath@box=\box55
-\pgfmath@toks=\toks44
-\pgfmath@stack@operand=\toks45
-\pgfmath@stack@operation=\toks46
+\pgfmath@dimen=\dimen168
+\pgfmath@count=\count330
+\pgfmath@box=\box56
+\pgfmath@toks=\toks43
+\pgfmath@stack@operand=\toks44
+\pgfmath@stack@operation=\toks45
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
 tions.code.tex)
@@ -399,59 +394,59 @@ tions.integerarithmetics.code.tex)
 .code.tex)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloa
 t.code.tex
-\c@pgfmathroundto@lastzeros=\count324
+\c@pgfmathroundto@lastzeros=\count331
 ))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code
 .tex)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 repoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen168
-\pgf@picmaxx=\dimen169
-\pgf@picminy=\dimen170
-\pgf@picmaxy=\dimen171
-\pgf@pathminx=\dimen172
-\pgf@pathmaxx=\dimen173
-\pgf@pathminy=\dimen174
-\pgf@pathmaxy=\dimen175
-\pgf@xx=\dimen176
-\pgf@xy=\dimen177
-\pgf@yx=\dimen178
-\pgf@yy=\dimen179
-\pgf@zx=\dimen180
-\pgf@zy=\dimen181
+\pgf@picminx=\dimen169
+\pgf@picmaxx=\dimen170
+\pgf@picminy=\dimen171
+\pgf@picmaxy=\dimen172
+\pgf@pathminx=\dimen173
+\pgf@pathmaxx=\dimen174
+\pgf@pathminy=\dimen175
+\pgf@pathmaxy=\dimen176
+\pgf@xx=\dimen177
+\pgf@xy=\dimen178
+\pgf@yx=\dimen179
+\pgf@yy=\dimen180
+\pgf@zx=\dimen181
+\pgf@zy=\dimen182
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 repathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen182
-\pgf@path@lasty=\dimen183
+\pgf@path@lastx=\dimen183
+\pgf@path@lasty=\dimen184
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 repathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen184
-\pgf@shorten@start@additional=\dimen185
+\pgf@shorten@end@additional=\dimen185
+\pgf@shorten@start@additional=\dimen186
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 rescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box56
-\pgf@hbox=\box57
-\pgf@layerbox@main=\box58
-\pgf@picture@serial@count=\count325
+\pgfpic=\box57
+\pgf@hbox=\box58
+\pgf@layerbox@main=\box59
+\pgf@picture@serial@count=\count332
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 regraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen186
+\pgflinewidth=\dimen187
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 retransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen187
-\pgf@pt@y=\dimen188
-\pgf@pt@temp=\dimen189
+\pgf@pt@x=\dimen188
+\pgf@pt@y=\dimen189
+\pgf@pt@temp=\dimen190
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 requick.code.tex
@@ -468,14 +463,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 rearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen190
+\pgfarrowsep=\dimen191
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 reshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen191
-\pgf@sys@shading@range@num=\count326
-\pgf@shadingcount=\count327
+\pgf@max=\dimen192
+\pgf@sys@shading@range@num=\count333
+\pgf@shadingcount=\count334
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 reimage.code.tex
@@ -484,7 +479,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 reexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box59
+\pgfexternal@startupbox=\box60
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
 relayers.code.tex
@@ -505,7 +500,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 eshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box60
+\pgfnodeparttextbox=\box61
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 eplot.code.tex
@@ -514,8 +509,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
 omp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen192
-\pgf@nodesepend=\dimen193
+\pgf@nodesepstart=\dimen193
+\pgf@nodesepend=\dimen194
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
 omp-version-1-18.sty
@@ -533,10 +528,10 @@ e.tex))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor
 .code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen194
-\pgffor@skip=\dimen195
-\pgffor@stack=\toks47
-\pgffor@toks=\toks48
+\pgffor@iter=\dimen195
+\pgffor@skip=\dimen196
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
 ))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
 kz\tikz.code.tex
@@ -545,34 +540,34 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
 raryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count328
-\pgfplotmarksize=\dimen196
+\pgf@plot@mark@count=\count335
+\pgfplotmarksize=\dimen197
 )
-\tikz@lastx=\dimen197
-\tikz@lasty=\dimen198
-\tikz@lastxsaved=\dimen199
-\tikz@lastysaved=\dimen256
-\tikz@lastmovetox=\dimen257
-\tikz@lastmovetoy=\dimen258
-\tikzleveldistance=\dimen259
-\tikzsiblingdistance=\dimen260
-\tikz@figbox=\box61
-\tikz@figbox@bg=\box62
-\tikz@tempbox=\box63
-\tikz@tempbox@bg=\box64
-\tikztreelevel=\count329
-\tikznumberofchildren=\count330
-\tikznumberofcurrentchild=\count331
-\tikz@fig@count=\count332
+\tikz@lastx=\dimen198
+\tikz@lasty=\dimen199
+\tikz@lastxsaved=\dimen256
+\tikz@lastysaved=\dimen257
+\tikz@lastmovetox=\dimen258
+\tikz@lastmovetoy=\dimen259
+\tikzleveldistance=\dimen260
+\tikzsiblingdistance=\dimen261
+\tikz@figbox=\box62
+\tikz@figbox@bg=\box63
+\tikz@tempbox=\box64
+\tikz@tempbox@bg=\box65
+\tikztreelevel=\count336
+\tikznumberofchildren=\count337
+\tikznumberofcurrentchild=\count338
+\tikz@fig@count=\count339
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 ematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count333
-\pgfmatrixcurrentcolumn=\count334
-\pgf@matrix@numberofcolumns=\count335
+\pgfmatrixcurrentrow=\count340
+\pgfmatrixcurrentcolumn=\count341
+\pgf@matrix@numberofcolumns=\count342
 )
-\tikz@expandcount=\count336
+\tikz@expandcount=\count343
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
 kz/libraries\tikzlibrarytopaths.code.tex
@@ -584,21 +579,21 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count337
-\calc@Bcount=\count338
-\calc@Adimen=\dimen261
-\calc@Bdimen=\dimen262
-\calc@Askip=\skip81
-\calc@Bskip=\skip82
+\calc@Acount=\count344
+\calc@Bcount=\count345
+\calc@Adimen=\dimen262
+\calc@Bdimen=\dimen263
+\calc@Askip=\skip82
+\calc@Bskip=\skip83
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count339
-\calc@Cskip=\skip83
+\calc@Ccount=\count346
+\calc@Cskip=\skip84
 )
-\c@@todonotes@numberoftodonotes=\count340
+\c@@todonotes@numberoftodonotes=\count347
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
-Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
 \symboldsymbols=\mathgroup8
@@ -608,7 +603,7 @@ Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
@@ -644,9 +639,6 @@ Package pdftexcmds Info: \pdfdraftmode found.
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 
@@ -661,45 +653,51 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 y
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count341
+\c@section@level=\count348
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count342
+\etb@tempcnta=\count349
 )
-\@linkdim=\dimen263
-\Hy@linkcounter=\count343
-\Hy@pagecounter=\count344
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.
+sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen264
+\Hy@linkcounter=\count350
+\Hy@pagecounter=\count351
+
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count345
+\Hy@SavedSpaceFactor=\count352
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4062.
-Package hyperref Info: Hyper figures OFF on input line 4179.
-Package hyperref Info: Link nesting OFF on input line 4184.
-Package hyperref Info: Hyper index ON on input line 4187.
-Package hyperref Info: Plain pages OFF on input line 4194.
-Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count346
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count353
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
+\Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen264
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen265
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -709,36 +707,36 @@ c.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count347
-\Field@Width=\dimen265
-\Fld@charsize=\dimen266
-Package hyperref Info: Hyper figures OFF on input line 6063.
-Package hyperref Info: Link nesting OFF on input line 6068.
-Package hyperref Info: Hyper index ON on input line 6071.
-Package hyperref Info: backreferencing OFF on input line 6078.
-Package hyperref Info: Link coloring ON on input line 6081.
-Package hyperref Info: Link coloring with OCG OFF on input line 6088.
-Package hyperref Info: PDF/A mode OFF on input line 6093.
+\Fld@menulength=\count354
+\Field@Width=\dimen266
+\Fld@charsize=\dimen267
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring ON on input line 6060.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count348
-\c@Item=\count349
-\c@Hfootnote=\count350
+\Hy@abspage=\count355
+\c@Item=\count356
+\c@Hfootnote=\count357
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count351
-\c@bookmark@seq@number=\count352
+\Fld@listcount=\count358
+\c@bookmark@seq@number=\count359
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
 lecheck.sty
@@ -751,7 +749,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip84
+\Hy@SectionHShift=\skip85
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -759,118 +757,121 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count353
-\Gm@cntv=\count354
-\c@Gm@tempcnt=\count355
-\Gm@bindingoffset=\dimen267
-\Gm@wd@mp=\dimen268
-\Gm@odd@mp=\dimen269
-\Gm@even@mp=\dimen270
-\Gm@layoutwidth=\dimen271
-\Gm@layoutheight=\dimen272
-\Gm@layouthoffset=\dimen273
-\Gm@layoutvoffset=\dimen274
-\Gm@dimlist=\toks49
+\Gm@cnth=\count360
+\Gm@cntv=\count361
+\c@Gm@tempcnt=\count362
+\Gm@bindingoffset=\dimen268
+\Gm@wd@mp=\dimen269
+\Gm@odd@mp=\dimen270
+\Gm@even@mp=\dimen271
+\Gm@layoutwidth=\dimen272
+\Gm@layoutheight=\dimen273
+\Gm@layouthoffset=\dimen274
+\Gm@layoutvoffset=\dimen275
+\Gm@dimlist=\toks48
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count356
-\float@exts=\toks50
-\float@box=\box65
-\@float@everytoks=\toks51
-\@floatcapt=\box66
+\c@float@type=\count363
+\float@exts=\toks49
+\float@box=\box66
+\@float@everytoks=\toks50
+\@floatcapt=\box67
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen275
-\lightrulewidth=\dimen276
-\cmidrulewidth=\dimen277
-\belowrulesep=\dimen278
-\belowbottomsep=\dimen279
-\aboverulesep=\dimen280
-\abovetopsep=\dimen281
-\cmidrulesep=\dimen282
-\cmidrulekern=\dimen283
-\defaultaddspace=\dimen284
-\@cmidla=\count357
-\@cmidlb=\count358
-\@aboverulesep=\dimen285
-\@belowrulesep=\dimen286
-\@thisruleclass=\count359
-\@lastruleclass=\count360
-\@thisrulewidth=\dimen287
+\heavyrulewidth=\dimen276
+\lightrulewidth=\dimen277
+\cmidrulewidth=\dimen278
+\belowrulesep=\dimen279
+\belowbottomsep=\dimen280
+\aboverulesep=\dimen281
+\abovetopsep=\dimen282
+\cmidrulesep=\dimen283
+\cmidrulekern=\dimen284
+\defaultaddspace=\dimen285
+\@cmidla=\count364
+\@cmidlb=\count365
+\@aboverulesep=\dimen286
+\@belowrulesep=\dimen287
+\@thisruleclass=\count366
+\@lastruleclass=\count367
+\@thisrulewidth=\dimen288
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.st
 y
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip85
-\enit@outerparindent=\dimen288
+\enitkv@toks@=\toks51
+\labelindent=\skip86
+\enit@outerparindent=\dimen289
 \enit@toks=\toks52
-\enit@inbox=\box67
-\enit@count@id=\count361
-\enitdp@description=\count362
+\enit@inbox=\box68
+\enit@count@id=\count368
+\enitdp@description=\count369
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/graphics\epsfig.sty
-Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
-\epsfxsize=\dimen289
-\epsfysize=\dimen290
+Package: epsfig 2024/01/14 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen290
+\epsfysize=\dimen291
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.st
 y
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
-\UL@box=\box68
-\UL@hyphenbox=\box69
-\UL@skip=\skip86
+\UL@box=\box69
+\UL@hyphenbox=\box70
+\UL@skip=\skip87
 \UL@hook=\toks53
-\UL@height=\dimen291
-\UL@pe=\count363
-\UL@pixel=\dimen292
-\ULC@box=\box70
+\UL@height=\dimen292
+\UL@pe=\count370
+\UL@pixel=\dimen293
+\ULC@box=\box71
 Package: ulem 2019/11/18
-\ULdepth=\dimen293
+\ULdepth=\dimen294
 )
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
-kz/libraries\tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikz-qtree\tikz-qtree.
+sty
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikz-qtree\pgftree.sty
 
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
-raryarrows.code.tex
-File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen294
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikz-qtree\pgfsubpic.s
+ty
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/tikz-qtree\pgfsubpic
+.tex
+\pgf@subpicminx=\dimen295
+\pgf@subpicminy=\dimen296
+\pgf@subpicmaxx=\dimen297
+\pgf@subpicmaxy=\dimen298
 ))
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
-kz/libraries\tikzlibraryautomata.code.tex
-File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
-kz/libraries\tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
-\pgflibraryshapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box71
-\pgfnodeparttwobox=\box72
-\pgfnodepartthreebox=\box73
-\pgfnodepartfourbox=\box74
-\pgfnodeparttwentybox=\box75
-\pgfnodepartnineteenbox=\box76
-\pgfnodeparteighteenbox=\box77
-\pgfnodepartseventeenbox=\box78
-\pgfnodepartsixteenbox=\box79
-\pgfnodepartfifteenbox=\box80
-\pgfnodepartfourteenbox=\box81
-\pgfnodepartthirteenbox=\box82
-\pgfnodeparttwelvebox=\box83
-\pgfnodepartelevenbox=\box84
-\pgfnodeparttenbox=\box85
-\pgfnodepartninebox=\box86
-\pgfnodeparteightbox=\box87
-\pgfnodepartsevenbox=\box88
-\pgfnodepartsixbox=\box89
-\pgfnodepartfivebox=\box90
-)))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/tikz-qtree\pgftree.t
+ex
+\levelsep=\dimen299
+\subtreesep=\dimen300
+\smuggle@levelsep=\dimen301
+\smuggle@subtreesep=\dimen302
+\this@levelsep=\dimen303
+\this@subtreesep=\dimen304
+\pgftree@childx=\dimen305
+\pgftree@savechildx=\dimen306
+\pgftree@childy=\dimen307
+\pgftree@savechildy=\dimen308
+\pgftree@childi=\count371
+\pgftree@savechildi=\count372
+\pgftree@level=\count373
+\pgftree@depth=\dimen309
+\pgf@subpic@hbox@children=\box72
+\pgf@subpic@minx@children=\dimen310
+\pgf@subpic@miny@children=\dimen311
+\pgf@subpic@maxx@children=\dimen312
+\pgf@subpic@maxy@children=\dimen313
+\pgftree@lastchildx=\dimen314
+\pgftree@lastchildy=\dimen315
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/tikz-qtree\tikz-qtre
+e.tex
+\@result=\toks54
+\child@list=\toks55
+\root@node=\toks56
+))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.re
 vision.tex)
@@ -880,12 +881,12 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 de.tex
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscor
 e.code.tex
-\t@pgfplots@toka=\toks54
-\t@pgfplots@tokb=\toks55
-\t@pgfplots@tokc=\toks56
-\pgfplots@tmpa=\dimen295
-\c@pgfplots@coordindex=\count364
-\c@pgfplots@scanlineindex=\count365
+\t@pgfplots@toka=\toks57
+\t@pgfplots@tokb=\toks58
+\t@pgfplots@tokc=\toks59
+\pgfplots@tmpa=\dimen316
+\c@pgfplots@coordindex=\count374
+\c@pgfplots@scanlineindex=\count375
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplot
 ssysgeneric.code.tex))
@@ -896,9 +897,9 @@ tib\pgfplotsoldpgfsupp_loader.code.tex
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
 raryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks57
-\t@pgf@tokb=\toks58
-\t@pgf@tokc=\toks59
+\t@pgf@toka=\toks60
+\t@pgf@tokb=\toks61
+\t@pgf@tokc=\toks62
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompa
 tib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
@@ -910,14 +911,14 @@ re\pgfplotsliststructure.code.tex)
 re\pgfplotsliststructureext.code.tex)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
 re\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count366
+\c@pgfplotsarray@tmp=\count376
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
 re\pgfplotsmatrix.code.tex)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pg
 fplotstableshared.code.tex
-\c@pgfplotstable@counta=\count367
-\t@pgfplotstable@a=\toks60
+\c@pgfplotstable@counta=\count377
+\t@pgfplotstable@a=\toks63
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructu
 re\pgfplotsdeque.code.tex)
@@ -929,7 +930,7 @@ tsbinary.data.code.tex))
 tsutil.verb.code.tex)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflib
 rarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count368
+\c@pgfplotslibrarysurf@no=\count378
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibr
 arypgfplots.surfshading.pgfsys-pdftex.def)))
@@ -961,16 +962,16 @@ ths.code.tex)
 kz/libraries\tikzlibrarydecorations.code.tex
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
 edecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen296
-\pgfdecoratedremainingdistance=\dimen297
-\pgfdecoratedinputsegmentcompleteddistance=\dimen298
-\pgfdecoratedinputsegmentremainingdistance=\dimen299
-\pgf@decorate@distancetomove=\dimen300
-\pgf@decorate@repeatstate=\count369
-\pgfdecorationsegmentamplitude=\dimen301
-\pgfdecorationsegmentlength=\dimen302
+\pgfdecoratedcompleteddistance=\dimen317
+\pgfdecoratedremainingdistance=\dimen318
+\pgfdecoratedinputsegmentcompleteddistance=\dimen319
+\pgfdecoratedinputsegmentremainingdistance=\dimen320
+\pgf@decorate@distancetomove=\dimen321
+\pgf@decorate@repeatstate=\count379
+\pgfdecorationsegmentamplitude=\dimen322
+\pgfdecorationsegmentlength=\dimen323
 )
-\tikz@lib@dec@box=\box91
+\tikz@lib@dec@box=\box73
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
 kz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
@@ -982,13 +983,13 @@ kz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
 tions\pgflibrarydecorations.pathreplacing.code.tex))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzli
 brarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count370
-\pgfplots@xmin@reg=\dimen303
-\pgfplots@xmax@reg=\dimen304
-\pgfplots@ymin@reg=\dimen305
-\pgfplots@ymax@reg=\dimen306
-\pgfplots@zmin@reg=\dimen307
-\pgfplots@zmax@reg=\dimen308
+\pgfplots@numplots=\count380
+\pgfplots@xmin@reg=\dimen324
+\pgfplots@xmax@reg=\dimen325
+\pgfplots@ymin@reg=\dimen326
+\pgfplots@ymax@reg=\dimen327
+\pgfplots@zmin@reg=\dimen328
+\pgfplots@zmax@reg=\dimen329
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
 kz/libraries\tikzlibraryplotmarks.code.tex
@@ -998,22 +999,6 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 raryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzli
-brarypgfplots.fillbetween.code.tex
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\
-tikzlibraryfillbetween.code.tex
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
-kz/libraries\tikzlibraryintersections.code.tex
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
-raryintersections.code.tex
-\pgf@intersect@solutions=\count371
-))
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\
-tikzlibrarydecorations.softclip.code.tex
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\
-pgflibraryfillbetween.code.tex)))
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzli
-brarypgfplots.decorations.softclip.code.tex))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
@@ -1021,48 +1006,48 @@ Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen309
-\captionmargin=\dimen310
-\caption@leftmargin=\dimen311
-\caption@rightmargin=\dimen312
-\caption@width=\dimen313
-\caption@indent=\dimen314
-\caption@parindent=\dimen315
-\caption@hangindent=\dimen316
+\caption@tempdima=\dimen330
+\captionmargin=\dimen331
+\caption@leftmargin=\dimen332
+\caption@rightmargin=\dimen333
+\caption@width=\dimen334
+\caption@indent=\dimen335
+\caption@parindent=\dimen336
+\caption@hangindent=\dimen337
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count372
-\c@continuedfloat=\count373
+\c@caption@flags=\count381
+\c@continuedfloat=\count382
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count374
+\c@subfigure=\count383
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count375
+\c@subtable=\count384
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.s
 ty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\@float@every@algorithm=\toks61
-\c@algorithm=\count376
+\@float@every@algorithm=\toks64
+\c@algorithm=\count385
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithm
 icx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count377
-\c@ALG@rem=\count378
-\c@ALG@nested=\count379
-\ALG@tlm=\skip87
-\ALG@thistlm=\skip88
-\c@ALG@Lnr=\count380
-\c@ALG@blocknr=\count381
-\c@ALG@storecount=\count382
-\c@ALG@tmpcounter=\count383
-\ALG@tmplength=\skip89
+\c@ALG@line=\count386
+\c@ALG@rem=\count387
+\c@ALG@nested=\count388
+\ALG@tlm=\skip88
+\ALG@thistlm=\skip89
+\c@ALG@Lnr=\count389
+\c@ALG@blocknr=\count390
+\c@ALG@storecount=\count391
+\c@ALG@tmpcounter=\count392
+\ALG@tmplength=\skip90
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudo
 code.sty
@@ -1084,68 +1069,86 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip90
-\thanksmargin=\skip91
-\droptitle=\skip92
+\thanksmarkwidth=\skip91
+\thanksmargin=\skip92
+\droptitle=\skip93
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3
 keys2e.sty
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-01-22 L3 programming layer (loader) 
+Package: expl3 2024-10-09 L3 programming layer (loader) 
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
 ftex.def
-File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count384
-\l__pdf_internal_box=\box92
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count393
+\l__pdf_internal_box=\box74
 ))
-Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count385
-\l__lipsum_a_int=\count386
-\l__lipsum_b_int=\count387
+\g__lipsum_par_int=\count394
+\l__lipsum_a_int=\count395
+\l__lipsum_b_int=\count396
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
-Package: lastpage 2023/10/14 v2.0e lastpage: 2.09 or 2e? (HMM)
+Package: lastpage 2024/07/07 v2.1c lastpage: 2.09 or 2e? (HMM)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.st
 y
-Package: lastpage2e 2023/10/14 v2.0e Decide which 2e lastpage version to use (H
+Package: lastpage2e 2024/07/07 v2.1c Decide which 2e lastpage version to use (H
 MM)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemoder
 n.sty
-Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count388
+Package: lastpagemodern 2024-07-07 v2.1c Refers to last page's name (HMM; JPG)
+\c@lastpagecount=\count397
 ) 
 )) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
-Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count389
-\mult@box=\box93
-\multicol@leftmargin=\dimen317
-\c@unbalance=\count390
-\c@collectmore=\count391
-\doublecol@number=\count392
-\multicoltolerance=\count393
-\multicolpretolerance=\count394
-\full@width=\dimen318
-\page@free=\dimen319
-\premulticols=\dimen320
-\postmulticols=\dimen321
-\multicolsep=\skip93
-\multicolbaselineskip=\skip94
-\partial@page=\box94
-\last@line=\box95
-\mc@boxedresult=\box96
-\maxbalancingoverflow=\dimen322
-\mult@rightbox=\box97
-\mult@grightbox=\box98
-\mult@firstbox=\box99
-\mult@gfirstbox=\box100
+Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
+\c@tracingmulticols=\count398
+\mult@box=\box75
+\multicol@leftmargin=\dimen338
+\c@unbalance=\count399
+\c@collectmore=\count400
+\doublecol@number=\count401
+\multicoltolerance=\count402
+\multicolpretolerance=\count403
+\full@width=\dimen339
+\page@free=\dimen340
+\premulticols=\dimen341
+\postmulticols=\dimen342
+\multicolsep=\skip94
+\multicolbaselineskip=\skip95
+\partial@page=\box76
+\last@line=\box77
+\mc@boxedresult=\box78
+\maxbalancingoverflow=\dimen343
+\mult@rightbox=\box79
+\mult@grightbox=\box80
+\mult@firstbox=\box81
+\mult@gfirstbox=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
 \@tempa=\box101
 \@tempa=\box102
 \@tempa=\box103
@@ -1164,98 +1167,74 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box116
 \@tempa=\box117
 \@tempa=\box118
-\@tempa=\box119
-\@tempa=\box120
-\@tempa=\box121
-\@tempa=\box122
-\@tempa=\box123
-\@tempa=\box124
-\@tempa=\box125
-\@tempa=\box126
-\@tempa=\box127
-\@tempa=\box128
-\@tempa=\box129
-\@tempa=\box130
-\@tempa=\box131
-\@tempa=\box132
-\@tempa=\box133
-\@tempa=\box134
-\@tempa=\box135
-\@tempa=\box136
-\c@minrows=\count395
-\c@columnbadness=\count396
-\c@finalcolumnbadness=\count397
-\last@try=\dimen323
-\multicolovershoot=\dimen324
-\multicolundershoot=\dimen325
-\mult@nat@firstbox=\box137
-\colbreak@box=\box138
-\mc@col@check@num=\count398
+\c@minrows=\count404
+\c@columnbadness=\count405
+\c@finalcolumnbadness=\count406
+\last@try=\dimen344
+\multicolovershoot=\dimen345
+\multicolundershoot=\dimen346
+\mult@nat@firstbox=\box119
+\colbreak@box=\box120
+\mc@col@check@num=\count407
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
-Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen326
-\ar@mcellbox=\box139
-\extrarowheight=\dimen327
-\NC@list=\toks62
-\extratabsurround=\skip95
-\backup@length=\skip96
-\ar@cellbox=\box140
+Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
+\col@sep=\dimen347
+\ar@mcellbox=\box121
+\extrarowheight=\dimen348
+\NC@list=\toks65
+\extratabsurround=\skip96
+\backup@length=\skip97
+\ar@cellbox=\box122
 )
-\TX@col@width=\dimen328
-\TX@old@table=\dimen329
-\TX@old@col=\dimen330
-\TX@target=\dimen331
-\TX@delta=\dimen332
-\TX@cols=\count399
-\TX@ftn=\toks63
+\TX@col@width=\dimen349
+\TX@old@table=\dimen350
+\TX@old@col=\dimen351
+\TX@target=\dimen352
+\TX@delta=\dimen353
+\TX@cols=\count408
+\TX@ftn=\toks66
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/comment\comment.sty
 \CommentStream=\write4
 
 Excluding comment 'comment')
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
-Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip97
-\L@UnitsRaiseTextstyle=\skip98
-\L@UnitsRaiseScriptstyle=\skip99
-)
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.st
 y
-Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
  (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
-Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks64
-\verbatim@line=\toks65
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks67
+\verbatim@line=\toks68
 \verbatim@in@stream=\read3
 )
-\tcb@titlebox=\box141
-\tcb@upperbox=\box142
-\tcb@lowerbox=\box143
-\tcb@phantombox=\box144
-\c@tcbbreakpart=\count400
-\c@tcblayer=\count401
-\c@tcolorbox@number=\count402
-\l__tcobox_tmpa_box=\box145
-\l__tcobox_tmpa_dim=\dimen333
-\tcb@temp=\box146
-\tcb@temp=\box147
-\tcb@temp=\box148
-\tcb@temp=\box149
+\tcb@titlebox=\box123
+\tcb@upperbox=\box124
+\tcb@lowerbox=\box125
+\tcb@phantombox=\box126
+\c@tcbbreakpart=\count409
+\c@tcblayer=\count410
+\c@tcolorbox@number=\count411
+\l__tcobox_tmpa_box=\box127
+\l__tcobox_tmpa_dim=\dimen354
+\tcb@temp=\box128
+\tcb@temp=\box129
+\tcb@temp=\box130
+\tcb@temp=\box131
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbraster.co
 de.tex
-Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
-\c@tcbrastercolumn=\count403
-\c@tcbrasterrow=\count404
-\c@tcbrasternum=\count405
-\c@tcbraster=\count406
+Library (tcolorbox): 'tcbraster.code.tex' version '6.4.1'
+\c@tcbrastercolumn=\count412
+\c@tcbrasterrow=\count413
+\c@tcbrasternum=\count414
+\c@tcbraster=\count415
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.cod
 e.tex
-Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+Library (tcolorbox): 'tcbskins.code.tex' version '6.4.1'
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.imag
 e.sty
@@ -1268,76 +1247,78 @@ Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryfi
 ll.image.code.tex
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box150
+\l__tikzfill_img_box=\box132
 ))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigs
 aw.code.tex
-Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.4.1'
 ))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakable
 .code.tex
-Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.4.1'
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/pdfcol\pdfcol.sty
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 )
 Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
-\tcb@testbox=\box151
-\tcb@totalupperbox=\box152
-\tcb@totallowerbox=\box153
+\tcb@testbox=\box133
+\tcb@totalupperbox=\box134
+\tcb@totallowerbox=\box135
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbhooks.cod
 e.tex
-Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.4.1'
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbtheorems.
 code.tex
-Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.4.1'
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbfitting.c
 ode.tex
-Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
-\tcbfitdim=\dimen334
-\tcb@lowerfitdim=\dimen335
-\tcb@upperfitdim=\dimen336
-\tcb@cur@hbadness=\count407
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.4.1'
+\tcbfitdim=\dimen355
+\tcb@lowerfitdim=\dimen356
+\tcb@upperfitdim=\dimen357
+\tcb@cur@hbadness=\count416
 ))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
-Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
-\everycr=\toks66
-\minrowclearance=\skip100
-\rownum=\count408
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+\everycr=\toks69
+\minrowclearance=\skip98
+\rownum=\count417
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
 y
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip101
-\multirow@cntb=\count409
-\multirow@dima=\skip102
-\bigstrutjot=\dimen337
+\multirow@colwidth=\skip99
+\multirow@cntb=\count418
+\multirow@dima=\skip100
+\bigstrutjot=\dimen358
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count410
-\lst@gtempboxa=\box154
-\lst@token=\toks67
-\lst@length=\count411
-\lst@currlwidth=\dimen338
-\lst@column=\count412
-\lst@pos=\count413
-\lst@lostspace=\dimen339
-\lst@width=\dimen340
-\lst@newlines=\count414
-\lst@lineno=\count415
-\lst@maxwidth=\dimen341
+\lst@mode=\count419
+\lst@gtempboxa=\box136
+\lst@token=\toks70
+\lst@length=\count420
+\lst@currlwidth=\dimen359
+\lst@column=\count421
+\lst@pos=\count422
+\lst@lostspace=\dimen360
+\lst@width=\dimen361
+\lst@newlines=\count423
+\lst@lineno=\count424
+\lst@maxwidth=\dimen362
 
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count416
-\lst@skipnumbers=\count417
-\lst@framebox=\box155
-)
-(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2023/02/27 1.9 listings configuration
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count425
+\lst@skipnumbers=\count426
+\lst@framebox=\box137
+) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
+g
+File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
-Package: listings 2023/02/27 1.9 (Carsten Heinz)
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.st
 y
@@ -1353,38 +1334,38 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.
 sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
-\collectedbox=\box156
+\collectedbox=\box138
 )
-\tc@llx=\dimen342
-\tc@lly=\dimen343
-\tc@urx=\dimen344
-\tc@ury=\dimen345
+\tc@llx=\dimen363
+\tc@lly=\dimen364
+\tc@urx=\dimen365
+\tc@ury=\dimen366
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.de
 f
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen346
-\adjbox@Height=\dimen347
-\adjbox@Depth=\dimen348
-\adjbox@Totalheight=\dimen349
-\adjbox@pwidth=\dimen350
-\adjbox@pheight=\dimen351
-\adjbox@pdepth=\dimen352
-\adjbox@ptotalheight=\dimen353
+\adjbox@Width=\dimen367
+\adjbox@Height=\dimen368
+\adjbox@Depth=\dimen369
+\adjbox@Totalheight=\dimen370
+\adjbox@pwidth=\dimen371
+\adjbox@pheight=\dimen372
+\adjbox@pdepth=\dimen373
+\adjbox@ptotalheight=\dimen374
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.st
 y
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count418
+\c@checkoddpage=\count427
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box157
-\sift@deathcycles=\count419
-\@vwid@loff=\dimen354
-\@vwid@roff=\dimen355
+\@vwid@box=\box139
+\sift@deathcycles=\count428
+\@vwid@loff=\dimen375
+\@vwid@roff=\dimen376
 )) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\wasysym.sty
 Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 \symwasy=\mathgroup9
@@ -1393,8 +1374,197 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 ) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen377
+\WF@size=\dimen378
+\c@WF@wrappedlines=\count429
+\WF@box=\box140
+\WF@everypar=\toks71
+Package: wrapfig 2003/01/31  v 3.6
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
+\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
+\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
+\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
+\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.callouts.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
+\pgflibraryshapes.callouts.code.tex))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes
+\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box141
+\pgfnodeparttwobox=\box142
+\pgfnodepartthreebox=\box143
+\pgfnodepartfourbox=\box144
+\pgfnodeparttwentybox=\box145
+\pgfnodepartnineteenbox=\box146
+\pgfnodeparteighteenbox=\box147
+\pgfnodepartseventeenbox=\box148
+\pgfnodepartsixteenbox=\box149
+\pgfnodepartfifteenbox=\box150
+\pgfnodepartfourteenbox=\box151
+\pgfnodepartthirteenbox=\box152
+\pgfnodeparttwelvebox=\box153
+\pgfnodepartelevenbox=\box154
+\pgfnodeparttenbox=\box155
+\pgfnodepartninebox=\box156
+\pgfnodeparteightbox=\box157
+\pgfnodepartsevenbox=\box158
+\pgfnodepartsixbox=\box159
+\pgfnodepartfivebox=\box160
+)))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen379
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box161
+\pgf@layerboxsaved@background=\box162
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarypetri.code.tex
+File: tikzlibrarypetri.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.shapes.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.shapes.code.tex))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.text.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.text.code.tex
+\pgf@lib@dec@text@box=\box163
+)
+\tikz@lib@dec@te@box=\box164
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.fractals.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.fractals.code.tex))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarydecorations.footprints.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+tions\pgflibrarydecorations.footprints.code.tex))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryspy.code.tex
+File: tikzlibraryspy.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\tikz@lib@spybox=\box165
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparen
+t.sty
+Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparen
+t-nometadata.sty
+Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
+ stack (HO)
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+))) (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikz-cd.st
+y
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/tikz-cd\tikzlibrarycd.
+code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen380
+\pgfarrowlength=\dimen381
+\pgfarrowwidth=\dimen382
+\pgfarrowlinewidth=\dimen383
+)))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzli
+brarypgfplots.fillbetween.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\
+tikzlibraryfillbetween.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+kz/libraries\tikzlibraryintersections.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+raryintersections.code.tex
+\pgf@intersect@solutions=\count430
+))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\
+tikzlibrarydecorations.softclip.code.tex
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/pgfcontrib\
+pgflibraryfillbetween.code.tex)))
+(C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzli
+brarypgfplots.decorations.softclip.code.tex))
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
+File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/regexpatch\regexpatch.
 sty
@@ -1402,43 +1572,43 @@ Package: regexpatch 2021/03/21 v0.2f Extending etoolbox patching commands
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
 se.sty
-Package: xparse 2023-10-10 L3 Experimental document command parser
-))) (main.aux)
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 452.
+LaTeX Font Info:    ... okay on input line 452.
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count420
-\scratchdimen=\dimen356
-\scratchbox=\box158
-\nofMPsegments=\count421
-\nofMParguments=\count422
-\everyMPshowfont=\toks68
-\MPscratchCnt=\count423
-\MPscratchDim=\dimen357
-\MPnumerator=\count424
-\makeMPintoPDFobject=\count425
-\everyMPtoPDFconversion=\toks69
+\scratchcounter=\count431
+\scratchdimen=\dimen384
+\scratchbox=\box166
+\nofMPsegments=\count432
+\nofMParguments=\count433
+\everyMPshowfont=\toks72
+\MPscratchCnt=\count434
+\MPscratchDim=\dimen385
+\MPnumerator=\count435
+\makeMPintoPDFobject=\count436
+\everyMPtoPDFconversion=\toks73
 )
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
 base.sty
@@ -1450,7 +1620,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 4.
+Package hyperref Info: Link coloring ON on input line 452.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1492,160 +1662,102 @@ Package hyperref Info: Link coloring ON on input line 4.
 
 Couldn't patch \deferred@thm@head!
 Package pgfplots notification 'compat/show suggested version=true': you might b
-enefit from \pgfplotsset{compat=1.18} (current compat level: 1.16).
+enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count426
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
-
+\c@lstlisting=\count437
+LaTeX Font Info:    Trying to load font information for U+msa on input line 460
+.
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 460
+.
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 22
-.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 46
+0.
 
 (C:\Users\dpbird\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-Underfull \hbox (badness 10000) in alignment at lines 22--28
+Underfull \hbox (badness 10000) in alignment at lines 460--466
 [] [] [] 
  []
+
+
 
 [1
 
 {C:/Users/dpbird/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-(instructions.tex) [2] (qs-opt.tex
-Overfull \hbox (17.98454pt too wide) detected at line 1
-\OT1/cmr/bx/n/17.28 1  Optimization, Regularization, and Modeling (8 points)  
- []
+
+[2]
 
 [3
 
-]) [4
-
-] (qs-logreg.tex [5
-
-]) [6
-
-] (qs-neuralnets.tex
-Overfull \hbox (8.74695pt too wide) detected at line 66
-[]
+]
+Overfull \hbox (2.9329pt too wide) in paragraph at lines 613--614
+[]\OT1/cmr/bx/n/12 True or False: \OT1/cmr/m/n/12 The for-ward pro-cess of a di
+f-fu-sion model \OT1/cmr/m/it/12 and \OT1/cmr/m/n/12 the (learned)
  []
 
 
-Overfull \hbox (11.35802pt too wide) in paragraph at lines 10--68
-[]$[]$ $[]$ 
- []
 
-[7
-
-] [8
+[4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
-
- []
-
-) [9] (qs-theory.tex
-<figures/pac-narwhal.png, id=117, 587.19376pt x 316.18124pt>
-File: figures/pac-narwhal.png Graphic file (type png)
-<use figures/pac-narwhal.png>
-Package pdftex.def Info: figures/pac-narwhal.png  used on input line 9.
-(pdftex.def)             Requested size: 234.8775pt x 126.47025pt.
- [10
-
- <./figures/pac-narwhal.png>]) [11
-
-] (qs-societal.tex
-[12
-
-] [13
-
-]) [14
-
-] [15
-
-
-] [16
-
-] [17
-
-] [18
+[5
 
 ]
-This exam contains 5 questions with 10 parts, 25 subparts, and 0 subsubparts.
-This exam has a total of 48 points.
+This exam contains 4 questions with 11 parts, 0 subparts, and 0 subsubparts.
+This exam has a total of 14 points.
 This exam has a total of 0 bonus points.
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (main.aux)
  ***********
-LaTeX2e <2023-11-01> patch level 1
+LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2021/03/21>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CD9899D14B48DF15664F94CF0D1B5612;906.
+(rerunfilecheck)             Checksum: 00E06C1A2577D0CAF0DC76813E21DA46;414.
  ) 
 Here is how much of TeX's memory you used:
- 45645 strings out of 474541
- 1057109 string characters out of 5743953
- 1945978 words of memory out of 5000000
- 67019 multiletter control sequences out of 15000+600000
- 580099 words of font info for 119 fonts, out of 8000000 for 9000
+ 48675 strings out of 473896
+ 1153414 string characters out of 5725968
+ 1939190 words of memory out of 5000000
+ 70642 multiletter control sequences out of 15000+600000
+ 567237 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,12n,134p,3866b,1265s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,10n,131p,3839b,1031s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\dpbird\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi720\was
 y10.pk> <C:\Users\dpbird\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\tcrm1200.pk><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmbx8.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/dpbird/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dpbird/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/dpbird
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Use
-rs/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmmib10.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cmextra/cmmib8.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dpbird/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/dpbird/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/dpbird/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/dpbird
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/User
-s/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmti12.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/dpbird/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/dpbird/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 299137 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/dpbird/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/dpbird/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Us
+ers/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cm
+mib6.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cmextra/cmmib8.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><C:/Users/dpbird/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/dpbird/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dpbird/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/dpbird/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users
+/dpbird/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb>
+Output written on main.pdf (5 pages, 175257 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 66 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 175 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
