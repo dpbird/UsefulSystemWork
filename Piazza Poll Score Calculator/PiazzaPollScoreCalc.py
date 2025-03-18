@@ -13,7 +13,16 @@ def getAndrewEmail(emails):
 
 
 
-def generatePollResults(polls, outputCSV, requiredPercent):
+def generatePollResults(polls, outputCSV, requiredPercent, missedPolls = None):
+    missed = None
+    if missedPolls != None:
+        missed = pd.read_csv(missedPolls)
+        missed = missed[["Andrew Email", "Poll Number"]].set_index("Andrew Email")
+        # print(missed.head(4))
+        # print(missed[missed['Poll Number'] == 'poll11'])
+
+    
+    
     for poll in polls:
         pollName = poll.split("-")[2]
         polldf = pd.read_csv(f"polls/{poll}")
@@ -26,7 +35,14 @@ def generatePollResults(polls, outputCSV, requiredPercent):
         polldf["Andrew Email"] = polldf["emails"].map(lambda x: getAndrewEmail(x))
         polldf = polldf.drop(["emails", "vote", "name"], axis=1).set_index("Andrew Email")
         polldf[f"{pollName}"] = 1 
+        print(pollName)
+        
         outputCSV[f"{pollName}"] = polldf[f"{pollName}"]
+        
+        if missed != None:
+            # if you have a 'missed' sheet then account for the missed polls for the students there
+            outputCSV.loc[missed[missed['Poll Number'] == pollName.lower()].index ,pollName] = 1
+        
         outputCSV = outputCSV.fillna(0)
 
         outputCSV["Total Poll Score"] += outputCSV[f"{pollName}"]
@@ -42,7 +58,9 @@ def generatePollResults(polls, outputCSV, requiredPercent):
 
 if __name__ == "__main__":
     requiredPercent = None
-    
+    missedPollsFile = "missedpolls/missedpolls.csv"
+
+
     rosterCSV = os.listdir("roster")[0]
     roster = pd.read_csv(f"roster/{rosterCSV}")
     outputCSV = roster[["Last Name","Preferred/First Name","Email"]].set_index("Email")
@@ -50,6 +68,14 @@ if __name__ == "__main__":
 
     polls = os.listdir('polls')
 
-    generatePollResults(polls, outputCSV, requiredPercent)
+
+    
+
+
+
+    if os.path.isfile(missedPollsFile):
+        generatePollResults(polls, outputCSV, requiredPercent, missedPollsFile)
+    else:
+        generatePollResults(polls, outputCSV, requiredPercent)
 
 
