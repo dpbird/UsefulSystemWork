@@ -1,12 +1,206 @@
-$n_1, n_2, \cdots, n_w$
+$\Mv_D$, i.e. no causal attention
 
-$$n_1, n_2, \cdots, n_w$$
 
-That is simple!
-\Oc
 
-\Zb
 
-\pv
 
-\Jv
+$\Mv_C$, i.e. regular causal attention
+
+
+
+
+
+
+$\Mv_D$, i.e. no causal attention
+
+
+
+
+
+
+
+
+B, C, D
+
+
+
+
+
+
+
+the true data distribution $q_0(\xv_0)$
+
+
+
+
+
+
+
+The latent vectors $\xv_t$ are of the same dimension as the generated image $\xv_0$
+
+
+
+
+
+
+
+
+$p_{\theta}(\xv_{t-1} \mid \xv_t) \sim \Nc( \text{UNet}_{\theta}(\xv_t, t), \sigma_t \Iv) $
+
+    Note: the other more complicated answers are also acceptable (e.g. using UNet to approximate $\xv_0$ or $\epsilonv$. 
+
+
+
+
+
+
+
+
+
+encoder / decoder / sample
+
+
+
+
+
+
+
+
+
+few-shot ICL
+
+
+
+
+
+
+
+
+
+zero-shot learning
+
+
+
+
+
+
+
+
+few-shot SFT, since we're doing instruction fine-tuning on summarization
+
+
+
+
+
+
+
+
+
+False, humans wrote the prompt and the response
+
+
+
+
+
+
+
+
+
+
+False, DPO does not train an explicit reward model.
+
+
+
+
+
+
+
+
+
+$\Av^{(l)}$ is $r \times d_{ff}$ \\
+    $\Bv^{(l)}$ is $d_{model} \times r$
+
+
+
+
+
+
+
+
+
+
+Hot swap the AB parameters into a regular linear layer $y = Wz + b$ where $W = W_0 + AB$.
+
+
+
+
+
+
+
+
+
+
+Higher training loss. By reducing the number of parameters in this way, the model is less likely to be able to fit to the finetuning data. As well, the layers likely will need to adapt in different ways, so the additional parameters may not help at all. 
+
+
+
+
+
+
+
+
+Latent diffusion model
+
+
+
+
+
+
+
+
+Dall-E
+
+
+
+
+
+
+
+
+
+Parti
+
+
+
+
+
+
+
+
+
+False, the hyperparameters dictate which timesteps are modified and which are not.
+
+
+
+
+
+
+
+
+True
+
+
+
+
+
+
+False
+
+
+
+
+
+
+
+
+False, the larger model typically need fewer passes than the smaller model
