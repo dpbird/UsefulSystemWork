@@ -132,7 +132,9 @@ gradebook = hw2.addQuizScore(1, "quiz/Quiz_Week_1_scores.csv")
 # gracedays = hw3.updateGraceDays()
 # gradebook = hw3.updateGradebook()
 # print(gracedays.head(20))
-print(gradebook.head(20))
+gracedays.to_csv("gracedays.csv")
+gradebook.to_csv("gradebook.csv")
+
      
 
      
