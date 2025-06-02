@@ -124,6 +124,20 @@ gracedays = hw2.updateGraceDays()
 gradebook = hw2.updateGradebook()
 
 gradebook = hw2.addQuizScore(1, "quiz/Quiz_Week_1_scores.csv")
+gradebook = hw2.addQuizScore(2, "quiz/Quiz_Week_2_scores.csv")
+
+hw3 = hwData(3, "homework/Homework_3_Written_scores.csv", "homework/Homework_3_Programming_scores.csv",
+             "roster/CourseRosters_M25_Selected_05.27.2025.csv", gracedays, gradebook)
+gracedays = hw3.updateGraceDays()
+gradebook = hw3.updateGradebook()
+
+hw4 = hwData(4, "homework/Homework_4_Written_scores.csv", "homework/Homework_4_Programming_scores.csv",
+             "roster/CourseRosters_M25_Selected_05.27.2025.csv", gracedays, gradebook)
+gracedays = hw4.updateGraceDays()
+gradebook = hw4.updateGradebook()
+
+
+
 
 
 
