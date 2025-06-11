@@ -46,58 +46,47 @@ def graceDaysUsed(maxHour):
 
     return graceDays
 
-
-class hwData:
-     def __init__(self, hwNum: int, writtenLoc: str, progLoc: str, rosterLoc: str, gracedays: pd.DataFrame = None, gradebook: pd.DataFrame = None):
-          self.hwNum = hwNum
-          self.writtenLoc = writtenLoc
-          self.progLoc = progLoc
+class genGradebookGracedays:
+     def __init__(self, rosterLoc: str):
           self.roster = pd.read_csv(rosterLoc)
-          
-          self.writtenData = pd.read_csv(writtenLoc).set_index("Email")
-          if self.progLoc != None:
-               self.progData = pd.read_csv(progLoc).set_index("Email")
-          self.gradebook = gradebook
-          self.gracedays = gracedays
+          self.gradebook = self.roster[["Last Name", "Preferred/First Name", "Email"]].set_index("Email")
+          self.gracedays = self.roster[["Last Name", "Preferred/First Name", "Email"]].set_index("Email")
+          self.gracedays["Remaining"] = 8   #Update this value if initial grace days is something else!
 
-     def updateGraceDays(self) -> pd.DataFrame:
-          if self.gracedays is None:
-               self.gracedays = self.roster[["Last Name", "Preferred/First Name", "Email"]].set_index("Email")
-               # If the initial grace days is something else, change this value!
-               self.gracedays["Remaining"] = 8
-               
-          self.gracedays[f"hw{self.hwNum}WriteLate"] = self.writtenData["Lateness (H:M:S)"].fillna("00:00:00")
-          if self.progLoc != None:
-               self.gracedays[f"hw{self.hwNum}ProgLate"] = self.progData["Lateness (H:M:S)"].fillna("00:00:00")
-               self.gracedays[f"hw{self.hwNum}Latness"] = self.gracedays[[f"hw{self.hwNum}WriteLate", f"hw{self.hwNum}ProgLate"]].apply(lambda x: graceDaysUsed(maxLateness(x[f"hw{self.hwNum}WriteLate"], x[f"hw{self.hwNum}ProgLate"])[0]), axis=1)
+     def updateGraceDays(self, hwNum: int, writtenLoc: str, progLoc: str = None) -> pd.DataFrame:
+          writtenData = pd.read_csv(writtenLoc).set_index("Email")
+          self.gracedays[f"hw{hwNum}WriteLate"] = writtenData["Lateness (H:M:S)"].fillna("00:00:00")
+
+          if progLoc != None:
+               progData = pd.read_csv(progLoc).set_index("Email")
+               self.gracedays[f"hw{hwNum}ProgLate"] = progData["Lateness (H:M:S)"].fillna("00:00:00")
+               self.gracedays[f"hw{hwNum}Latness"] = self.gracedays[[f"hw{hwNum}WriteLate", f"hw{hwNum}ProgLate"]].apply(lambda x: graceDaysUsed(maxLateness(x[f"hw{hwNum}WriteLate"], x[f"hw{hwNum}ProgLate"])[0]), axis=1)
           else:
-               self.gracedays[f"hw{self.hwNum}Latness"] = self.gracedays[[f"hw{self.hwNum}WriteLate"]].apply(lambda x: graceDaysUsed(maxLateness(x[f"hw{self.hwNum}WriteLate"], None)[0]), axis = 1)
-          self.gracedays["Remaining"] = self.gracedays["Remaining"] - self.gracedays[f"hw{self.hwNum}Latness"]
+               self.gracedays[f"hw{hwNum}Latness"] = self.gracedays[[f"hw{hwNum}WriteLate"]].apply(lambda x: graceDaysUsed(maxLateness(x[f"hw{hwNum}WriteLate"], None)[0]), axis = 1)
+          self.gracedays["Remaining"] = self.gracedays["Remaining"] - self.gracedays[f"hw{hwNum}Latness"]
 
           # NEED TO ADD A PENALTY AND GRACE DAY UPDATE FOR STUDENTS WHO HIT NEGATIVE GRACE DAYS.
 
           return self.gracedays
      
-
-     def updateGradebook(self) -> pd.DataFrame:
-          if self.gradebook is None:
-               self.gradebook = self.roster[["Last Name", "Preferred/First Name", "Email"]].set_index("Email")
+     def updateGradebook(self, hwNum: int, writtenLoc: str, progLoc: str = None) -> pd.DataFrame:
+          writtenData = pd.read_csv(writtenLoc).set_index("Email")
+          self.gradebook[f"hw{hwNum}Write"] = writtenData["Total Score"].fillna(0)
+          writtenTotal = writtenData["Max Points"].iloc[1]
+          if (writtenData['Status'] == "Ungraded").any():
+               print(f"Warning some written submissions in hw {hwNum} are ungraded!!!") 
           
-          self.gradebook[f"hw{self.hwNum}Write"] = self.writtenData["Total Score"].fillna(0)
-          writtenTotal = self.writtenData["Max Points"].iloc[1]
-          if (self.writtenData['Status'] == "Ungraded").any():
-               print(f"Warning some written submissions in hw {self.hwNum} are ungraded!!!") 
+          if progLoc != None:
+               progData = pd.read_csv(progLoc).set_index("Email")
+               self.gradebook[f"hw{hwNum}Prog"] = progData["Total Score"].fillna(0)
+               progTotal = progData["Max Points"].iloc[1]
+               if (progData['Status'] == "Ungraded").any():
+                    print(f"Warning some programming submissions in hw {hwNum} are ungraded!!!") 
           
-          if self.progLoc != None:
-               self.gradebook[f"hw{self.hwNum}Prog"] = self.progData["Total Score"].fillna(0)
-               progTotal = self.progData["Max Points"].iloc[1]
-               if (self.progData['Status'] == "Ungraded").any():
-                    print(f"Warning some programming submissions in hw {self.hwNum} are ungraded!!!") 
-          
-               self.gradebook[f"hw{self.hwNum} Percent"] = 100 * (self.gradebook[f"hw{self.hwNum}Write"] + self.gradebook[f"hw{self.hwNum}Prog"])/(writtenTotal + progTotal)
+               self.gradebook[f"hw{hwNum} Percent"] = 100 * (self.gradebook[f"hw{hwNum}Write"] + self.gradebook[f"hw{hwNum}Prog"])/(writtenTotal + progTotal)
           
           else:
-               self.gradebook[f"hw{self.hwNum} Percent"] = 100 * (self.gradebook[f"hw{self.hwNum}Write"])/writtenTotal
+               self.gradebook[f"hw{hwNum} Percent"] = 100 * (self.gradebook[f"hw{hwNum}Write"])/writtenTotal
 
           return self.gradebook
      
@@ -126,12 +115,13 @@ class hwData:
                print(f"Warning some exam submissions in exam {examNum} are ungraded!!!") 
 
           return self.gradebook
-          
+     
+
 
 
 if __name__ == "__main__":
 
-     rosterLoc = "roster/CourseRosters_M25_Selected_05.27.2025.csv"
+     rosterLoc = "roster/CourseRosters_M25_Selected_06.10.2025.csv"
                
      hw1WriteLoc = "homework/Homework_1_Written_scores.csv"
      hw1ProgLoc = "homework/Homework_1_Programming_scores.csv" # Can be None if no programming
@@ -165,50 +155,41 @@ if __name__ == "__main__":
      exam2Loc = None   # Exam 2
 
                
-               
+     generated = genGradebookGracedays(rosterLoc)
+     
+     
+     homeworkCount = 5
+     for i in range(homeworkCount):
+          i += 1
+          print(f"Processing homework {i}!")
+          gradebook = generated.updateGradebook(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"])
+          gracedays = generated.updateGraceDays(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"])
 
-     hw1 = hwData(1, hw1WriteLoc, hw1ProgLoc,
-               rosterLoc)
-     gracedays = hw1.updateGraceDays()
-     gradebook = hw1.updateGradebook()
+     quizCount = 2
+     for i in range(quizCount):
+          i += 1
+          print(f"Processing quiz {i}!")
+          gradebook = generated.addQuizScore(i, globals()[f"quiz{i}Loc"])
 
-     hw2 = hwData(2, hw2WriteLoc, hw2ProgLoc,
-               rosterLoc, gracedays, gradebook)
-     gracedays = hw2.updateGraceDays()
-     gradebook = hw2.updateGradebook()
-
-     gradebook = hw2.addQuizScore(1, quiz1Loc)
-     gradebook = hw2.addQuizScore(2, quiz2Loc)
-
-     hw3 = hwData(3, hw3WriteLoc, hw3ProgLoc,
-               rosterLoc, gracedays, gradebook)
-     gracedays = hw3.updateGraceDays()
-     gradebook = hw3.updateGradebook()
-
-     gradebook = hw3.addExamScore(1, exam1Loc)
-
-     hw4 = hwData(4, hw4WriteLoc, hw4ProgLoc,
-               rosterLoc, gracedays, gradebook)
-     gracedays = hw4.updateGraceDays()
-     gradebook = hw4.updateGradebook()
-
-     gradebook = hw3.addExamScore(1, exam1Loc)
+     examCount = 1
+     for i in range(examCount):
+          i += 1
+          print(f"Processing exam {i}!")
+          gradebook = generated.addExamScore(i, globals()[f"exam{i}Loc"])
 
 
-     hw5 = hwData(5, hw5WriteLoc, hw5ProgLoc,
-                  rosterLoc, gracedays, gradebook)
-     gracedays = hw5.updateGraceDays()
-     gradebook = hw5.updateGradebook()
-
-     # hw4 = hwData(4, hw4WriteLoc, hw4ProgLoc,
-     #              rosterLoc, gracedays, gradebook)
-     # gracedays = hw4.updateGraceDays()
-     # gradebook = hw4.updateGradebook()
-
+     
+     
+     # gradebook = generated.updateGradebook(1, hw1WriteLoc, hw1ProgLoc)
+     # gracedays = generated.updateGradebook(1, hw1WriteLoc, hw1ProgLoc)
+     # gradebook = generated.updateGradebook(2, hw2WriteLoc, hw2ProgLoc)
+     # gracedays = generated.updateGradebook(2, hw2WriteLoc, hw2ProgLoc)
 
 
      gracedays.to_csv("gracedays.csv")
      gradebook.to_csv("gradebook.csv")
+
+
 
      
 
