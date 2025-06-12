@@ -47,11 +47,12 @@ def graceDaysUsed(maxHour):
     return graceDays
 
 class genGradebookGracedays:
-     def __init__(self, rosterLoc: str):
+     def __init__(self, rosterLoc: str, graceDayCount: int):
           self.roster = pd.read_csv(rosterLoc)
           self.gradebook = self.roster[["Last Name", "Preferred/First Name", "Email"]].set_index("Email")
           self.gracedays = self.roster[["Last Name", "Preferred/First Name", "Email"]].set_index("Email")
-          self.gracedays["Remaining"] = 8   #Update this value if initial grace days is something else!
+          self.gracedays["Remaining"] = graceDayCount 
+          self.gracedays["Penalties"] = ""  
 
      def updateGraceDays(self, hwNum: int, writtenLoc: str, progLoc: str = None) -> pd.DataFrame:
           writtenData = pd.read_csv(writtenLoc).set_index("Email")
@@ -66,6 +67,50 @@ class genGradebookGracedays:
           self.gracedays["Remaining"] = self.gracedays["Remaining"] - self.gracedays[f"hw{hwNum}Latness"]
 
           # NEED TO ADD A PENALTY AND GRACE DAY UPDATE FOR STUDENTS WHO HIT NEGATIVE GRACE DAYS.
+          late = self.gracedays[self.gracedays["Remaining"] < 0]
+          print(f"Submissions late: {len(late)}")
+
+          if len(late) > 0:
+               perDayPen = input("What is the penalty per day late? (e.g if the student loses 20 percent per day late, enter 0.2) \n(To manually adjust the grades type 'manual'):\n")
+               if perDayPen == 'manual':
+                    print("manual grade override selected!")
+               else:
+                    try:
+                         perDayPen = float(perDayPen)
+                         if(perDayPen < 0 or perDayPen > 1):
+                              print("penalty should be x where 0<=x<=1")
+                    except:
+                         print("Only options are numbers x where 0<=x<=1 or 'manual'")
+
+               for i in range(len(late)):
+                         
+                    response = input(f"(Y/N) Apply penalty to late penalty to Homework {hwNum} of {late["Preferred/First Name"].iloc[i]} {late["Last Name"].iloc[i]} ({late.index[i]})?:\n")
+                    if response.lower() == "y":
+                         print(f"Original Score: {self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"]}")
+                         if perDayPen == "manual":
+                              currentPen = input(f"Penalty percentage applied to Homework {hwNum} for {late["Preferred/First Name"].iloc[i]} who submitted {-late["Remaining"].iloc[i]} day(s) late? (Enter a value between 0 and 1, with 0.7 meaning the student will get 70% score):\n")
+                              self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] = self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] * float(currentPen)   
+                              if len(self.gracedays.loc[late.index[i], "Penalties"]) > 0:
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f", hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late" 
+                              else:
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f"hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late"                 
+                         else:
+                              self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] = self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] * (1+ perDayPen * late["Remaining"].iloc[i])
+                              if len(self.gracedays.loc[late.index[i], "Penalties"]) > 0:
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f", hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late" 
+                              else:
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f"hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late"
+                         print(f"Penalty Score: {self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"]}")
+                         self.gracedays.loc[late.index[i], "Remaining"] = 0
+
+
+                    elif response.lower() == "n":
+                         print("No penalty applied. Remaining grace days for this student set to 0")
+                         self.gracedays.loc[late.index[i], "Remaining"] = 0
+
+                    else:
+                         print("ERROR: Invalid response Y/N answers only.")
+
 
           return self.gracedays
      
@@ -121,7 +166,9 @@ class genGradebookGracedays:
 
 if __name__ == "__main__":
 
-     rosterLoc = "roster/CourseRosters_M25_Selected_06.10.2025.csv"
+     
+     graceDayCount = 8
+     rosterLoc = "roster/CourseRosters_M25_Selected_06.12.2025.csv"
                
      hw1WriteLoc = "homework/Homework_1_Written_scores.csv"
      hw1ProgLoc = "homework/Homework_1_Programming_scores.csv" # Can be None if no programming
@@ -155,7 +202,7 @@ if __name__ == "__main__":
      exam2Loc = None   # Exam 2
 
                
-     generated = genGradebookGracedays(rosterLoc)
+     generated = genGradebookGracedays(rosterLoc, graceDayCount)
      
      
      homeworkCount = 5
@@ -188,6 +235,36 @@ if __name__ == "__main__":
 
      gracedays.to_csv("gracedays.csv")
      gradebook.to_csv("gradebook.csv")
+
+     # gracedays["Remaining"] = gracedays["Remaining"] -2
+     
+     # late = gracedays["Remaining"] < 0
+     # print(late.head(10))
+     # gracedays["Penalties"] = ""
+     # gracedays["Penalties"] = gracedays.apply(lambda x: x["Penalties"] if x["Remaining"] >= 0 else x["Penalties"] + (f"hw1,{x["Remaining"]}"), axis=1)
+     # # print(gracedays.head(10))
+
+     # late = gracedays[gracedays["Remaining"] < 0]
+     # print(len(late))
+
+     # # print(late.head(10))
+     # # print(len(late))
+
+     # for i in range(len(late)):
+     #      # print(f"Apply penalty to late penalty to Homework 1 of {late["Preferred/First Name"]} {late["Last Name"]} ({late["Email"]})? (Y/N)")
+     #      response = input(f"(Y/N) Apply penalty to late penalty to Homework 1 of {late["Preferred/First Name"].iloc[i]} {late["Last Name"].iloc[i]} ({late.index[i]})?    ")
+     #      if response.lower() == "y":
+     #           print(f"Original Score: {gradebook.loc[late.index[i], "hw1 Percent"]}")
+     #           gradebook.loc[late.index[i], "hw1 Percent"] = gradebook.loc[late.index[i], "hw1 Percent"] * (1+0.2* late["Remaining"].iloc[i])
+     #           print(f"Penalty Score: {gradebook.loc[late.index[i], "hw1 Percent"]}")
+
+
+     #      elif response.lower() == "n":
+     #           continue
+
+     #      else:
+     #           print("ERROR: Invalid response Y/N answers only.")
+
 
 
 
