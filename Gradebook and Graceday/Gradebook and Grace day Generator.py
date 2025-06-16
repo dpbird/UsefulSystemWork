@@ -166,6 +166,9 @@ class genGradebookGracedays:
 
 if __name__ == "__main__":
 
+     '''------------------------'''
+     ''' Make your updates here '''
+     '''------------------------'''
      
      graceDayCount = 8
      rosterLoc = "roster/CourseRosters_M25_Selected_06.12.2025.csv"
@@ -185,11 +188,11 @@ if __name__ == "__main__":
      hw5WriteLoc = "homework/Homework_5_Written_scores.csv"
      hw5ProgLoc = "homework/Homework_5_Programming_scores.csv" # Can be None if no programming     
 
-     hw6WriteLoc = None
-     hw6ProgLoc = None # Can be None if no programming     
+     hw6WriteLoc = "homework/Homework_6_Written_scores.csv"
+     hw6ProgLoc = "homework/Homework_6_Programming_scores.csv" # Can be None if no programming     
 
-     hw7WriteLoc = None
-     hw7ProgLoc = None # Can be None if no programming     
+     hw7WriteLoc = "homework/Homework_7_Written_scores.csv"
+     hw7ProgLoc = "homework/Homework_7_Programming_scores.csv" # Can be None if no programming     
 
      hw8WriteLoc = None
      hw8ProgLoc = None # Can be None if no programming     
@@ -205,7 +208,7 @@ if __name__ == "__main__":
      generated = genGradebookGracedays(rosterLoc, graceDayCount)
      
      
-     homeworkCount = 5
+     homeworkCount = 7
      for i in range(homeworkCount):
           i += 1
           print(f"Processing homework {i}!")
