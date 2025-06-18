@@ -26,5 +26,7 @@ The program will generate grace days and will also prompt you if you want to pen
 - (Manual Mode Only:) "Penalty percentage applied to Homework X for STUDENT NAME who submitted Y day(s) late?
     - Give it a value between 0 and 1 which represents the percentage which will be applied. If you put 0.7 this means that the student will get 70% of their score.
 
+NOTE: The current system has a built in 30 minute grace window, this means students can submit up to 30 minutes late, and it will still count as if the submission was made on time.
+
 Output:
 It will output the files as gradebook.csv and gracedays.csv
