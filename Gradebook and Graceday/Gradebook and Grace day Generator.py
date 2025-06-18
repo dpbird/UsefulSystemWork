@@ -200,7 +200,7 @@ if __name__ == "__main__":
      quiz1Loc = "quiz/Quiz_Week_1_scores.csv"
      quiz2Loc = "quiz/Quiz_Week_2_scores.csv"
      exam1Loc = "quiz/Exam_1_scores.csv"   # Exam 1 
-     quiz3Loc = None 
+     quiz3Loc = "quiz/Quiz_3_scores.csv"
      quiz4Loc = None
      exam2Loc = None   # Exam 2
 
@@ -211,20 +211,26 @@ if __name__ == "__main__":
      homeworkCount = 7
      for i in range(homeworkCount):
           i += 1
+          print("\n------------------------")
           print(f"Processing homework {i}!")
+          print("------------------------\n")
           gradebook = generated.updateGradebook(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"])
           gracedays = generated.updateGraceDays(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"])
 
-     quizCount = 2
+     quizCount = 3
      for i in range(quizCount):
           i += 1
+          print("\n------------------------")
           print(f"Processing quiz {i}!")
+          print("------------------------\n")
           gradebook = generated.addQuizScore(i, globals()[f"quiz{i}Loc"])
 
      examCount = 1
      for i in range(examCount):
           i += 1
+          print("\n------------------------")
           print(f"Processing exam {i}!")
+          print("------------------------\n")
           gradebook = generated.addExamScore(i, globals()[f"exam{i}Loc"])
 
 
