@@ -194,21 +194,21 @@ if __name__ == "__main__":
      hw7WriteLoc = "homework/Homework_7_Written_scores.csv"
      hw7ProgLoc = "homework/Homework_7_Programming_scores.csv" # Can be None if no programming     
 
-     hw8WriteLoc = None
-     hw8ProgLoc = None # Can be None if no programming     
+     hw8WriteLoc = "homework/Homework_8_Written_scores.csv"
+     hw8ProgLoc = "homework/Homework_8_Programming_scores.csv" # Can be None if no programming     
 
      quiz1Loc = "quiz/Quiz_Week_1_scores.csv"
      quiz2Loc = "quiz/Quiz_Week_2_scores.csv"
      exam1Loc = "quiz/Exam_1_scores.csv"   # Exam 1 
      quiz3Loc = "quiz/Quiz_3_scores.csv"
-     quiz4Loc = None
-     exam2Loc = None   # Exam 2
+     quiz4Loc = "quiz/Quiz_4_scores.csv"
+     exam2Loc = "quiz/Final_Exam_scores.csv"   # Exam 2
 
                
      generated = genGradebookGracedays(rosterLoc, graceDayCount)
      
      
-     homeworkCount = 7
+     homeworkCount = 8
      for i in range(homeworkCount):
           i += 1
           print("\n------------------------")
@@ -217,7 +217,7 @@ if __name__ == "__main__":
           gradebook = generated.updateGradebook(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"])
           gracedays = generated.updateGraceDays(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"])
 
-     quizCount = 3
+     quizCount = 4
      for i in range(quizCount):
           i += 1
           print("\n------------------------")
@@ -225,7 +225,7 @@ if __name__ == "__main__":
           print("------------------------\n")
           gradebook = generated.addQuizScore(i, globals()[f"quiz{i}Loc"])
 
-     examCount = 1
+     examCount = 2
      for i in range(examCount):
           i += 1
           print("\n------------------------")
@@ -234,45 +234,11 @@ if __name__ == "__main__":
           gradebook = generated.addExamScore(i, globals()[f"exam{i}Loc"])
 
 
-     
-     
-     # gradebook = generated.updateGradebook(1, hw1WriteLoc, hw1ProgLoc)
-     # gracedays = generated.updateGradebook(1, hw1WriteLoc, hw1ProgLoc)
-     # gradebook = generated.updateGradebook(2, hw2WriteLoc, hw2ProgLoc)
-     # gracedays = generated.updateGradebook(2, hw2WriteLoc, hw2ProgLoc)
-
 
      gracedays.to_csv("gracedays.csv")
      gradebook.to_csv("gradebook.csv")
 
-     # gracedays["Remaining"] = gracedays["Remaining"] -2
-     
-     # late = gracedays["Remaining"] < 0
-     # print(late.head(10))
-     # gracedays["Penalties"] = ""
-     # gracedays["Penalties"] = gracedays.apply(lambda x: x["Penalties"] if x["Remaining"] >= 0 else x["Penalties"] + (f"hw1,{x["Remaining"]}"), axis=1)
-     # # print(gracedays.head(10))
 
-     # late = gracedays[gracedays["Remaining"] < 0]
-     # print(len(late))
-
-     # # print(late.head(10))
-     # # print(len(late))
-
-     # for i in range(len(late)):
-     #      # print(f"Apply penalty to late penalty to Homework 1 of {late["Preferred/First Name"]} {late["Last Name"]} ({late["Email"]})? (Y/N)")
-     #      response = input(f"(Y/N) Apply penalty to late penalty to Homework 1 of {late["Preferred/First Name"].iloc[i]} {late["Last Name"].iloc[i]} ({late.index[i]})?    ")
-     #      if response.lower() == "y":
-     #           print(f"Original Score: {gradebook.loc[late.index[i], "hw1 Percent"]}")
-     #           gradebook.loc[late.index[i], "hw1 Percent"] = gradebook.loc[late.index[i], "hw1 Percent"] * (1+0.2* late["Remaining"].iloc[i])
-     #           print(f"Penalty Score: {gradebook.loc[late.index[i], "hw1 Percent"]}")
-
-
-     #      elif response.lower() == "n":
-     #           continue
-
-     #      else:
-     #           print("ERROR: Invalid response Y/N answers only.")
 
 
 
