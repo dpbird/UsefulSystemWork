@@ -31,7 +31,6 @@ def maxLateness(time1, time2, time3):
             maxLateSeconds = lateSeconds1
      if time3 != None:
           time3 = time3.split(":")
-          print(time3)
           hour3 = int(time3[0])
           minute3 = int(time3[1])
           second3 = int(time3[2])
@@ -86,7 +85,6 @@ class genGradebookGracedays:
                onlineData = pd.read_csv(onlineLoc).set_index("Email")
                self.gracedays[f"hw{hwNum}ProgLate"] = progData["Lateness (H:M:S)"].fillna("00:00:00")
                self.gracedays[f"hw{hwNum}OnlineLate"] = onlineData["Lateness (H:M:S)"].fillna("00:00:00")
-               print(self.gracedays[f"hw{hwNum}OnlineLate"].head(20))
                self.gracedays[f"hw{hwNum}Latness"] = self.gracedays[[f"hw{hwNum}WriteLate", f"hw{hwNum}ProgLate", f"hw{hwNum}OnlineLate"]].apply(lambda x: graceDaysUsed(maxLateness(x[f"hw{hwNum}WriteLate"], x[f"hw{hwNum}ProgLate"], x[f"hw{hwNum}OnlineLate"])[0]), axis=1)
 
 
@@ -225,9 +223,9 @@ if __name__ == "__main__":
      graceDayCount = 6
      rosterLoc = "roster/CourseRoster_S26_07280_1_02.24.2026.csv"
                
-     hw0WriteLoc = "homework/HW0_online__scores.csv"
-     hw0ProgLoc = None # Can be None if no programming  
-     hw0OnlineLoc = None # Can be None if no online
+     # hw0WriteLoc = "homework/HW0_online__scores.csv"
+     # hw0ProgLoc = None # Can be None if no programming  
+     # hw0OnlineLoc = None # Can be None if no online
      
      hw1WriteLoc = "homework/HW1_written__scores (1).csv"
      hw1ProgLoc = "homework/HW1_programming__scores (1).csv" # Can be None if no programming
@@ -269,9 +267,9 @@ if __name__ == "__main__":
      generated = genGradebookGracedays(rosterLoc, graceDayCount)
      
      
-     homeworkCount = 6
+     homeworkCount = 5
      for i in range(homeworkCount):
-          # i += 1 # Needs to be added back in if no homework 0!!!
+          i += 1 # Needs to be added back in if no homework 0!!!
           print("\n------------------------")
           print(f"Processing homework {i}!")
           print("------------------------\n")
