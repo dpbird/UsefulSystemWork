@@ -259,6 +259,66 @@ if __name__ == "__main__":
                print("You did not enter a valid integer.")
                sys.exit()
 
+          homeworkDict = dict()
+
+          homework0Bool = input("Do you have a homework 0? (Y/N) ")
+          if homework0Bool == "Y":
+               homework0Bool = 0
+          elif homework0Bool == "N":
+               homework0Bool = 1
+          else:
+               print("Only Y/N answers accepted")
+
+          for i in range(homeworkCount):
+               homeworkNum = i + homework0Bool
+               currHomeworkFilesCount = input(f"How many components does homework {homeworkNum} have? [1/2/3] ")
+               try:
+                    currHomeworkFilesCount = int(currHomeworkFilesCount)
+                    if currHomeworkFilesCount > 3:
+                         sys.exit()
+                    if currHomeworkFilesCount < 1:
+                         sys.exit()
+               except:
+                    print("You did not enter a valid integer. Please choose between 1, 2, or 3")
+                    sys.exit()
+               filesThisHomework = []
+               fst = ["first", 'second', 'third']
+               fstCounter = 0
+               while currHomeworkFilesCount > 0:
+                    print("Files Found: ")
+                    if len(homeworkFiles) == 0:
+                         print("Error: All Homework files accounted for. Please try again.")
+                         sys.exit()
+                    for i, file in enumerate(homeworkFiles):
+                         print(f"{i}: {file}")
+
+                    try:
+                         chosenFileNum = int(input(f"Choose the {fst[fstCounter]} file which is part of homework {homeworkNum}. [For the first file listed, enter '0', for the second file listed, enter '1', etc]: "))
+                         chosenFile = homeworkFiles[chosenFileNum]
+                         homeworkDict[homeworkNum] = homeworkDict.get(homeworkNum, []) + [chosenFile]
+                    except:
+                         print(f"You did not enter a valid integer. Please choose between 0 and {len(homeworkFiles)}")
+                         sys.exit()
+
+                    homeworkFiles.pop(chosenFileNum)
+                    fstCounter += 1
+                    currHomeworkFilesCount -= 1
+               
+               # Process the grades for this homework: 
+
+
+          #      i += 1 # Needs to be added back in if no homework 0!!!
+          #      print("\n------------------------")
+          #      print(f"Processing homework {i}!")
+          #      print("------------------------\n")
+          #      gradebook = generated.updateGradebook(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"], globals()[f"hw{i}OnlineLoc"])
+          #      gracedays = generated.updateGraceDays(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"], globals()[f"hw{i}OnlineLoc"])
+
+
+               
+
+
+
 
 
      
