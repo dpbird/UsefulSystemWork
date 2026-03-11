@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import os
+import sys
 
 def maxLateness(time1, time2, time3):
      time1 = time1.split(":")
@@ -114,23 +116,23 @@ class genGradebookGracedays:
 
                for i in range(len(late)):
                          
-                    response = input(f"(Y/N) Apply penalty to late penalty to Homework {hwNum} of {late["Preferred/First Name"].iloc[i]} {late["Last Name"].iloc[i]} ({late.index[i]})?:\n")
+                    response = input(f"(Y/N) Apply penalty to late penalty to Homework {hwNum} of {late['Preferred/First Name'].iloc[i]} {late['Last Name'].iloc[i]} ({late.index[i]})?:\n")
                     if response.lower() == "y":
-                         print(f"Original Score: {self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"]}")
+                         print(f"Original Score: {self.gradebook.loc[late.index[i], f'hw{hwNum} Percent']}")
                          if perDayPen == "manual":
-                              currentPen = input(f"Penalty percentage applied to Homework {hwNum} for {late["Preferred/First Name"].iloc[i]} who submitted {-late["Remaining"].iloc[i]} day(s) late? (Enter a value between 0 and 1, with 0.7 meaning the student will get 70% score):\n")
+                              currentPen = input(f"Penalty percentage applied to Homework {hwNum} for {late['Preferred/First Name'].iloc[i]} who submitted {-late['Remaining'].iloc[i]} day(s) late? (Enter a value between 0 and 1, with 0.7 meaning the student will get 70% score):\n")
                               self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] = self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] * float(currentPen)   
                               if len(self.gracedays.loc[late.index[i], "Penalties"]) > 0:
-                                   self.gracedays.loc[late.index[i], "Penalties"] += f", hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late" 
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f", hw{hwNum} for {-late['Remaining'].iloc[i]} day(s) late" 
                               else:
-                                   self.gracedays.loc[late.index[i], "Penalties"] += f"hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late"                 
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f"hw{hwNum} for {-late['Remaining'].iloc[i]} day(s) late"                 
                          else:
                               self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] = self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"] * (1+ perDayPen * late["Remaining"].iloc[i])
                               if len(self.gracedays.loc[late.index[i], "Penalties"]) > 0:
-                                   self.gracedays.loc[late.index[i], "Penalties"] += f", hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late" 
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f", hw{hwNum} for {-late['Remaining'].iloc[i]} day(s) late" 
                               else:
-                                   self.gracedays.loc[late.index[i], "Penalties"] += f"hw{hwNum} for {-late["Remaining"].iloc[i]} day(s) late"
-                         print(f"Penalty Score: {self.gradebook.loc[late.index[i], f"hw{hwNum} Percent"]}")
+                                   self.gracedays.loc[late.index[i], "Penalties"] += f"hw{hwNum} for {-late['Remaining'].iloc[i]} day(s) late"
+                         print(f"Penalty Score: {self.gradebook.loc[late.index[i], f'hw{hwNum} Percent']}")
                          self.gracedays.loc[late.index[i], "Remaining"] = 0
 
 
@@ -219,33 +221,79 @@ if __name__ == "__main__":
      '''------------------------'''
      ''' Make your updates here '''
      '''------------------------'''
+     # Get the roster file
+     print("Searching 'roster' folder for roster")
+     dir = os.path.dirname(os.path.abspath(__file__))
+     rosterFiles = os.listdir(os.path.join(dir,"roster"))
+     if len(rosterFiles) > 1:
+          print(f"{len(rosterFiles)} files found in roster, please make sure there is only one roster file in the roster directory! Make sure there is only one file, then run again")
+          sys.exit()
+     elif len(rosterFiles) == 0:
+          print("No roster file found. Please make sure the course roster csv is added to the 'roster' folder.")
+          sys.exit()
+     else:
+          print(f"Roster file found: {rosterFiles[0]}")
+          rosterLoc = os.path.join(dir,"roster",rosterFiles[0])
+
+     graceDayCount = input("How many grace days does your course have: ") 
+     try:
+          graceDayCount = int(graceDayCount)
+     except:
+          print("You did not enter a valid integer.")
+          sys.exit()
+
+     generated = genGradebookGracedays(rosterLoc, graceDayCount)
+
+
+     # Looking for homework files
+     print("Searching folder 'homework' for homework grade files from Gradescope.")
+     homeworkFiles = os.listdir(os.path.join(dir,"homework"))
+     if len(homeworkFiles) == 0:
+          print("No homework files found. Moving to exams.")
+     else:
+          print(f"Homework files found!")
+          homeworkCount = input("How many homework are you processing? For example, if you have files Homework 0 Written, Homework 1 Written, Homework 1 Programming, Homework 2 Programming) then you would enter 3: ")
+          try:
+               homeworkCount = int(homeworkCount)
+          except:
+               print("You did not enter a valid integer.")
+               sys.exit()
+
+
+
      
-     graceDayCount = 6
-     rosterLoc = "roster/CourseRoster_S26_07280_1_02.24.2026.csv"
+          
+
+
+     
+     
+
+
+     # rosterLoc = "roster/CourseRoster_S26_07280_1_02.24.2026.csv"
                
-     # hw0WriteLoc = "homework/HW0_online__scores.csv"
-     # hw0ProgLoc = None # Can be None if no programming  
-     # hw0OnlineLoc = None # Can be None if no online
+     # # hw0WriteLoc = "homework/HW0_online__scores.csv"
+     # # hw0ProgLoc = None # Can be None if no programming  
+     # # hw0OnlineLoc = None # Can be None if no online
      
-     hw1WriteLoc = "homework/HW1_written__scores (1).csv"
-     hw1ProgLoc = "homework/HW1_programming__scores (1).csv" # Can be None if no programming
-     hw1OnlineLoc = "homework/HW1_online__scores (1).csv" # Can be None if no online
+     # hw1WriteLoc = "homework/HW1_written__scores (1).csv"
+     # hw1ProgLoc = "homework/HW1_programming__scores (1).csv" # Can be None if no programming
+     # hw1OnlineLoc = "homework/HW1_online__scores (1).csv" # Can be None if no online
 
-     hw2WriteLoc = "homework/HW2_written__scores (1).csv"
-     hw2ProgLoc = "homework/HW2_programming__scores (1).csv" # Can be None if no programming
-     hw2OnlineLoc = "homework/HW2_online__scores (1).csv" # Can be None if no online
+     # hw2WriteLoc = "homework/HW2_written__scores (1).csv"
+     # hw2ProgLoc = "homework/HW2_programming__scores (1).csv" # Can be None if no programming
+     # hw2OnlineLoc = "homework/HW2_online__scores (1).csv" # Can be None if no online
 
-     hw3WriteLoc = "homework/HW3_online__scores (1).csv"
-     hw3ProgLoc = None # Can be None if no programming 
-     hw3OnlineLoc = None # Can be None if no online 
+     # hw3WriteLoc = "homework/HW3_online__scores (1).csv"
+     # hw3ProgLoc = None # Can be None if no programming 
+     # hw3OnlineLoc = None # Can be None if no online 
 
-     hw4WriteLoc = "homework/HW4_written__scores.csv"
-     hw4ProgLoc = None # Can be None if no programming     
-     hw4OnlineLoc = None # Can be None if no online
+     # hw4WriteLoc = "homework/HW4_written__scores.csv"
+     # hw4ProgLoc = None # Can be None if no programming     
+     # hw4OnlineLoc = None # Can be None if no online
 
-     hw5WriteLoc = "homework/HW5_written__scores.csv"
-     hw5ProgLoc = "homework/HW5_programming__scores.csv" # Can be None if no programming
-     hw5OnlineLoc = "homework/HW5_online__scores.csv" # Can be None if no online    
+     # hw5WriteLoc = "homework/HW5_written__scores.csv"
+     # hw5ProgLoc = "homework/HW5_programming__scores.csv" # Can be None if no programming
+     # hw5OnlineLoc = "homework/HW5_online__scores.csv" # Can be None if no online    
 
      # hw6WriteLoc = "homework/Homework_6_Written_scores.csv"
      # hw6ProgLoc = "homework/Homework_6_Programming_scores.csv" # Can be None if no programming     
@@ -264,38 +312,38 @@ if __name__ == "__main__":
      # exam2Loc = "quiz/Final_Exam_scores.csv"   # Exam 2
 
                
-     generated = genGradebookGracedays(rosterLoc, graceDayCount)
+     # generated = genGradebookGracedays(rosterLoc, graceDayCount)
      
      
-     homeworkCount = 5
-     for i in range(homeworkCount):
-          i += 1 # Needs to be added back in if no homework 0!!!
-          print("\n------------------------")
-          print(f"Processing homework {i}!")
-          print("------------------------\n")
-          gradebook = generated.updateGradebook(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"], globals()[f"hw{i}OnlineLoc"])
-          gracedays = generated.updateGraceDays(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"], globals()[f"hw{i}OnlineLoc"])
+     # homeworkCount = 0
+     # for i in range(homeworkCount):
+     #      i += 1 # Needs to be added back in if no homework 0!!!
+     #      print("\n------------------------")
+     #      print(f"Processing homework {i}!")
+     #      print("------------------------\n")
+     #      gradebook = generated.updateGradebook(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"], globals()[f"hw{i}OnlineLoc"])
+     #      gracedays = generated.updateGraceDays(i, globals()[f"hw{i}WriteLoc"], globals()[f"hw{i}ProgLoc"], globals()[f"hw{i}OnlineLoc"])
 
-     quizCount = 0
-     for i in range(quizCount):
-          i += 1
-          print("\n------------------------")
-          print(f"Processing quiz {i}!")
-          print("------------------------\n")
-          gradebook = generated.addQuizScore(i, globals()[f"quiz{i}Loc"])
+     # quizCount = 0
+     # for i in range(quizCount):
+     #      i += 1
+     #      print("\n------------------------")
+     #      print(f"Processing quiz {i}!")
+     #      print("------------------------\n")
+     #      gradebook = generated.addQuizScore(i, globals()[f"quiz{i}Loc"])
 
-     examCount = 0
-     for i in range(examCount):
-          i += 1
-          print("\n------------------------")
-          print(f"Processing exam {i}!")
-          print("------------------------\n")
-          gradebook = generated.addExamScore(i, globals()[f"exam{i}Loc"])
+     # examCount = 0
+     # for i in range(examCount):
+     #      i += 1
+     #      print("\n------------------------")
+     #      print(f"Processing exam {i}!")
+     #      print("------------------------\n")
+     #      gradebook = generated.addExamScore(i, globals()[f"exam{i}Loc"])
 
 
 
-     gracedays.to_csv("gracedays.csv")
-     gradebook.to_csv("gradebook.csv")
+     # gracedays.to_csv("gracedays.csv")
+     # gradebook.to_csv("gradebook.csv")
 
 
 
