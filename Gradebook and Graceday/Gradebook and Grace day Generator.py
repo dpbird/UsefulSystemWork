@@ -303,6 +303,49 @@ if __name__ == "__main__":
                     homeworkFiles.pop(chosenFileNum)
                     fstCounter += 1
                     currHomeworkFilesCount -= 1
+
+          print(homeworkDict)
+          print(homeworkNum)
+          for i in range(homeworkNum):
+               i = i + homework0Bool
+               print("\n------------------------")
+               print(f"Processing homework {i}!")
+               print("------------------------\n")
+               for file in homeworkDict[i]:
+                    if 'writ' in file.lower():
+                         writtenLoc = os.path.join('homework',file)
+                         print(f"File '{file}' marked as the written component for HW{i}")
+                    else:
+                         writtenLoc = None
+                         print(f"No written file found as part of HW{i}")
+                    if 'prog' in file.lower():
+                         progLoc = os.path.join('homework',file)
+                         print(f"File '{file}' marked as the programing component for HW{i}")
+                    else:
+                         progLoc = None
+                         print(f"No programming file found as part of HW{i}")
+                    if 'onlin' in file.lower():
+                         onlineLoc = os.path.join('homework',file)
+                         print(f"File '{file}' marked as the online component for HW{i}")
+                    else:
+                         onlineLoc = None
+                         print(f"No online file found as part of HW{i}")
+                    if writtenLoc == None and progLoc ==None and onlineLoc == None:
+                         print(f"File '{file}' not able to be identified as written, programming, or online. Please make sure the file contains 'writ', 'prog', or 'onlin' to indicate the difference.")
+                         sys.exit()
+               
+               
+
+               gradebook = generated.updateGradebook(i, writtenLoc, progLoc, onlineLoc)    
+               gracedays = generated.updateGraceDays(i, writtenLoc, progLoc, onlineLoc)  
+     gracedays.to_csv("gracedays.csv")
+     gradebook.to_csv("gradebook.csv")
+
+
+
+
+
+          
                
                # Process the grades for this homework: 
 
