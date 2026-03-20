@@ -1,31 +1,3 @@
-The row player’s minimax-optimal strategy is the strategy $(p_1, p_2)$ that maximizes the minimum of $5p_1 -15p_2$ and $-15p_1 +25p_2$. Using $p_2 = 1-p_1$, the row-player wants to maximize the minimum of $-15 + 20p_1$ and $25 - 40p_1$. Since one of these is increasing in $p_1$ and the other is decreasing in $p_1$, the minimum is maximized when the two terms are equal, so $60p_1 = 40$, solving to $p_1 = 2/3$ and $p_2 = 1/3$. 
-        
-The column player’s minimax-optimal strategy is the strategy $(q_1, q_2)$ that minimizes the maximum of $5q_1 - 15q_2$ and $-15q_1 + 25q_2$. Using $q_2 = 1 - q_1$, the column-player wants to minimize the maximum of $-15 + 20q_1$ and $25 - 40q_1$. Since one of these is increasing in $q_1$ and the other is decreasing in $q_1$, the maximum is minimized when the two terms are equal, so $60q_1 = 40$, solving to $q_1 = 2/3$ and $q_2 = 1/3$. 
-        
-The minimax-optimal value $v$ of the game is $-\frac{5}{3}$.
+Assuming $v_1 \geq v_2 \geq \ldots \geq v_n$ and using the some steps as part (a), bidder 1 gets all $m$ printers and is charged $mv_2$; all other bidders are charged nothing. 
 
 
-
-
-
-
-
-
-The row player’s minimax-optimal strategy is the strategy $(p_1, p_2)$ that maximizes the minimum of $5p_1 -15p_2$ and $-15p_1 +75p_2$. Using $p_2 = 1-p_1$, the row-player wants to maximize the minimum of $-15 + 20p_1$ and $75 - 90p_1$. Since one of these is increasing in $p_1$ and the other is decreasing in $p_1$, the minimum is maximized when the two terms are equal, so $110p_1 = 90$, solving to $p_1 =9/11$ and $p_2 = 2/11$. 
-        
-The column player’s minimax-optimal strategy is the strategy $(q_1, q_2)$ that minimizes the maximum of $5q_1 - 15q_2$ and $-15q_1 + 75q_2$. Using $q_2 = 1 - q_1$, the column-player wants to minimize the maximum of $-15 + 20q_1$ and $75 - 90q_1$. Since one of these is increasing in $q_1$ and the other is decreasing in $q_1$, the maximum is minimized when the two terms are equal, so $110q_1 = 90$, solving to $q_1 = 9/11$ and $q_2 = 2/11$. 
-        
-The minimax-optimal value $v$ of the game is $\frac{15}{11}$.
-
-
-
-
-
-
-
-
-The row player’s minimax-optimal strategy is the strategy $(p_1, p_2)$ that maximizes the minimum of $5p_1 -15p_2$ and $-45p_1 +75p_2$. Using $p_2 = 1-p_1$, the row-player wants to maximize the minimum of $-15 + 20p_1$ and $75 - 120p_1$. Since one of these is increasing in $p_1$ and the other is decreasing in $p_1$, the minimum is maximized when the two terms are equal, so $140p_1 = 90$, solving to $p_1 =9/14$ and $p_2 = 5/14$. 
-        
-The column player’s minimax-optimal strategy is the strategy $(q_1, q_2)$ that minimizes the maximum of $5q_1 - 45q_2$ and $-15q_1 + 75q_2$. Using $q_2 = 1 - q_1$, the column-player wants to minimize the maximum of $-45 + 50q_1$ and $75 - 90q_1$. Since one of these is increasing in $q_1$ and the other is decreasing in $q_1$, the maximum is minimized when the two terms are equal, so $140q_1 = 120$, solving to $q_1 = 6/7$ and $q_2 = 1/7$. 
-        
-The minimax-optimal value $v$ of the game is $-\frac{15}{7}$.

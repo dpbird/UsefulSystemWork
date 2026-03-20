@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 import sys
+import json
 
 def maxLateness(time1, time2, time3):
      time1 = time1.split(":")
@@ -235,6 +236,10 @@ if __name__ == "__main__":
           print(f"Roster file found: {rosterFiles[0]}")
           rosterLoc = os.path.join(dir,"roster",rosterFiles[0])
 
+     #ADD LOADING PROMPT HERE
+     #NEED: graceDayCount, homework0Bool, homeworkDict
+     
+
      graceDayCount = input("How many grace days does your course have: ") 
      try:
           graceDayCount = int(graceDayCount)
@@ -305,8 +310,20 @@ if __name__ == "__main__":
                     currHomeworkFilesCount -= 1
 
           print(homeworkDict)
-          print(homeworkNum)
-          for i in range(homeworkNum):
+          saved = {'graceDayCount': graceDayCount, "homework0Bool": homework0Bool, "homeworkDict": homeworkDict}
+
+          saveBool = input("Would you like to save this run for future processing? (Y/N) ")
+          if saveBool.lower() == 'y':
+               savedName = input("Saved file name: ")
+               with open(f"{os.path.join('saved', savedName)}.json", "w") as file:
+                    json.dump(saved, file, indent=4)
+               print(f"File saved: {os.path.join('saved', savedName)}.json")
+          
+          
+
+
+          
+          for i in range(len(homeworkDict.keys)):
                i = i + homework0Bool
                print("\n------------------------")
                print(f"Processing homework {i}!")
