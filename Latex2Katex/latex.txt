@@ -1,3 +1,79 @@
-Assuming $v_1 \geq v_2 \geq \ldots \geq v_n$ and using the some steps as part (a), bidder 1 gets all $m$ printers and is charged $mv_2$; all other bidders are charged nothing. 
+For (a), the expected revenue is $\mathbb{E}[\min(v_1, v_2)] = \frac{1}{3}$.
+    
+For (b), we can calculate expected revenue as: $p^2 \cdot 0 + 2p(1 -p)p + (1 -p)^2(p + \frac{1 -p}{3})$.
+Putting in for $p = \frac{1}{3}$, we get that $0 + \frac{4}{9}\cdot\frac{1}{3} + \frac{4}{9} \cdot \frac{5}{9} = \frac{32}{81}$
 
 
+
+
+
+
+
+Consider the game described in Hint 1. The social optimum cost in this game is $\text{OPT} = 1+ \epsilon$,
+corresponding to the solution in which all players choose $e_0$, each incurring a cost of $(1+\epsilon)/k>1/k$.
+
+Also it is a pure-strategy Nash equilibrium for each player $i$ to choose $\{e_i\}$, resulting in social cost of $\sum_{i=1}^{n}1/i = H_n$.
+
+For the sake of contradiction, say that there exists another pure-Nash equilibrium, in which  $k \geq 1$ players choose $e_0$. However, notice that $e_1, \ldots, e_{k-1}$ are the only resources that have base cost greater than $1/k$. So for at least one of the $k$ players, there must exist at least one player $i \in \{k, \ldots, n\}$, whose cost for choosing resource $\{e_i\}$ is strictly smaller than their current cost when choosing $\{e_0\}$. So they have an incentive to deviate to $\{e_i\}$. So this cannot be an equilibrium. So the PoS $=\frac{H_n}{1+\epsilon} = \Omega(\log n)$, by Hint 2.
+
+
+
+
+
+
+
+
+Consider for the sake of contradiction that there exists a Nash equilibrium in which there is a player that incurs cost greater than OPT. Then if that player switches to their strategy in OPT then their cost will be at most OPT (because all costs are non-negative). So, any joint action in which any player is incurring cost greater than OPT cannot be a Nash equilibrium.
+
+
+
+
+
+
+
+
+
+Since the Price of Anarchy for a class of games is the supremum over all games in the class, it suffices to exhibit a single fair cost-sharing game achieving $PoA = \Omega(n).$
+Consider a game with two resources $e_0$ and $e_1$ where each player $i \in \{1, \ldots, n\}$ may choose either resource $e_0$ or resource $e_1$, that is, for all $i$ we have $S_i = \{\{e_0\}, \{e_1\}\}$. Resource $e_0$ has $1+\epsilon$ and resource $e_1$ has base cost $n$. All players choosing $s_i = \{e_1\}$ is a Nash equilibrium since each player is incurring cost $n/n = 1$ and has no incentive to deviate. But this has social cost $n$, compared to the optimal social cost of $1+\epsilon$.
+
+
+
+
+
+
+
+
+Let $s$ be a pure-strategy Nash Equilibrium. Let $r^*$ be the resource with the highest load, such that $L_{r^*}(s) = Cost(s)$. Let $i^*$ be any player assigned to resource $r^*$ (i.e., $s_{i^*} = r^*$). Prove that for any other resource $r \in R \setminus \{r^*\}$, the load $L_r(s)$ must satisfy $L_r(s) \ge L_{r^*}(s) - w_{i^*}$.
+
+
+
+
+
+
+
+
+
+In the Nash Equilibrium $s$, player $i^*$ chooses resource $r^*$. Player $i^*$ could unilaterally deviate to any other resource $r$. If they did, the new load on $r\not=r^*$ would become $L_r(s) + w_{i^*}$. 
+    
+Because $s$ is a Nash Equilibrium, player $i^*$ has no incentive to deviate, meaning their current cost must be less than or equal to the cost of deviation:
+$$L_{r^*}(s) \le L_r(s) + w_{i^*} \implies L_r(s) \ge L_{r^*}(s) - w_{i^*}$$  
+
+
+
+
+
+
+
+
+
+Let $OPT$ be the optimal social cost. We know two lower bounds for $OPT$:\\
+$OPT \ge \frac{1}{m} \sum_{i} w_i$ (the optimal max-load cannot be less than the average load),\\ and $OPT \ge \max_i w_i$ (the optimal max-load cannot be less than the largest single weight).
+
+Note that the inequality from part (a) was proved for $r \neq r^*$, but the case $r = r^*$ holds trivially since $L_{r^*}(s) \ge L_{r^*}(s) - w_{i^*}$ is always true for positive weights. Thus we may sum the inequality over all $m$ resources:
+$$ \sum_{r=1}^m L_r(s) \ge \sum_{r=1}^m (L_{r^*}(s) - w_{i^*}) $$
+Denoting the total weight as $W = \sum_i w_i$:
+$$ W \ge m \cdot L_{r^*}(s) - m \cdot w_{i^*} $$
+$$ \frac{W}{m} + w_{i^*} \ge L_{r^*}(s) $$
+Since $L_{r^*}(s) = Cost(s)$, and substituting the bounds for $OPT$:
+$$ Cost(s) \le \frac{W}{m} + w_{i^*} \le OPT + OPT = 2 \cdot OPT $$
+Thus, $PoA \le 2$. 
