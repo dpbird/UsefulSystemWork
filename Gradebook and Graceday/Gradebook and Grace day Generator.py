@@ -216,118 +216,138 @@ class genGradebookGracedays:
      
 
 def runHomework(graceDayCount, homework0Bool, homeworkDict):
-     if graceDayCount == None and homework0Bool == None and homeworkDict == None:
+     if graceDayCount == None:
           graceDayCount = input("How many grace days does your course have: ") 
           try:
                graceDayCount = int(graceDayCount)
           except:
                print("You did not enter a valid integer.")
                sys.exit()
+     else:
+          print(f"From loaded data your course has {graceDayCount} total grace days!")
+     generated = genGradebookGracedays(rosterLoc, graceDayCount)
 
-          generated = genGradebookGracedays(rosterLoc, graceDayCount)
+     
 
 
-          # Looking for homework files
-          print("Searching folder 'homework' for homework grade files from Gradescope.")
-          homeworkFiles = os.listdir(os.path.join(dir,"homework"))
-          if len(homeworkFiles) == 0:
-               print("No homework files found. Moving to exams.")
+     # Looking for homework files
+     print("Searching folder 'homework' for homework grade files from Gradescope.")
+     homeworkFiles = os.listdir(os.path.join(dir,"homework"))
+     if len(homeworkFiles) == 0:
+          print("No homework files found. Moving to exams.")
+     else:
+          print(f"Homework files found!")
+          homeworkCount = input("How many homework are you processing? For example, if you have files Homework 0 Written, Homework 1 Written, Homework 1 Programming, Homework 2 Programming) then you would enter 3: ")
+          try:
+               homeworkCount = int(homeworkCount)
+          except:
+               print("You did not enter a valid integer.")
+               sys.exit()
+
+     if homeworkDict == None:
+          homeworkDict = dict()
+     else:
+          print(f"From loaded data your homework dictionary has been loaded!\n {homeworkDict}")
+          for hwNum in homeworkDict.keys():
+               currHW = homeworkDict[hwNum]
+               for file in currHW:
+                    if file in homeworkFiles:
+                         homeworkFiles.remove(file)
+                         print(f"'{file}' correctly matched!")
+                    else:
+                         print(f"'{file}' could not be correctly matched. Make sure you have file '{file}' named considently in the 'homework' folder.")
+     
+     if homework0Bool == 0:
+          homework0Bool = input("Do you have a homework 0? (Y/N) ")
+          if homework0Bool == "Y":
+               homework0Bool = 0
+          elif homework0Bool == "N":
+               homework0Bool = 1
           else:
-               print(f"Homework files found!")
-               homeworkCount = input("How many homework are you processing? For example, if you have files Homework 0 Written, Homework 1 Written, Homework 1 Programming, Homework 2 Programming) then you would enter 3: ")
+               print("Only Y/N answers accepted")
+     else: 
+          print(f"Loaded data indicates you did not have a homework 0")
+
+     try:
+          processingHW = max(homeworkDict.keys())
+          #CONTINUE HERE
+     for i in range(homeworkCount):
+          homeworkNum = i + homework0Bool
+          currHomeworkFilesCount = input(f"How many components does homework {homeworkNum} have? [1/2/3] ")
+          try:
+               currHomeworkFilesCount = int(currHomeworkFilesCount)
+               if currHomeworkFilesCount > 3:
+                    sys.exit()
+               if currHomeworkFilesCount < 1:
+                    sys.exit()
+          except:
+               print("You did not enter a valid integer. Please choose between 1, 2, or 3")
+               sys.exit()
+          filesThisHomework = []
+          fst = ["first", 'second', 'third']
+          fstCounter = 0
+          while currHomeworkFilesCount > 0:
+               print("Files Found: ")
+               if len(homeworkFiles) == 0:
+                    print("Error: All Homework files accounted for. Please try again.")
+                    sys.exit()
+               for i, file in enumerate(homeworkFiles):
+                    print(f"{i}: {file}")
+
                try:
-                    homeworkCount = int(homeworkCount)
+                    chosenFileNum = int(input(f"Choose the {fst[fstCounter]} file which is part of homework {homeworkNum}. [For the first file listed, enter '0', for the second file listed, enter '1', etc]: "))
+                    chosenFile = homeworkFiles[chosenFileNum]
+                    homeworkDict[homeworkNum] = homeworkDict.get(homeworkNum, []) + [chosenFile]
                except:
-                    print("You did not enter a valid integer.")
+                    print(f"You did not enter a valid integer. Please choose between 0 and {len(homeworkFiles)}")
                     sys.exit()
 
-               homeworkDict = dict()
+               homeworkFiles.pop(chosenFileNum)
+               fstCounter += 1
+               currHomeworkFilesCount -= 1
 
-               homework0Bool = input("Do you have a homework 0? (Y/N) ")
-               if homework0Bool == "Y":
-                    homework0Bool = 0
-               elif homework0Bool == "N":
-                    homework0Bool = 1
+     print(homeworkDict)
+     saved = {'graceDayCount': graceDayCount, "homework0Bool": homework0Bool, "homeworkDict": homeworkDict}
+     #MAYBE HAVE INDENT ISSUE HERE!!!!
+     saveBool = input("Would you like to save this run for future processing? (Y/N) ")
+     if saveBool.lower() == 'y':
+          savedName = input("Saved file name: ")
+          with open(f"{os.path.join('saved', savedName)}.json", "w") as file:
+               json.dump(saved, file, indent=4)
+          print(f"File saved: {os.path.join('saved', savedName)}.json")
+     
+     
+
+
+     
+     for i in range(len(homeworkDict.keys())):
+          i = i + homework0Bool
+          print("\n------------------------")
+          print(f"Processing homework {i}!")
+          print("------------------------\n")
+          writtenLoc = None
+          progLoc = None
+          onlineLoc = None
+          for file in homeworkDict[i]:
+               if 'writ' in file.lower():
+                    writtenLoc = os.path.join('homework',file)
+                    print(f"File '{file}' marked as the written component for HW{i}")
+               elif 'prog' in file.lower():
+                    progLoc = os.path.join('homework',file)
+                    print(f"File '{file}' marked as the programing component for HW{i}")
+               elif 'onlin' in file.lower():
+                    onlineLoc = os.path.join('homework',file)
+                    print(f"File '{file}' marked as the online component for HW{i}")
                else:
-                    print("Only Y/N answers accepted")
+                    print(f"File '{file}' not able to be identified as written, programming, or online. Please make sure the file contains 'writ', 'prog', or 'onlin' to indicate the difference.")
+                    sys.exit()
+          
+          
 
-               for i in range(homeworkCount):
-                    homeworkNum = i + homework0Bool
-                    currHomeworkFilesCount = input(f"How many components does homework {homeworkNum} have? [1/2/3] ")
-                    try:
-                         currHomeworkFilesCount = int(currHomeworkFilesCount)
-                         if currHomeworkFilesCount > 3:
-                              sys.exit()
-                         if currHomeworkFilesCount < 1:
-                              sys.exit()
-                    except:
-                         print("You did not enter a valid integer. Please choose between 1, 2, or 3")
-                         sys.exit()
-                    filesThisHomework = []
-                    fst = ["first", 'second', 'third']
-                    fstCounter = 0
-                    while currHomeworkFilesCount > 0:
-                         print("Files Found: ")
-                         if len(homeworkFiles) == 0:
-                              print("Error: All Homework files accounted for. Please try again.")
-                              sys.exit()
-                         for i, file in enumerate(homeworkFiles):
-                              print(f"{i}: {file}")
-
-                         try:
-                              chosenFileNum = int(input(f"Choose the {fst[fstCounter]} file which is part of homework {homeworkNum}. [For the first file listed, enter '0', for the second file listed, enter '1', etc]: "))
-                              chosenFile = homeworkFiles[chosenFileNum]
-                              homeworkDict[homeworkNum] = homeworkDict.get(homeworkNum, []) + [chosenFile]
-                         except:
-                              print(f"You did not enter a valid integer. Please choose between 0 and {len(homeworkFiles)}")
-                              sys.exit()
-
-                         homeworkFiles.pop(chosenFileNum)
-                         fstCounter += 1
-                         currHomeworkFilesCount -= 1
-
-               print(homeworkDict)
-               saved = {'graceDayCount': graceDayCount, "homework0Bool": homework0Bool, "homeworkDict": homeworkDict}
-               #MAYBE HAVE INDENT ISSUE HERE!!!!
-               saveBool = input("Would you like to save this run for future processing? (Y/N) ")
-               if saveBool.lower() == 'y':
-                    savedName = input("Saved file name: ")
-                    with open(f"{os.path.join('saved', savedName)}.json", "w") as file:
-                         json.dump(saved, file, indent=4)
-                    print(f"File saved: {os.path.join('saved', savedName)}.json")
-               
-               
-
-
-               
-               for i in range(len(homeworkDict.keys())):
-                    i = i + homework0Bool
-                    print("\n------------------------")
-                    print(f"Processing homework {i}!")
-                    print("------------------------\n")
-                    writtenLoc = None
-                    progLoc = None
-                    onlineLoc = None
-                    for file in homeworkDict[i]:
-                         if 'writ' in file.lower():
-                              writtenLoc = os.path.join('homework',file)
-                              print(f"File '{file}' marked as the written component for HW{i}")
-                         elif 'prog' in file.lower():
-                              progLoc = os.path.join('homework',file)
-                              print(f"File '{file}' marked as the programing component for HW{i}")
-                         elif 'onlin' in file.lower():
-                              onlineLoc = os.path.join('homework',file)
-                              print(f"File '{file}' marked as the online component for HW{i}")
-                         else:
-                              print(f"File '{file}' not able to be identified as written, programming, or online. Please make sure the file contains 'writ', 'prog', or 'onlin' to indicate the difference.")
-                              sys.exit()
-                    
-                    
-
-                    gradebook = generated.updateGradebook(i, writtenLoc, progLoc, onlineLoc)    
-                    gracedays = generated.updateGraceDays(i, writtenLoc, progLoc, onlineLoc)  
-          gracedays.to_csv("gracedays.csv")
-          gradebook.to_csv("gradebook.csv")
+          gradebook = generated.updateGradebook(i, writtenLoc, progLoc, onlineLoc)    
+          gracedays = generated.updateGraceDays(i, writtenLoc, progLoc, onlineLoc)  
+     gracedays.to_csv("gracedays.csv")
+     gradebook.to_csv("gradebook.csv")
 
 
 
