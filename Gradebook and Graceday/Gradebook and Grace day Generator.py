@@ -257,7 +257,7 @@ def runHomework(graceDayCount, homework0Bool, homeworkDict):
                     else:
                          print(f"'{file}' could not be correctly matched. Make sure you have file '{file}' named considently in the 'homework' folder.")
      
-     if homework0Bool == 0:
+     if homework0Bool == None:
           homework0Bool = input("Do you have a homework 0? (Y/N) ")
           if homework0Bool == "Y":
                homework0Bool = 0
@@ -269,10 +269,13 @@ def runHomework(graceDayCount, homework0Bool, homeworkDict):
           print(f"Loaded data indicates you did not have a homework 0")
 
      try:
-          processingHW = max(homeworkDict.keys())
-          #CONTINUE HERE
-     for i in range(homeworkCount):
-          homeworkNum = i + homework0Bool
+          processingHW = max([int(n) for n in homeworkDict.keys()]) + 1
+          print(F"PROCESSING CORRECTLY LOADED: processingHW = {processingHW}")
+     except:
+          processingHW = homework0Bool
+     for i in range(processingHW, homeworkCount+1):
+          print(f"DEBUG: homeworkNum: {i}")
+          homeworkNum = str(i) 
           currHomeworkFilesCount = input(f"How many components does homework {homeworkNum} have? [1/2/3] ")
           try:
                currHomeworkFilesCount = int(currHomeworkFilesCount)
@@ -308,7 +311,6 @@ def runHomework(graceDayCount, homework0Bool, homeworkDict):
 
      print(homeworkDict)
      saved = {'graceDayCount': graceDayCount, "homework0Bool": homework0Bool, "homeworkDict": homeworkDict}
-     #MAYBE HAVE INDENT ISSUE HERE!!!!
      saveBool = input("Would you like to save this run for future processing? (Y/N) ")
      if saveBool.lower() == 'y':
           savedName = input("Saved file name: ")
@@ -321,7 +323,7 @@ def runHomework(graceDayCount, homework0Bool, homeworkDict):
 
      
      for i in range(len(homeworkDict.keys())):
-          i = i + homework0Bool
+          i = str(i + homework0Bool)
           print("\n------------------------")
           print(f"Processing homework {i}!")
           print("------------------------\n")
